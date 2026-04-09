@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Health Insights | Dr. Abhishek Shenoy</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,600;1,400;1,600&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "error-dim": "#5C1202",
+              "on-primary-container": "#525151",
+              "surface-container-highest": "#E0E3E0",
+              "on-background": "#2F3331",
+              "error-container": "#FE8B70",
+              "surface-container": "#EDEEEB",
+              "primary-fixed-dim": "#D6D4D3",
+              "surface-container-lowest": "#FFFFFF",
+              "tertiary-dim": "#575348",
+              "primary-container": "#E5E2E1",
+              "on-tertiary-container": "#605B51",
+              "on-secondary": "#FFF8F1",
+              "surface-container-low": "#F3F4F1",
+              "tertiary-fixed-dim": "#ECE5D7",
+              "background": "#F5F4ED",
+              "on-primary-fixed": "#403F3F",
+              "surface-variant": "#E0E3E0",
+              "secondary-dim": "#5F513A",
+              "inverse-surface": "#0D0E0E",
+              "error": "#9E422C",
+              "secondary-fixed-dim": "#E5D2B4",
+              "secondary-fixed": "#F4E0C1",
+              "primary-fixed": "#E5E2E1",
+              "tertiary-fixed": "#FAF3E5",
+              "on-error-container": "#742410",
+              "on-tertiary-fixed-variant": "#6A665B",
+              "on-primary-fixed-variant": "#5C5B5B",
+              "surface-dim": "#D6DBD7",
+              "outline": "#777C79",
+              "surface-container-high": "#E6E9E6",
+              "surface-bright": "#FAF9F7",
+              "inverse-primary": "#FFFFFF",
+              "on-surface": "#2F3331",
+              "surface-tint": "#5F5E5E",
+              "on-secondary-fixed-variant": "#675A41",
+              "primary-dim": "#535252",
+              "surface": "#FAF9F7",
+              "secondary-container": "#F4E0C1",
+              "secondary": "#6B5D45",
+              "outline-variant": "#AFB3B0",
+              "on-secondary-container": "#5D5038",
+              "on-primary": "#FAF7F6",
+              "tertiary": "#635F54",
+              "on-tertiary-fixed": "#4D493F",
+              "on-surface-variant": "#5C605D",
+              "on-error": "#FFF7F6",
+              "inverse-on-surface": "#9D9D9B",
+              "on-secondary-fixed": "#4A3E27",
+              "tertiary-container": "#FAF3E5",
+              "on-tertiary": "#FFF8EC",
+              "primary": "#5F5E5E"
+            },
+            fontFamily: {
+              "headline": ["Newsreader"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "0rem", "lg": "0rem", "xl": "0rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .editorial-shadow { box-shadow: 0 20px 40px -15px rgba(49, 51, 44, 0.05); }
+      .material-symbols-outlined { font-variation-settings: 'wght' 200, 'opsz' 24; }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface selection:bg-primary-container selection:text-on-primary-container">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 w-full flex justify-between items-center px-6 md:px-12 py-6 max-w-none bg-[#FAF9F7]/80 dark:bg-[#1A1A1A]/80 backdrop-blur-xl z-50">
+<div class="font-['Newsreader'] text-2xl font-semibold text-[#31332C] dark:text-[#FAF9F7]">Dr. Abhishek Shenoy</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-[#31332C]/60 dark:text-[#FAF9F7]/60 font-['Manrope'] uppercase text-[0.75rem] tracking-[0.3em] hover:text-[#31332C] dark:hover:text-[#FFFFFF] transition-colors duration-300" href="#">Home</a>
+<a class="text-[#31332C]/60 dark:text-[#FAF9F7]/60 font-['Manrope'] uppercase text-[0.75rem] tracking-[0.3em] hover:text-[#31332C] dark:hover:text-[#FFFFFF] transition-colors duration-300" href="#">Philosophy</a>
+<a class="text-[#31332C]/60 dark:text-[#FAF9F7]/60 font-['Manrope'] uppercase text-[0.75rem] tracking-[0.3em] hover:text-[#31332C] dark:hover:text-[#FFFFFF] transition-colors duration-300" href="#">Expertise</a>
+<a class="text-[#31332C] dark:text-[#FFFFFF] border-b border-[#31332C] dark:border-[#FFFFFF] pb-1 font-['Manrope'] uppercase text-[0.75rem] tracking-[0.3em]" href="#">Insights</a>
+<a class="text-[#31332C]/60 dark:text-[#FAF9F7]/60 font-['Manrope'] uppercase text-[0.75rem] tracking-[0.3em] hover:text-[#31332C] dark:hover:text-[#FFFFFF] transition-colors duration-300" href="#">Contact</a>
+</div>
+<button class="bg-primary text-on-primary px-6 py-2 font-label uppercase text-[0.75rem] tracking-[0.2em] scale-102 transition-transform duration-200">
+            Book Consultation
+        </button>
+</nav>
+<main class="pt-32 pb-24">
+<!-- Header Section -->
+<header class="px-6 md:px-12 mb-16 max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-8">
+<div class="max-w-2xl">
+<span class="font-label text-[0.75rem] uppercase tracking-[0.3em] text-primary block mb-4">Clinical Perspectives</span>
+<h1 class="font-headline text-6xl md:text-8xl leading-[0.9] text-on-background">Health <span class="italic">Insights.</span></h1>
+<p class="font-headline text-2xl mt-6 text-on-surface-variant italic">Clinical perspectives on joint health and recovery.</p>
+</div>
+<!-- Categories -->
+<div class="flex flex-wrap gap-4 border-t border-outline-variant pt-8 md:pt-0 md:border-t-0">
+<button class="font-label text-[0.65rem] uppercase tracking-[0.2em] px-4 py-2 border border-outline-variant hover:bg-primary-container transition-colors">Joint Health</button>
+<button class="font-label text-[0.65rem] uppercase tracking-[0.2em] px-4 py-2 border border-outline-variant hover:bg-primary-container transition-colors">Preventive Care</button>
+<button class="font-label text-[0.65rem] uppercase tracking-[0.2em] px-4 py-2 border border-outline-variant hover:bg-primary-container transition-colors">Sports Recovery</button>
+<button class="font-label text-[0.65rem] uppercase tracking-[0.2em] px-4 py-2 border border-outline-variant hover:bg-primary-container transition-colors">Robotic Surgery</button>
+</div>
+</div>
+</header>
+<!-- Featured Section (Asymmetric Layout) -->
+<section class="px-6 md:px-12 max-w-7xl mx-auto mb-24">
+<div class="grid md:grid-cols-12 gap-0 relative">
+<div class="md:col-span-7 z-10">
+<div class="bg-surface-container-lowest p-8 md:p-16 editorial-shadow h-full flex flex-col justify-center">
+<span class="font-label text-[0.65rem] uppercase tracking-[0.3em] text-primary mb-6 block">Featured Analysis</span>
+<h2 class="font-headline text-4xl md:text-5xl leading-tight mb-6">The Future of Precision: <span class="italic text-primary">Navigated</span> Robotic Arthroplasty</h2>
+<p class="font-body text-lg text-on-surface-variant mb-8 leading-relaxed">How real-time biological feedback is transforming the longevity of total knee replacements in active patients.</p>
+<div class="flex items-center gap-6 mt-auto">
+<span class="font-label text-[0.7rem] uppercase tracking-[0.1em] text-outline">Oct 12, 2024</span>
+<a class="font-label text-[0.75rem] uppercase tracking-[0.3em] border-b border-primary pb-1 hover:text-primary transition-colors" href="#">Read Full Insight</a>
+</div>
+</div>
+</div>
+<div class="md:col-span-5 relative mt-8 md:mt-0">
+<img class="w-full h-[400px] md:h-full object-cover grayscale brightness-95 contrast-105" data-alt="Modern clinical setting with high-tech robotic surgical arm in a sterile environment with soft architectural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcKhs6nMTOeIj9DBq_xkrW7IX35j36sHNYuDi-BYYdOiZpYv0PW0BM2qRcVHeipnAkyaqW0wJZs2Wr52wO8yRwc_4x2vXGydrVT7Vm1HXte3kxYci7tDVTPhAGP0LQL31T5RBIGgF9RjjNcyc9cUITdfpKFcHqphHyGDV0k_d-VYmIjsi7kl5GNHMLHvjDCvmqE6o7IsAc7YsD55k21pkzsX98HkCPc4OUZy8tnps23EjTCHxXAd4xIFhiaNB4iNh1jH8RzBa3NjMA"/>
+</div>
+</div>
+</section>
+<!-- Article Grid (Editorial Bento-ish) -->
+<section class="px-6 md:px-12 max-w-7xl mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+<!-- Card 1 -->
+<article class="flex flex-col group cursor-pointer transition-transform duration-300 hover:-translate-y-2">
+<div class="aspect-[4/5] overflow-hidden mb-6 bg-surface-container">
+<img class="w-full h-full object-cover grayscale transition-transform duration-500 group-hover:scale-105" data-alt="Professional top-down shot of a healthy Mediterranean salad with fresh greens and olive oil on a minimalist ceramic plate" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKcdVRftANBCh3IKqQ_qPwk0NtDdpok9TY1TEy2Tq1pA7Tgfc-IFrYSo5BkuJ_wmXyDYgyQWkRxZFyz68S9eAJFLlWrVaGxnltPuJlejkqtaOqmqMghs6xfnXScNv4Jc3k384W027q_syLcyk-fiZlFoQJwu0409n3ycNnu8NGzqQfWgRE_1wWZxjIR7LEBHqL4ywfqcks9uNLT2CE1ThBnY83Qu1mou7y_oN1UjnGAK7Brysj-a-Th7e610l7fFMA45WxurYbIpmd"/>
+</div>
+<span class="font-label text-[0.65rem] uppercase tracking-[0.3em] text-primary mb-3">Preventive Care</span>
+<h3 class="font-headline text-2xl mb-4 group-hover:italic transition-all">Anti-Inflammatory Nutrition for Joint Longevity</h3>
+<p class="font-body text-sm text-on-surface-variant mb-6 line-clamp-3">Exploring the correlation between Mediterranean dietary patterns and reduced synovial inflammation in early-stage arthritis.</p>
+<span class="font-label text-[0.7rem] uppercase tracking-[0.1em] text-outline mt-auto">Sep 28, 2024</span>
+</article>
+<!-- Card 2 -->
+<article class="flex flex-col group cursor-pointer transition-transform duration-300 hover:-translate-y-2">
+<div class="aspect-[4/5] overflow-hidden mb-6 bg-surface-container">
+<img class="w-full h-full object-cover grayscale transition-transform duration-500 group-hover:scale-105" data-alt="Cinematic black and white photograph of an athlete focused on rehabilitation exercises in a minimalist modern gym" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDydFgLUuFIIcxsbUvEawsuPvwU3CSmYFGdu1GFUZgMU2GFMnC_FoYQm0AzbaCE_pN4-vnjmHw5OG-7NpTb_2kx-HBle_FcITZVzWuB8xodLoO-3sUG1Y1V0VVb6dI88ZhqGT8cyA01yVj_iXisndKWYnlbfUgXmnabX7tuhU76HZcv1hVeEbCVncG8WoxXbBid14yezd0IOyCaj8ycr0pI6MB_qbFSLMghHnAV3aJJncTcUIjpWC6IHbmoGasXLZ6dSA7iFvHhAwo0"/>
+</div>
+<span class="font-label text-[0.65rem] uppercase tracking-[0.3em] text-primary mb-3">Sports Recovery</span>
+<h3 class="font-headline text-2xl mb-4 group-hover:italic transition-all">Optimizing the ACL Reconstruction Timeline</h3>
+<p class="font-body text-sm text-on-surface-variant mb-6 line-clamp-3">A clinical deep dive into the 'Quiet Knee' philosophy and why pre-operative range of motion determines post-surgical success.</p>
+<span class="font-label text-[0.7rem] uppercase tracking-[0.1em] text-outline mt-auto">Sep 15, 2024</span>
+</article>
+<!-- Card 3 -->
+<article class="flex flex-col group cursor-pointer transition-transform duration-300 hover:-translate-y-2">
+<div class="aspect-[4/5] overflow-hidden mb-6 bg-surface-container">
+<img class="w-full h-full object-cover grayscale transition-transform duration-500 group-hover:scale-105" data-alt="Abstract close-up of a human joint model in a clean white laboratory setting with soft focus background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHQfrZ9OVS6duMf-mW612bkc4C5oULyeKa951B7x5y96cJwYEeRf4DshXybfwz-0LsjNEaDGsRT682ayvpAyX2cnLHuABnIyesRR1pPhCRKWTHAzmLKTZYVuX1wbmx0Z86a_mT5kc485If8Z2QEeq4iMWI2XKynXbZelRmiGK38_TNTsmCyLUzIUSDjTnV-BtL6c15Dpj9519FqvxcJjweRsIwqB-j0IMF67COvcgm_yNY2WRfIJCSTXcBjeikL9moztgtln7tSaGL"/>
+</div>
+<span class="font-label text-[0.65rem] uppercase tracking-[0.3em] text-primary mb-3">Joint Health</span>
+<h3 class="font-headline text-2xl mb-4 group-hover:italic transition-all">The Role of Biologics in Knee Preservation</h3>
+<p class="font-body text-sm text-on-surface-variant mb-6 line-clamp-3">Understanding PRP and Hyaluronic Acid: When do regenerative injections actually provide measurable clinical benefits?</p>
+<span class="font-label text-[0.7rem] uppercase tracking-[0.1em] text-outline mt-auto">Aug 30, 2024</span>
+</article>
+</div>
+<!-- Second Row - Secondary Visuals -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12 mt-24">
+<!-- Card 4 (Full Height Text emphasis) -->
+<article class="bg-surface-container-low p-12 flex flex-col justify-center">
+<span class="font-label text-[0.65rem] uppercase tracking-[0.3em] text-primary mb-4">Clinical Deep Dive</span>
+<h3 class="font-headline text-3xl mb-6">Patient Perspectives: Returning to High-Impact Sport After Replacement</h3>
+<p class="font-body text-on-surface-variant mb-8">Debunking myths about activity restrictions after modern joint replacement using evidence-based performance data.</p>
+<div class="flex items-center gap-4">
+<span class="font-label text-[0.7rem] uppercase tracking-[0.1em] text-outline">Aug 22, 2024</span>
+<span class="material-symbols-outlined text-primary" data-icon="arrow_right_alt">arrow_right_alt</span>
+</div>
+</article>
+<article class="flex flex-col group cursor-pointer">
+<div class="aspect-video overflow-hidden mb-6 bg-surface-container">
+<img class="w-full h-full object-cover grayscale brightness-110 contrast-90 transition-transform duration-500 group-hover:scale-105" data-alt="Clean, brightly lit surgical suite with advanced monitors and specialized orthopedic instrumentation in focus" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQ2ViEXABArtMDX_4GvJZUXNf9MRTLpmZLhw3r4V3d70tUAM_rXJQustP3W6dNzc_Fzj9lNbdZjhGlZaBjunFs9MItTABOW472bBXC-msGuJmIMQzAH5dqxEYgeWBlFS8Y2Bk21o6bNuVVDW0A6m10_M6tKn5m8_deIxj8f-edFNr4TOI659geOCyq6xHF4xHySQFPu-AfrHrByFeS68351lC0hbLMwXaTCy430VXCUf4-jv-ULBIhhHfsHrvjW2njCnTebZfCNNMD"/>
+</div>
+<span class="font-label text-[0.65rem] uppercase tracking-[0.3em] text-primary mb-3">Robotic Surgery</span>
+<h3 class="font-headline text-2xl mb-4 group-hover:italic transition-all">Minimizing Trauma through Robotic Precision</h3>
+<p class="font-body text-sm text-on-surface-variant">The correlation between robotic bone preparation and reduced post-operative narcotic requirements.</p>
+</article>
+</div>
+</section>
+<!-- Newsletter / Contact CTA -->
+<section class="mt-32 px-6 md:px-12 max-w-7xl mx-auto text-center border-t border-outline-variant pt-24">
+<h2 class="font-headline text-4xl mb-6 italic">Stay informed on orthopedic innovation.</h2>
+<p class="font-body text-on-surface-variant mb-12 max-w-lg mx-auto">Quarterly insights delivered to your inbox. Precision updates on clinical research and recovery protocols.</p>
+<form class="max-w-md mx-auto flex flex-col md:flex-row gap-0">
+<input class="flex-1 bg-transparent border-b border-outline-variant focus:border-primary outline-none py-3 font-label text-[0.75rem] tracking-[0.2em]" placeholder="EMAIL ADDRESS" type="email"/>
+<button class="bg-primary text-on-primary px-10 py-4 font-label uppercase text-[0.75rem] tracking-[0.2em] transition-transform hover:scale-105">Subscribe</button>
+</form>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-white py-20 border-t border-border-light">
+<div class="max-w-7xl mx-auto px-6 lg:px-12">
+<div class="grid md:grid-cols-12 gap-16 mb-20">
+<div class="md:col-span-5">
+<div class="text-2xl font-display tracking-[0.2em] uppercase text-text-primary mb-8">
+                        Dr. Abhishek <span class="font-light italic text-beige">Shenoy</span>
+</div>
+<p class="max-w-xs text-text-secondary text-sm leading-relaxed mb-10">
+                        Dedicated to providing advanced orthopaedic solutions through innovation, precision, and compassionate care.
+                    </p>
+<div class="flex gap-6">
+<a class="text-text-secondary hover:text-beige transition-colors" href="#">Instagram</a>
+<a class="text-text-secondary hover:text-beige transition-colors" href="#">LinkedIn</a>
+<a class="text-text-secondary hover:text-beige transition-colors" href="#">Twitter</a>
+</div>
+</div>
+<div class="md:col-span-3">
+<h5 class="font-bold uppercase tracking-[0.3em] text-[10px] text-text-primary mb-10">The Clinic</h5>
+<ul class="space-y-4 text-text-secondary text-xs tracking-widest uppercase">
+<li><a class="hover:text-beige transition-colors" href="#about">Philosophy</a></li>
+<li><a class="hover:text-beige transition-colors" href="#services">Procedures</a></li>
+<li><a class="hover:text-beige transition-colors" href="#patient-stories">Stories</a></li>
+<li><a class="hover:text-beige transition-colors" href="#contact">Inquiry</a></li>
+</ul>
+</div>
+<div class="md:col-span-4">
+<h5 class="font-bold uppercase tracking-[0.3em] text-[10px] text-text-primary mb-10">Subscribe to Health Notes</h5>
+<p class="text-text-secondary text-xs leading-relaxed mb-6">Expert insights on joint health and longevity delivered monthly.</p>
+<div class="flex border-b border-border-light">
+<input class="bg-transparent border-0 focus:ring-0 text-xs py-3 px-0 w-full text-text-primary placeholder:text-border-light" placeholder="Email Address" type="email"/>
+<button class="text-beige text-[10px] font-bold uppercase tracking-widest pl-4">Join</button>
+</div>
+</div>
+</div>
+<div class="pt-10 border-t border-border-light flex flex-col md:flex-row justify-between items-center gap-6">
+<p class="text-[9px] text-text-secondary uppercase tracking-[0.3em]">
+                    © 2024 Dr. Abhishek Shenoy. Meticulously Crafted Care.
+                </p>
+<div class="flex items-center gap-8 text-[9px] uppercase tracking-[0.3em] font-medium text-text-secondary">
+<a class="hover:text-beige" href="#">Privacy Policy</a>
+<a class="hover:text-beige" href="#">Terms of Care</a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

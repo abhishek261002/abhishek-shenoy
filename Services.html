@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Dr. Abhishek Shenoy | Precision for Life</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "tertiary-container": "#fef2e1","on-secondary-fixed-variant": "#625b4e",
+          "surface-container-highest": "#e2e3d9","primary-dim": "#535252",
+          "on-primary-fixed-variant": "#5c5b5b","on-secondary": "#fff8f0",
+          "primary-fixed": "#e5e2e1","on-tertiary-container": "#625b4e",
+          "tertiary-fixed-dim": "#efe4d3","inverse-primary": "#ffffff",
+          "error-container": "#fe8983","on-error-container": "#752121",
+          "tertiary-dim": "#5a5246","on-secondary-container": "#585144",
+          "secondary": "#655e51","tertiary": "#665e51",
+          "inverse-on-surface": "#9e9d99","surface": "#fbf9f4",
+          "surface-container-lowest": "#ffffff","background": "#fbf9f4",
+          "primary": "#5f5e5e","outline": "#797c73","error-dim": "#4e0309",
+          "primary-container": "#e5e2e1","on-primary-fixed": "#403f3f",
+          "inverse-surface": "#0e0e0c","on-surface": "#31332c",
+          "surface-container-high": "#e8e9e0","on-primary-container": "#525151",
+          "secondary-fixed": "#ece1d1","on-tertiary": "#fff8f1",
+          "tertiary-fixed": "#fef2e1","on-tertiary-fixed-variant": "#6d6558",
+          "surface-variant": "#e2e3d9","on-background": "#31332c",
+          "on-surface-variant": "#5e6058","primary-fixed-dim": "#d6d4d3",
+          "surface-container-low": "#f5f4ed","surface-tint": "#5f5e5e",
+          "surface-dim": "#d9dbcf","surface-bright": "#fbf9f4",
+          "on-tertiary-fixed": "#50493d","error": "#9f403d","on-error": "#fff7f6",
+          "on-primary": "#faf7f6","secondary-dim": "#595246",
+          "secondary-container": "#ece1d1","outline-variant": "#b1b3a9",
+          "on-secondary-fixed": "#453f33","secondary-fixed-dim": "#ddd3c3",
+          "surface-container": "#efeee6"
+        },
+        fontFamily: {
+          "headline": ["Newsreader"],"body": ["Manrope"],"label": ["Manrope"]
+        },
+        borderRadius: {"DEFAULT": "0px","lg": "0px","xl": "0px","full": "9999px"},
+      },
+    },
+  }
+</script>
+
+<style>
+  /* ── Base ─────────────────────────────────────── */
+  .font-newsreader { font-family: 'Newsreader', serif; }
+  .font-manrope    { font-family: 'Manrope', sans-serif; }
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+  }
+
+  /* ── Page reveal ──────────────────────────────── */
+  @keyframes pageIn { from { opacity:0 } to { opacity:1 } }
+  body { animation: pageIn 0.5s ease both; }
+
+  /* ── Nav slide down ───────────────────────────── */
+  @keyframes navDown {
+    from { transform: translateY(-100%); opacity: 0; }
+    to   { transform: translateY(0);     opacity: 1; }
+  }
+  nav { animation: navDown 0.75s cubic-bezier(0.22,1,0.36,1) 0.15s both; }
+
+  /* Nav link hover underline sweep */
+  nav a { position: relative; }
+  nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px; left: 0;
+    width: 0; height: 1px;
+    background: currentColor;
+    transition: width 0.35s cubic-bezier(0.22,1,0.36,1);
+  }
+  nav a:hover::after { width: 100%; }
+
+  /* ── Read progress bar ────────────────────────── */
+  #rp {
+    position: fixed; top: 0; left: 0;
+    height: 2px; background: #5f5e5e;
+    z-index: 9999; transition: width 0.08s linear;
+    pointer-events: none;
+  }
+
+  /* ── Custom cursor ────────────────────────────── */
+  #cdot {
+    position: fixed; width: 7px; height: 7px;
+    border-radius: 50%; background: #5f5e5e;
+    pointer-events: none; z-index: 9999;
+    transform: translate(-50%,-50%);
+    mix-blend-mode: multiply;
+    transition: transform 0.1s ease;
+  }
+  #cring {
+    position: fixed; width: 34px; height: 34px;
+    border-radius: 50%; border: 1px solid rgba(95,94,94,0.35);
+    pointer-events: none; z-index: 9998;
+    transform: translate(-50%,-50%);
+    transition: width 0.3s, height 0.3s, border-color 0.3s;
+  }
+  body:has(a:hover) #cring,
+  body:has(button:hover) #cring {
+    width: 52px; height: 52px;
+    border-color: rgba(95,94,94,0.65);
+  }
+
+  /* ── Scroll reveal ────────────────────────────── */
+  .rv {
+    opacity: 0; transform: translateY(26px);
+    transition: opacity 0.75s cubic-bezier(0.22,1,0.36,1),
+                transform 0.75s cubic-bezier(0.22,1,0.36,1);
+  }
+  .rv.on { opacity: 1; transform: translateY(0); }
+
+  .rv-l {
+    opacity: 0; transform: translateX(-30px);
+    transition: opacity 0.8s cubic-bezier(0.22,1,0.36,1),
+                transform 0.8s cubic-bezier(0.22,1,0.36,1);
+  }
+  .rv-l.on { opacity: 1; transform: translateX(0); }
+
+  .rv-r {
+    opacity: 0; transform: translateX(30px);
+    transition: opacity 0.8s cubic-bezier(0.22,1,0.36,1),
+                transform 0.8s cubic-bezier(0.22,1,0.36,1);
+  }
+  .rv-r.on { opacity: 1; transform: translateX(0); }
+
+  .rv-sc {
+    opacity: 0; transform: scale(0.96);
+    transition: opacity 0.7s cubic-bezier(0.22,1,0.36,1),
+                transform 0.7s cubic-bezier(0.22,1,0.36,1);
+  }
+  .rv-sc.on { opacity: 1; transform: scale(1); }
+
+  /* ── Hero headline split-line ────────────────── */
+  .hl-line { overflow: hidden; display: block; }
+  .hl-inner {
+    display: block;
+    opacity: 0; transform: translateY(100%);
+    transition: opacity 0.8s cubic-bezier(0.22,1,0.36,1),
+                transform 0.8s cubic-bezier(0.22,1,0.36,1);
+  }
+  .hl-inner.on { opacity: 1; transform: translateY(0); }
+
+  /* ── Eyebrow label fade+shift ────────────────── */
+  .eyebrow {
+    opacity: 0; letter-spacing: 0.1em;
+    transform: translateX(-12px);
+    transition: opacity 0.7s ease, transform 0.7s ease, letter-spacing 0.7s ease;
+  }
+  .eyebrow.on { opacity: 1; letter-spacing: 0.3em; transform: translateX(0); }
+
+  /* ── Hero sub-text ────────────────────────────── */
+  .hero-sub {
+    opacity: 0; transform: translateX(20px);
+    transition: opacity 0.7s ease 0.7s, transform 0.7s ease 0.7s;
+  }
+  .hero-sub.on { opacity: 1; transform: translateX(0); }
+
+  /* ── Service card: number ghost parallax ──────── */
+  .svc-card { position: relative; overflow: hidden; }
+  .svc-num {
+    transition: transform 0.5s cubic-bezier(0.22,1,0.36,1),
+                opacity 0.5s ease;
+  }
+  .svc-card:hover .svc-num {
+    transform: translateY(-12px) scale(1.08);
+    opacity: 0.18;
+  }
+
+  /* Arrow slide on hover */
+  .svc-link .material-symbols-outlined {
+    transition: transform 0.35s cubic-bezier(0.22,1,0.36,1);
+  }
+  .svc-link:hover .material-symbols-outlined { transform: translateX(6px); }
+  .svc-link { transition: gap 0.3s ease; }
+
+  /* Card wipe-reveal */
+  .card-wipe {
+    position: relative; overflow: hidden;
+  }
+  .card-wipe::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: #f5f4ed;
+    transform: scaleX(1); transform-origin: left;
+    transition: transform 0.85s cubic-bezier(0.77,0,0.18,1);
+    pointer-events: none;
+  }
+  .card-wipe.on::after { transform: scaleX(0); transform-origin: right; }
+
+  /* Card lift */
+  .card-lift {
+    transition: transform 0.35s cubic-bezier(0.22,1,0.36,1),
+                box-shadow 0.35s cubic-bezier(0.22,1,0.36,1);
+  }
+  .card-lift:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 18px 48px rgba(49,51,44,0.09);
+  }
+
+  /* ── Robotic image wipe ───────────────────────── */
+  .img-wipe { position: relative; overflow: hidden; }
+  .img-wipe::before {
+    content: '';
+    position: absolute; inset: 0; z-index: 1;
+    background: #efeee6;
+    transform: scaleX(1); transform-origin: right;
+    transition: transform 1.1s cubic-bezier(0.77,0,0.18,1);
+    pointer-events: none;
+  }
+  .img-wipe.on::before { transform: scaleX(0); }
+
+  /* Floating dark card */
+  @keyframes floatCard {
+    0%,100% { transform: translate(-2rem, -2rem); }
+    50%      { transform: translate(-2rem, -2.6rem); }
+  }
+  .float-card {
+    animation: floatCard 5s ease-in-out infinite;
+    position: absolute; bottom: 0; right: 0;
+    transform: translate(-2rem,-2rem);
+  }
+
+  /* Ken-burns on robotic image */
+  .kb-img {
+    animation: kbZ 12s ease-in-out infinite alternate;
+    transform-origin: center;
+  }
+  @keyframes kbZ {
+    from { transform: scale(1); }
+    to   { transform: scale(1.05); }
+  }
+
+  /* Grayscale-to-color on hover */
+  .img-reveal {
+    transition: filter 0.7s ease, opacity 0.5s ease;
+  }
+  .img-reveal:hover {
+    filter: grayscale(0%) contrast(100%);
+    opacity: 1;
+  }
+
+  /* ── Philosophy section ───────────────────────── */
+  /* Vertical line grows */
+  .vline {
+    height: 0; width: 1px; background: #797c73;
+    transition: height 1.2s cubic-bezier(0.22,1,0.36,1);
+    margin: 0 auto;
+  }
+  .vline.on { height: 6rem; }
+
+  /* Quote word-by-word */
+  .q-word {
+    display: inline-block;
+    opacity: 0; transform: translateY(14px);
+    transition: opacity 0.45s, transform 0.45s;
+  }
+  .q-word.on { opacity: 1; transform: translateY(0); }
+
+  /* Cite fade */
+  .cite-tag {
+    opacity: 0; transform: translateY(10px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .cite-tag.on { opacity: 1; transform: translateY(0); }
+
+  /* Philosophy bg shimmer */
+  @keyframes shimmerBg {
+    0%,100% { background-position: 0% 50%; }
+    50%      { background-position: 100% 50%; }
+  }
+  .phil-section {
+    background: #D4CBB3;
+    background-size: 200% 200%;
+    animation: shimmerBg 10s ease infinite;
+  }
+
+  /* ── CTA section ──────────────────────────────── */
+  .cta-box {
+    position: relative; overflow: hidden;
+  }
+  /* Animated diagonal sweep */
+  .cta-box::before {
+    content: '';
+    position: absolute;
+    top: -50%; left: -60%;
+    width: 40%; height: 200%;
+    background: rgba(255,255,255,0.03);
+    transform: skewX(-15deg);
+    transition: left 0.9s cubic-bezier(0.22,1,0.36,1);
+    pointer-events: none;
+  }
+  .cta-box:hover::before { left: 140%; }
+
+  /* CTA title lines */
+  .cta-line { overflow: hidden; display: block; }
+  .cta-inner {
+    display: block;
+    opacity: 0; transform: translateY(55px);
+    transition: opacity 0.8s cubic-bezier(0.22,1,0.36,1),
+                transform 0.8s cubic-bezier(0.22,1,0.36,1);
+  }
+  .cta-inner.on { opacity: 1; transform: translateY(0); }
+
+  /* Button shimmer */
+  .btn-sh {
+    position: relative; overflow: hidden;
+  }
+  .btn-sh::after {
+    content: '';
+    position: absolute; top: 0; left: -100%;
+    width: 55%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.14), transparent);
+    transition: left 0.5s cubic-bezier(0.22,1,0.36,1);
+    pointer-events: none;
+  }
+  .btn-sh:hover::after { left: 140%; }
+
+  /* ── Footer ───────────────────────────────────── */
+  .foot-rv {
+    opacity: 0; transform: translateY(14px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .foot-rv.on { opacity: 1; transform: translateY(0); }
+
+  /* Footer link underline */
+  footer a {
+    position: relative;
+    text-decoration: none;
+  }
+  footer a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px; left: 0;
+    width: 0; height: 1px;
+    background: #31332c;
+    transition: width 0.3s cubic-bezier(0.22,1,0.36,1);
+  }
+  footer a:hover::after { width: 100%; }
+
+  /* ── Stagger helper ───────────────────────────── */
+  .sg > * {
+    opacity: 0; transform: translateY(18px);
+    transition: opacity 0.55s cubic-bezier(0.22,1,0.36,1),
+                transform 0.55s cubic-bezier(0.22,1,0.36,1);
+  }
+  .sg.on > *:nth-child(1) { opacity:1; transform:translateY(0); transition-delay:0.00s; }
+  .sg.on > *:nth-child(2) { opacity:1; transform:translateY(0); transition-delay:0.08s; }
+  .sg.on > *:nth-child(3) { opacity:1; transform:translateY(0); transition-delay:0.16s; }
+  .sg.on > *:nth-child(4) { opacity:1; transform:translateY(0); transition-delay:0.24s; }
+  .sg.on > *:nth-child(5) { opacity:1; transform:translateY(0); transition-delay:0.32s; }
+
+  /* ── Nav CTA button ───────────────────────────── */
+  nav button {
+    position: relative; overflow: hidden;
+  }
+  nav button::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: rgba(255,255,255,0.1);
+    transform: translateX(-100%);
+    transition: transform 0.4s cubic-bezier(0.22,1,0.36,1);
+  }
+  nav button:hover::before { transform: translateX(0); }
+
+  /* ── Explore button underline draw ───────────── */
+  .explore-btn {
+    position: relative;
+  }
+  .explore-btn::after {
+    content: '';
+    position: absolute; bottom: -2px; left: 0;
+    width: 100%; height: 1px;
+    background: currentColor;
+    transform: scaleX(1); transform-origin: left;
+    transition: transform 0.35s cubic-bezier(0.22,1,0.36,1);
+  }
+  .explore-btn:hover::after { transform: scaleX(0); transform-origin: right; }
+  .explore-btn { border-bottom: none !important; }
+
+  /* ── Scroll indicator ─────────────────────────── */
+  @keyframes bob {
+    0%,100% { transform: translateY(0); opacity:0.5; }
+    50%      { transform: translateY(6px); opacity:1; }
+  }
+  .scroll-bob { animation: bob 2.2s ease-in-out infinite; }
+</style>
+</head>
+
+<body class="bg-surface text-on-surface font-manrope selection:bg-secondary-container">
+
+<!-- Cursor -->
+<div id="cdot"></div>
+<div id="cring"></div>
+
+<!-- Progress bar -->
+<div id="rp" style="width:0%"></div>
+
+<!-- ── Nav ──────────────────────────────────────────────── -->
+<nav class="fixed top-0 w-full z-50 bg-[#fbf9f4]/80 dark:bg-[#31332c]/80 backdrop-blur-xl">
+  <div class="flex justify-between items-center px-12 py-6 max-w-[1440px] mx-auto">
+    <div class="font-newsreader font-bold text-2xl text-[#31332c] dark:text-[#fbf9f4] tracking-tighter">
+      Dr. Abhishek Shenoy
+    </div>
+    <div class="hidden md:flex gap-10 items-center">
+      <a class="font-newsreader italic text-lg tracking-tight text-[#5f5e5e] hover:opacity-70 transition-opacity duration-300" href="#">Home</a>
+      <a class="font-newsreader italic text-lg tracking-tight text-[#5f5e5e] hover:opacity-70 transition-opacity duration-300" href="#">Philosophy</a>
+      <a class="font-newsreader italic text-lg tracking-tight text-[#31332c] border-b border-[#31332c] pb-1" href="#">Expertise</a>
+      <a class="font-newsreader italic text-lg tracking-tight text-[#5f5e5e] hover:opacity-70 transition-opacity duration-300" href="#">Stories</a>
+      <a class="font-newsreader italic text-lg tracking-tight text-[#5f5e5e] hover:opacity-70 transition-opacity duration-300" href="#">Contact</a>
+    </div>
+    <button class="btn-sh bg-primary text-on-primary px-8 py-3 font-label uppercase tracking-widest text-xs scale-100 hover:scale-[1.02] active:scale-95 transition-all">
+      Book Consultation
+    </button>
+  </div>
+</nav>
+
+<main class="pt-32">
+
+  <!-- ── Hero ─────────────────────────────────────────── -->
+  <section class="px-12 py-20 max-w-[1440px] mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-end">
+
+      <div class="md:col-span-8">
+        <!-- Eyebrow -->
+        <span class="eyebrow font-label uppercase text-xs text-outline mb-6 block" id="hero-eyebrow">
+          Specialized Orthopedics
+        </span>
+
+        <!-- Headline with line-by-line reveal -->
+        <h1 class="font-headline text-7xl md:text-9xl text-on-surface tracking-tighter leading-none mb-8">
+          <span class="hl-line"><span class="hl-inner" id="hl1" style="transition-delay:0.35s">Precision</span></span>
+          <span class="hl-line"><span class="hl-inner italic font-light" id="hl2" style="transition-delay:0.5s">for Life.</span></span>
+        </h1>
+      </div>
+
+      <!-- Side text -->
+      <div class="md:col-span-4 pb-4 hero-sub" id="hero-sub">
+        <p class="font-body text-lg text-primary leading-relaxed border-l border-outline-variant pl-8">
+          Restoring mobility through clinical excellence and the advanced application of robotic surgical systems.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Scroll cue -->
+    <div class="flex justify-start mt-12 ml-2">
+      <div class="scroll-bob flex flex-col items-center gap-2 opacity-40">
+        <span class="font-label text-[9px] uppercase tracking-[0.25em] text-outline">Scroll</span>
+        <div class="w-px h-8 bg-outline-variant/50"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Services Bento Grid ───────────────────────────── -->
+  <section class="px-12 py-24 bg-surface-container-low">
+    <div class="max-w-[1440px] mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-px bg-outline-variant/20">
+
+        <!-- 01 -->
+        <div class="svc-card card-wipe card-lift bg-surface-container-low p-10 relative group overflow-hidden"
+             style="transition-delay:0.00s">
+          <span class="svc-num absolute top-8 right-8 font-headline text-8xl text-outline-variant/10 pointer-events-none">01</span>
+          <div class="relative z-10">
+            <h3 class="font-headline text-3xl mb-6 text-on-surface">Knee Replacement</h3>
+            <p class="font-body text-sm text-primary leading-relaxed mb-8">
+              Specialized arthroplasty focused on joint preservation and total restoration using patient-specific alignment protocols.
+            </p>
+            <a class="svc-link inline-flex items-center gap-2 font-label uppercase tracking-widest text-[10px] text-on-surface" href="#">
+              View Procedure <span class="material-symbols-outlined text-sm">arrow_forward</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- 02 -->
+        <div class="svc-card card-wipe card-lift bg-surface-container-low p-10 relative group overflow-hidden border-l border-outline-variant/10"
+             style="transition-delay:0.1s">
+          <span class="svc-num absolute top-8 right-8 font-headline text-8xl text-outline-variant/10 pointer-events-none">02</span>
+          <div class="relative z-10">
+            <h3 class="font-headline text-3xl mb-6 text-on-surface">Hip Replacement</h3>
+            <p class="font-body text-sm text-primary leading-relaxed mb-8">
+              Advanced reconstruction techniques including anterior approach options for faster recovery and enhanced joint stability.
+            </p>
+            <a class="svc-link inline-flex items-center gap-2 font-label uppercase tracking-widest text-[10px] text-on-surface" href="#">
+              View Procedure <span class="material-symbols-outlined text-sm">arrow_forward</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- 03 -->
+        <div class="svc-card card-wipe card-lift bg-surface-container-low p-10 relative group overflow-hidden border-l border-outline-variant/10"
+             style="transition-delay:0.2s">
+          <span class="svc-num absolute top-8 right-8 font-headline text-8xl text-outline-variant/10 pointer-events-none">03</span>
+          <div class="relative z-10">
+            <h3 class="font-headline text-3xl mb-6 text-on-surface">Sports Medicine</h3>
+            <p class="font-body text-sm text-primary leading-relaxed mb-8">
+              Minimally invasive arthroscopic solutions for ligament repairs, meniscus injuries, and cartilage preservation.
+            </p>
+            <a class="svc-link inline-flex items-center gap-2 font-label uppercase tracking-widest text-[10px] text-on-surface" href="#">
+              View Procedure <span class="material-symbols-outlined text-sm">arrow_forward</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- 04 -->
+        <div class="svc-card card-wipe card-lift bg-surface-container-low p-10 relative group overflow-hidden border-l border-outline-variant/10"
+             style="transition-delay:0.3s">
+          <span class="svc-num absolute top-8 right-8 font-headline text-8xl text-outline-variant/10 pointer-events-none">04</span>
+          <div class="relative z-10">
+            <h3 class="font-headline text-3xl mb-6 text-on-surface">Fracture Care</h3>
+            <p class="font-body text-sm text-primary leading-relaxed mb-8">
+              Expert management of complex orthopedic trauma and secondary reconstructive procedures for optimal healing.
+            </p>
+            <a class="svc-link inline-flex items-center gap-2 font-label uppercase tracking-widest text-[10px] text-on-surface" href="#">
+              View Procedure <span class="material-symbols-outlined text-sm">arrow_forward</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Robotic Surgery Section ──────────────────────── -->
+  <section class="px-12 py-32 max-w-[1440px] mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-20 items-center">
+
+      <!-- Image -->
+      <div class="md:col-span-5 rv-l">
+        <div class="aspect-[4/5] bg-surface-container img-wipe relative" id="robotic-img-wrap">
+          <img alt="Robotic surgery interface"
+               class="w-full h-full object-cover filter grayscale contrast-125 kb-img img-reveal"
+               src="https://lh3.googleusercontent.com/aida-public/AB6AXuDULFgxiz5HEYchzB5FAxfwEv5wQ80OMux0IEmfEZ_O_g0FELui2YvNEMZ4hjosYwMSUpajcZOemTP1llZ3-pDh1fukBefizEeDhVJbZPx0K7PmFtfg4TQi_9N4KT3Wwi7sKJOH9DmX0tnRDA5GQ2WOaaDwW0VFbLuQucZNWuWwUEaosHS2XtrJxLNZ_qsSrcfvxPklFnbkGJr3LVhgq-3dQP24RwVOi3GEXBSNyzjyLmTB-d__WSIoKx4FTGZlyKzlyp23snpiCdnL"/>
+          <!-- Floating dark card -->
+          <div class="float-card bg-[#4A473E] p-10 text-surface max-w-xs rv" style="transition-delay:0.6s">
+            <h4 class="font-headline text-2xl mb-4 italic">The Digital Edge</h4>
+            <p class="font-body text-sm leading-relaxed opacity-80">
+              Using sub-millimeter precision to ensure every implant is placed with mathematical perfection tailored to your unique anatomy.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Text -->
+      <div class="md:col-span-6 md:col-start-7 space-y-0">
+        <span class="eyebrow font-label uppercase text-xs text-outline mb-6 block" id="rob-eyebrow">Innovation</span>
+        <h2 class="rv font-headline text-5xl text-on-surface mb-10 leading-tight" style="transition-delay:0.1s">
+          Robotic-Assisted <br/>Joint Restoration
+        </h2>
+        <div class="sg space-y-8 font-body text-lg text-primary leading-relaxed">
+          <p>
+            Traditional orthopedic surgery relies on the surgeon's eye. While experience is vital, robotic assistance provides real-time data and intra-operative mapping that ensures unparalleled accuracy.
+          </p>
+          <p>
+            This technology allows for smaller incisions, reduced soft tissue damage, and a recovery trajectory that is significantly faster than conventional methods. Precision isn't just a goal; it's our standard.
+          </p>
+          <div class="pt-6">
+            <button class="explore-btn font-label uppercase tracking-widest text-xs text-on-surface hover:opacity-60 transition-opacity border-b border-on-surface pb-2">
+              Explore Robotic Technology
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── Philosophy Section ────────────────────────────── -->
+  <section class="py-32 phil-section">
+    <div class="max-w-[1440px] mx-auto px-12">
+      <div class="flex flex-col items-center text-center">
+
+        <!-- Vertical line grows -->
+        <div class="vline mb-12" id="phil-vline"></div>
+
+        <blockquote class="max-w-4xl">
+          <h2 class="font-headline text-4xl md:text-6xl text-on-surface italic leading-snug" id="philosophy-q">
+            "Surgery is the final step in a journey of restoration. My philosophy is rooted in the belief that movement is the fundamental essence of human dignity."
+          </h2>
+        </blockquote>
+
+        <cite class="cite-tag mt-12 not-italic font-label uppercase tracking-[0.4em] text-sm text-outline" id="phil-cite">
+          — Dr. Abhishek Shenoy
+        </cite>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA Section ───────────────────────────────────── -->
+  <section class="px-12 py-32 max-w-[1440px] mx-auto">
+    <div class="cta-box rv-sc bg-on-surface p-16 md:p-24 flex flex-col md:flex-row justify-between items-center gap-12">
+      <div>
+        <h2 class="font-headline text-5xl text-surface mb-4">
+          <span class="cta-line"><span class="cta-inner" id="cta1">Begin Your Recovery</span></span>
+        </h2>
+        <p class="rv font-body text-surface/60 text-lg" style="transition-delay:0.25s" id="cta-sub">
+          Consultations available for complex joint cases.
+        </p>
+      </div>
+      <button class="btn-sh rv bg-surface text-on-surface px-12 py-5 font-label uppercase tracking-widest text-sm hover:bg-secondary-container transition-colors" style="transition-delay:0.35s" id="cta-btn">
+        Request Appointment
+      </button>
+    </div>
+  </section>
+
+</main>
+
+<!-- ── Footer ────────────────────────────────────────────── -->
+<footer class="bg-white py-20 border-t border-border-light">
+<div class="max-w-7xl mx-auto px-6 lg:px-12">
+<div class="grid md:grid-cols-12 gap-16 mb-20">
+<div class="md:col-span-5">
+<div class="text-2xl font-display tracking-[0.2em] uppercase text-text-primary mb-8">
+                        Dr. Abhishek <span class="font-light italic text-beige">Shenoy</span>
+</div>
+<p class="max-w-xs text-text-secondary text-sm leading-relaxed mb-10">
+                        Dedicated to providing advanced orthopaedic solutions through innovation, precision, and compassionate care.
+                    </p>
+<div class="flex gap-6">
+<a class="text-text-secondary hover:text-beige transition-colors" href="#">Instagram</a>
+<a class="text-text-secondary hover:text-beige transition-colors" href="#">LinkedIn</a>
+<a class="text-text-secondary hover:text-beige transition-colors" href="#">Twitter</a>
+</div>
+</div>
+<div class="md:col-span-3">
+<h5 class="font-bold uppercase tracking-[0.3em] text-[10px] text-text-primary mb-10">The Clinic</h5>
+<ul class="space-y-4 text-text-secondary text-xs tracking-widest uppercase">
+<li><a class="hover:text-beige transition-colors" href="#about">Philosophy</a></li>
+<li><a class="hover:text-beige transition-colors" href="#services">Procedures</a></li>
+<li><a class="hover:text-beige transition-colors" href="#patient-stories">Stories</a></li>
+<li><a class="hover:text-beige transition-colors" href="#contact">Inquiry</a></li>
+</ul>
+</div>
+<div class="md:col-span-4">
+<h5 class="font-bold uppercase tracking-[0.3em] text-[10px] text-text-primary mb-10">Subscribe to Health Notes</h5>
+<p class="text-text-secondary text-xs leading-relaxed mb-6">Expert insights on joint health and longevity delivered monthly.</p>
+<div class="flex border-b border-border-light">
+<input class="bg-transparent border-0 focus:ring-0 text-xs py-3 px-0 w-full text-text-primary placeholder:text-border-light" placeholder="Email Address" type="email"/>
+<button class="text-beige text-[10px] font-bold uppercase tracking-widest pl-4">Join</button>
+</div>
+</div>
+</div>
+<div class="pt-10 border-t border-border-light flex flex-col md:flex-row justify-between items-center gap-6">
+<p class="text-[9px] text-text-secondary uppercase tracking-[0.3em]">
+                    © 2024 Dr. Abhishek Shenoy. Meticulously Crafted Care.
+                </p>
+<div class="flex items-center gap-8 text-[9px] uppercase tracking-[0.3em] font-medium text-text-secondary">
+<a class="hover:text-beige" href="#">Privacy Policy</a>
+<a class="hover:text-beige" href="#">Terms of Care</a>
+</div>
+</div>
+</div>
+</footer>
+
+<!-- ── JS ─────────────────────────────────────────────────── -->
+<script>
+/* ── Cursor ─────────────────────────────────── */
+const dot = document.getElementById('cdot');
+const ring = document.getElementById('cring');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove', e => { mx=e.clientX; my=e.clientY; });
+(function loop(){
+  rx += (mx-rx)*0.16; ry += (my-ry)*0.16;
+  dot.style.left  = mx+'px'; dot.style.top  = my+'px';
+  ring.style.left = rx+'px'; ring.style.top = ry+'px';
+  requestAnimationFrame(loop);
+})();
+
+/* ── Progress bar ────────────────────────────── */
+const rp = document.getElementById('rp');
+window.addEventListener('scroll', () => {
+  const pct = window.scrollY / (document.body.scrollHeight - window.innerHeight);
+  rp.style.width = Math.round(pct * 100) + '%';
+});
+
+/* ── Nav shadow on scroll ────────────────────── */
+const navEl = document.querySelector('nav');
+window.addEventListener('scroll', () => {
+  navEl.style.boxShadow = window.scrollY > 50
+    ? '0 1px 28px rgba(49,51,44,0.07)'
+    : 'none';
+});
+
+/* ── IntersectionObserver factory ───────────── */
+function makeIO(sel, threshold=0.15, cb=null) {
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      if (cb) cb(e.target);
+      else e.target.classList.add('on');
+      io.unobserve(e.target);
+    });
+  }, { threshold });
+  document.querySelectorAll(sel).forEach(el => io.observe(el));
+  return io;
+}
+
+// Generic reveal classes
+makeIO('.rv, .rv-l, .rv-r, .rv-sc');
+
+// Stagger groups
+makeIO('.sg', 0.2);
+
+// Card wipes (service cards)
+makeIO('.card-wipe', 0.1);
+
+// Footer
+makeIO('.foot-rv', 0.3);
+
+/* ── Hero on load ────────────────────────────── */
+setTimeout(() => {
+  document.getElementById('hero-eyebrow').classList.add('on');
+  document.getElementById('hero-sub').classList.add('on');
+  document.getElementById('hl1').classList.add('on');
+  setTimeout(() => document.getElementById('hl2').classList.add('on'), 150);
+}, 300);
+
+/* ── Robotic section eyebrow ─────────────────── */
+makeIO('#rob-eyebrow', 0.3, el => el.classList.add('on'));
+
+/* ── Robotic image wipe ──────────────────────── */
+makeIO('#robotic-img-wrap', 0.15, el => el.classList.add('on'));
+
+/* ── Philosophy quote — word-by-word ─────────── */
+const philQ = document.getElementById('philosophy-q');
+const philIO = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    const words = e.target.textContent.trim().split(/\s+/);
+    e.target.innerHTML = words.map((w,i) =>
+      `<span class="q-word" style="transition-delay:${i*0.045}s">${w}&nbsp;</span>`
+    ).join('');
+    setTimeout(() => e.target.querySelectorAll('.q-word').forEach(w => w.classList.add('on')), 60);
+    philIO.unobserve(e.target);
+  });
+}, { threshold: 0.3 });
+philIO.observe(philQ);
+
+/* ── Vertical line ───────────────────────────── */
+const vlIO = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('on'); vlIO.unobserve(e.target); }
+  });
+}, { threshold: 0.5 });
+vlIO.observe(document.getElementById('phil-vline'));
+
+/* ── Cite tag ─────────────────────────────────── */
+makeIO('#phil-cite', 0.4, el => {
+  setTimeout(() => el.classList.add('on'), 800);
+});
+
+/* ── CTA title ───────────────────────────────── */
+makeIO('#cta1, .cta-inner', 0.3, el => el.classList.add('on'));
+
+/* ── Parallax on robotic image ───────────────── */
+window.addEventListener('scroll', () => {
+  const wrap = document.getElementById('robotic-img-wrap');
+  if (!wrap) return;
+  const rect = wrap.getBoundingClientRect();
+  if (rect.bottom > 0 && rect.top < window.innerHeight) {
+    const ratio = (window.innerHeight - rect.top) / (window.innerHeight + rect.height);
+    wrap.querySelector('img').style.transform = `scale(1.05) translateY(${(ratio - 0.5) * 24}px)`;
+  }
+});
+</script>
+
+</body></html>
