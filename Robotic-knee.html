@@ -2,194 +2,674 @@
 <html class="scroll-smooth" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Knee Replacement | Precision Orthopedics</title>
+<title>Knee Replacement | Dr. Abhishek Shenoy</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;family=Inter:wght@300;400;500;600&amp;family=Material+Icons+Outlined&amp;display=swap" rel="stylesheet"/>
-<script>
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        primary: "#1a1a1a",
-                        secondary: "#8a8374",
-                        "background-light": "#f4f4f2",
-                        "background-dark": "#121212",
-                    },
-                    fontFamily: {
-                        display: ["Playfair Display", "serif"],
-                        sans: ["Inter", "sans-serif"],
-                    },
-                    borderRadius: {
-                        DEFAULT: "0px",
-                    },
-                },
-            },
-        };
-    </script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Manrope:wght@200..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "inverse-primary": "#ffffff",
+          "outline-variant": "#b1b3a9",
+          "on-tertiary-container": "#625b4e",
+          "on-primary-fixed": "#403f3f",
+          "on-primary": "#faf7f6",
+          "on-error": "#fff7f6",
+          "surface-container-high": "#e8e9e0",
+          "error-dim": "#4e0309",
+          "on-primary-fixed-variant": "#5c5b5b",
+          "error": "#9f403d",
+          "surface": "#fbf9f4",
+          "surface-container-low": "#f5f4ed",
+          "tertiary-container": "#fef2e1",
+          "tertiary-fixed": "#fef2e1",
+          "secondary-fixed-dim": "#ddd3c3",
+          "secondary": "#655e51",
+          "tertiary-dim": "#5a5246",
+          "tertiary-fixed-dim": "#efe4d3",
+          "primary-container": "#e5e2e1",
+          "on-secondary-fixed-variant": "#625b4e",
+          "primary-fixed-dim": "#d6d4d3",
+          "on-surface": "#31332c",
+          "surface-container-highest": "#e2e3d9",
+          "inverse-on-surface": "#9e9d99",
+          "secondary-dim": "#595246",
+          "secondary-fixed": "#ece1d1",
+          "surface-dim": "#d9dbcf",
+          "surface-bright": "#fbf9f4",
+          "primary-fixed": "#e5e2e1",
+          "tertiary": "#665e51",
+          "on-background": "#31332c",
+          "error-container": "#fe8983",
+          "on-tertiary": "#fff8f1",
+          "background": "#fbf9f4",
+          "surface-container-lowest": "#ffffff",
+          "on-tertiary-fixed": "#50493d",
+          "primary": "#5f5e5e",
+          "surface-container": "#efeee6",
+          "on-secondary-fixed": "#453f33",
+          "on-surface-variant": "#5e6058",
+          "on-error-container": "#752121",
+          "on-tertiary-fixed-variant": "#6d6558",
+          "secondary-container": "#ece1d1",
+          "surface-variant": "#e2e3d9",
+          "on-secondary-container": "#585144",
+          "inverse-surface": "#0e0e0c",
+          "surface-tint": "#5f5e5e",
+          "on-primary-container": "#525151",
+          "outline": "#797c73",
+          "on-secondary": "#fff8f0",
+          "primary-dim": "#535252",
+          primary_page: "#1a1a1a",
+          secondary_page: "#8a8374",
+          "background-light": "#f4f4f2",
+          "background-dark": "#121212",
+        },
+        fontFamily: {
+          headline: ["Newsreader"],
+          body: ["Manrope"],
+          label: ["Manrope"],
+          display: ["Playfair Display", "serif"],
+          sans: ["Inter", "sans-serif"],
+        },
+        borderRadius: { DEFAULT: "0px", lg: "0px", xl: "0px", full: "9999px" },
+      },
+    },
+  };
+</script>
+
 <style>
-        .serif-text { font-family: 'Playfair Display', serif; }
-        .hero-gradient {
-            background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.4) 100%);
-        }
-    </style>
+  /* ── Base ─────────────────────────────────────── */
+  body { font-family: 'Inter', sans-serif; }
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+  }
+
+  /* ── Page reveal ──────────────────────────────── */
+  @keyframes pageIn { from { opacity:0 } to { opacity:1 } }
+  body { animation: pageIn 0.5s ease both; }
+
+  /* ── Nav ──────────────────────────────────────── */
+  @keyframes navDown {
+    from { transform: translateY(-100%); opacity:0; }
+    to   { transform: translateY(0);     opacity:1; }
+  }
+  nav { animation: navDown 0.75s cubic-bezier(0.22,1,0.36,1) 0.15s both; }
+
+  /* Nav link underline sweep */
+  nav a { position: relative; }
+  nav a::after {
+    content: '';
+    position: absolute; bottom: -2px; left: 0;
+    width: 0; height: 1px; background: currentColor;
+    transition: width 0.35s cubic-bezier(0.22,1,0.36,1);
+  }
+  nav a:hover::after { width: 100%; }
+
+  /* Nav CTA shimmer */
+  nav button { position: relative; overflow: hidden; }
+  nav button::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: rgba(255,255,255,0.1);
+    transform: translateX(-100%);
+    transition: transform 0.4s cubic-bezier(0.22,1,0.36,1);
+  }
+  nav button:hover::before { transform: translateX(0); }
+
+  /* ── Progress bar ─────────────────────────────── */
+  #rp {
+    position: fixed; top: 0; left: 0;
+    height: 2px; background: #5f5e5e; z-index: 9999;
+    transition: width 0.08s linear; pointer-events: none;
+  }
+
+  /* ── Custom cursor ────────────────────────────── */
+  #cdot {
+    position: fixed; width: 7px; height: 7px;
+    border-radius: 50%; background: #5f5e5e;
+    pointer-events: none; z-index: 9999;
+    transform: translate(-50%,-50%); mix-blend-mode: multiply;
+  }
+  #cring {
+    position: fixed; width: 34px; height: 34px;
+    border-radius: 50%; border: 1px solid rgba(95,94,94,0.35);
+    pointer-events: none; z-index: 9998;
+    transform: translate(-50%,-50%);
+    transition: width 0.3s, height 0.3s, border-color 0.3s;
+  }
+  body:has(a:hover) #cring,
+  body:has(button:hover) #cring {
+    width: 52px; height: 52px;
+    border-color: rgba(95,94,94,0.65);
+  }
+
+  /* ── Hero ─────────────────────────────────────── */
+  .hero-gradient {
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.55) 100%);
+  }
+
+  /* Ken-burns on hero */
+  .hero-img {
+    animation: kbHero 16s ease-in-out infinite alternate;
+    transform-origin: center;
+  }
+  @keyframes kbHero {
+    from { transform: scale(1); }
+    to   { transform: scale(1.06); }
+  }
+
+  /* Hero eyebrow letter-spacing expansion */
+  .hero-eyebrow {
+    opacity: 0; letter-spacing: 0.1em;
+    transform: translateY(10px);
+    transition: opacity 0.7s ease 0.4s, letter-spacing 0.9s ease 0.4s,
+                transform 0.7s ease 0.4s;
+  }
+  .hero-eyebrow.on { opacity: 1; letter-spacing: 0.3em; transform: translateY(0); }
+
+  /* Hero headline line-by-line */
+  .hl-line { overflow: hidden; display: block; }
+  .hl-inner {
+    display: block; opacity: 0; transform: translateY(100%);
+    transition: opacity 0.85s cubic-bezier(0.22,1,0.36,1),
+                transform 0.85s cubic-bezier(0.22,1,0.36,1);
+  }
+  .hl-inner.on { opacity: 1; transform: translateY(0); }
+
+  /* Hero sub-text */
+  .hero-sub {
+    opacity: 0; transform: translateY(16px);
+    transition: opacity 0.7s ease 1s, transform 0.7s ease 1s;
+  }
+  .hero-sub.on { opacity: 1; transform: translateY(0); }
+
+  /* ── Scroll indicator ─────────────────────────── */
+  @keyframes bob {
+    0%,100% { transform: translateY(0); opacity:0.5; }
+    50%      { transform: translateY(6px); opacity:1; }
+  }
+  .scroll-bob { animation: bob 2.2s ease-in-out infinite; }
+
+  /* ── Generic scroll reveal ────────────────────── */
+  .rv {
+    opacity: 0; transform: translateY(26px);
+    transition: opacity 0.75s cubic-bezier(0.22,1,0.36,1),
+                transform 0.75s cubic-bezier(0.22,1,0.36,1);
+  }
+  .rv.on { opacity: 1; transform: translateY(0); }
+
+  .rv-l {
+    opacity: 0; transform: translateX(-30px);
+    transition: opacity 0.8s cubic-bezier(0.22,1,0.36,1),
+                transform 0.8s cubic-bezier(0.22,1,0.36,1);
+  }
+  .rv-l.on { opacity: 1; transform: translateX(0); }
+
+  .rv-r {
+    opacity: 0; transform: translateX(30px);
+    transition: opacity 0.8s cubic-bezier(0.22,1,0.36,1),
+                transform 0.8s cubic-bezier(0.22,1,0.36,1);
+  }
+  .rv-r.on { opacity: 1; transform: translateX(0); }
+
+  /* Stagger children */
+  .sg > * {
+    opacity: 0; transform: translateY(18px);
+    transition: opacity 0.55s cubic-bezier(0.22,1,0.36,1),
+                transform 0.55s cubic-bezier(0.22,1,0.36,1);
+  }
+  .sg.on > *:nth-child(1) { opacity:1; transform:none; transition-delay:0.00s; }
+  .sg.on > *:nth-child(2) { opacity:1; transform:none; transition-delay:0.08s; }
+  .sg.on > *:nth-child(3) { opacity:1; transform:none; transition-delay:0.16s; }
+  .sg.on > *:nth-child(4) { opacity:1; transform:none; transition-delay:0.24s; }
+
+  /* ── Technology section ───────────────────────── */
+  /* Image wipe reveal */
+  .img-wipe { position: relative; overflow: hidden; }
+  .img-wipe::before {
+    content: '';
+    position: absolute; inset: 0; z-index: 1;
+    background: #f4f4f2;
+    transform: scaleX(1); transform-origin: right;
+    transition: transform 1.1s cubic-bezier(0.77,0,0.18,1);
+    pointer-events: none;
+  }
+  .img-wipe.on::before { transform: scaleX(0); }
+
+  /* Floating quote card */
+  @keyframes floatQ {
+    0%,100% { transform: translate(-1.5rem,-1.5rem); }
+    50%      { transform: translate(-1.5rem,-2.1rem); }
+  }
+  .quote-card {
+    animation: floatQ 5s ease-in-out infinite;
+    position: absolute; bottom: 0; left: 0;
+    transform: translate(-1.5rem,-1.5rem);
+  }
+
+  /* Stats count-up wrapper */
+  .stat-wrap {
+    opacity: 0; transform: translateY(16px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .stat-wrap.on { opacity: 1; transform: translateY(0); }
+
+  /* ── Recovery journey cards ───────────────────── */
+  /* Card wipe */
+  .card-wipe { position: relative; overflow: hidden; }
+  .card-wipe::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: #f4f4f2;
+    transform: scaleX(1); transform-origin: left;
+    transition: transform 0.85s cubic-bezier(0.77,0,0.18,1);
+    pointer-events: none;
+  }
+  .card-wipe.on::after { transform: scaleX(0); transform-origin: right; }
+
+  /* Ghost number parallax */
+  .journey-card { position: relative; overflow: hidden; }
+  .ghost-num {
+    transition: transform 0.5s cubic-bezier(0.22,1,0.36,1), opacity 0.5s ease;
+  }
+  .journey-card:hover .ghost-num {
+    transform: translateY(-10px) scale(1.06);
+    opacity: 0.12;
+  }
+
+  /* Card lift */
+  .card-lift {
+    transition: transform 0.35s cubic-bezier(0.22,1,0.36,1),
+                box-shadow 0.35s cubic-bezier(0.22,1,0.36,1);
+  }
+  .card-lift:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 18px 48px rgba(26,26,26,0.09);
+  }
+
+  /* ── Testimonial ──────────────────────────────── */
+  /* Quote icon bounce */
+  @keyframes quoteFloat {
+    0%,100% { transform: translateY(0); }
+    50%      { transform: translateY(-6px); }
+  }
+  .quote-icon { animation: quoteFloat 3.5s ease-in-out infinite; }
+
+  /* Quote word-by-word */
+  .q-word {
+    display: inline-block;
+    opacity: 0; transform: translateY(12px);
+    transition: opacity 0.45s, transform 0.45s;
+  }
+  .q-word.on { opacity: 1; transform: translateY(0); }
+
+  /* Avatar reveal */
+  .avatar-reveal {
+    opacity: 0; transform: scale(0.88);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .avatar-reveal.on { opacity: 1; transform: scale(1); }
+
+  /* Cite fade */
+  .cite-rv {
+    opacity: 0; transform: translateY(8px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  .cite-rv.on { opacity: 1; transform: translateY(0); }
+
+  /* ── Button shimmer ───────────────────────────── */
+  .btn-sh { position: relative; overflow: hidden; }
+  .btn-sh::after {
+    content: '';
+    position: absolute; top: 0; left: -100%;
+    width: 55%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.14), transparent);
+    transition: left 0.5s cubic-bezier(0.22,1,0.36,1);
+    pointer-events: none;
+  }
+  .btn-sh:hover::after { left: 140%; }
+
+  /* ── Footer ───────────────────────────────────── */
+  .foot-rv {
+    opacity: 0; transform: translateY(14px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .foot-rv.on { opacity: 1; transform: translateY(0); }
+
+  footer a { position: relative; text-decoration: none; }
+  footer a::after {
+    content: '';
+    position: absolute; bottom: -2px; left: 0;
+    width: 0; height: 1px; background: #31332c;
+    transition: width 0.3s cubic-bezier(0.22,1,0.36,1);
+  }
+  footer a:hover::after { width: 100%; }
+
+  /* Eyebrow expand (reusable) */
+  .eyebrow-rv {
+    opacity: 0; letter-spacing: 0.1em; transform: translateX(-10px);
+    transition: opacity 0.7s ease, letter-spacing 0.7s ease, transform 0.7s ease;
+  }
+  .eyebrow-rv.on { opacity: 1; letter-spacing: 0.3em; transform: translateX(0); }
+
+  /* Section heading split */
+  .sh-line { overflow: hidden; display: block; }
+  .sh-inner {
+    display: block; opacity: 0; transform: translateY(60px);
+    transition: opacity 0.8s cubic-bezier(0.22,1,0.36,1),
+                transform 0.8s cubic-bezier(0.22,1,0.36,1);
+  }
+  .sh-inner.on { opacity: 1; transform: translateY(0); }
+</style>
 </head>
-<body class="bg-background-light dark:bg-background-dark text-primary dark:text-gray-100 font-sans transition-colors duration-300">
-<nav class="fixed w-full z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
-<div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-<div class="text-2xl font-display font-semibold tracking-tight">PRECISION</div>
-<div class="hidden md:flex space-x-10 text-xs uppercase tracking-widest font-medium">
-<a class="hover:text-secondary transition-colors" href="#">Expertise</a>
-<a class="hover:text-secondary transition-colors underline underline-offset-8" href="#">Knee Replacement</a>
-<a class="hover:text-secondary transition-colors" href="#">Technology</a>
-<a class="hover:text-secondary transition-colors" href="#">Patient Stories</a>
-</div>
-<button class="px-6 py-2 border border-primary dark:border-gray-100 text-xs uppercase tracking-widest hover:bg-primary hover:text-white dark:hover:bg-gray-100 dark:hover:text-black transition-all">
-                Book Consultation
-            </button>
-</div>
+
+<body class="bg-background-light dark:bg-background-dark text-primary_page dark:text-gray-100 font-sans">
+
+<div id="cdot"></div>
+<div id="cring"></div>
+
+<div id="rp" style="width:0%"></div>
+
+<nav class="relative z-50 bg-[#fbf9f4] dark:bg-[#31332c] flex justify-between items-center px-6 md:px-12 py-6 max-w-[1920px] mx-auto">
+  <div class="font-headline text-2xl text-[#31332c] leading-tight tracking-tight">Dr. Abhishek Shenoy</div>
+  <div class="hidden md:flex gap-8 items-center">
+    <a class="uppercase tracking-widest text-xs font-semibold text-[#5f5e5e] dark:text-[#ece1d1] opacity-70 hover:opacity-100 transition-opacity duration-300" href="/index.html">Home</a>
+    <a class="uppercase tracking-widest text-xs font-semibold text-[#5f5e5e] dark:text-[#ece1d1] opacity-70 hover:opacity-100 transition-opacity duration-300" href="/service.html">Expertise</a>
+    <a class="uppercase tracking-widest text-xs font-semibold text-[#5f5e5e] dark:text-[#ece1d1] opacity-70 hover:opacity-100 transition-opacity duration-300" href="#">Stories</a>
+    <a class="uppercase tracking-widest text-xs font-semibold text-[#5f5e5e] dark:text-[#ece1d1] opacity-70 hover:opacity-100 transition-opacity duration-300" href="/Contact.html">Contact</a>
+  </div>
+  <button class="bg-primary text-on-primary px-6 py-3 text-xs uppercase tracking-widest font-bold hover:opacity-90 transition-all active:scale-[0.99] font-label">
+    Book Consultation
+  </button>
 </nav>
-<section class="relative h-[80vh] flex items-end">
-<div class="absolute inset-0 z-0">
-<img alt="Modern surgical suite with advanced robotic equipment" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7AEu-MsGtl0FaS2Y9d9qBkL2XSPkWz9tUCyIbR7U1A7PMpQmPmadhecx34L-9k6BWG9A1frUv0fFDIiPiO1I2ECvcrhwMP7eWQZmNHu4TeQJi4mk8wwJJoTdVHDcoNEbLuTqku8VIzuUT2l0mgGRV4uQxOrNFtL9x_0PO1u7lEr-yV3uBs49V9N7J9T-lveom09jfp-z4PLTsxcHj7EKq5RwMVs3EFLXvVcXnqe42LQnetjXAHF0FFgIUuxMiF1Eyak8dkIHKHRpX"/>
-<div class="absolute inset-0 hero-gradient"></div>
-</div>
-<div class="relative z-10 max-w-7xl mx-auto px-6 pb-24 w-full text-white">
-<span class="text-xs uppercase tracking-[0.3em] mb-4 block">Areas of Expertise</span>
-<h1 class="text-6xl md:text-8xl font-display mb-6 max-w-3xl leading-tight">Robotic-Assisted Knee Replacement.</h1>
-<p class="text-lg max-w-xl font-light opacity-90 leading-relaxed">
-                Utilizing state-of-the-art robotic technology to ensure millimetric precision, resulting in a joint that feels as natural as your own.
-            </p>
-</div>
+
+<section class="relative h-[80vh] flex items-end overflow-hidden">
+  <div class="absolute inset-0 z-0">
+    <img alt="Modern surgical suite with advanced robotic equipment"
+         class="w-full h-full object-cover hero-img"
+         src="/assets/robot.jpg"/>
+    <div class="absolute inset-0 hero-gradient"></div>
+  </div>
+  <div class="relative z-10 max-w-7xl mx-auto px-6 pb-24 w-full text-white">
+    <span class="hero-eyebrow text-xs uppercase mb-4 block" id="hero-eyebrow">Areas of Expertise</span>
+    <h1 style="font-family:'Playfair Display',serif" class="text-6xl md:text-8xl mb-6 max-w-3xl leading-tight">
+      <span class="hl-line"><span class="hl-inner" id="hl1" style="transition-delay:0.45s">Robotic-Assisted</span></span>
+      <span class="hl-line"><span class="hl-inner" id="hl2" style="transition-delay:0.6s">Knee Replacement.</span></span>
+    </h1>
+    <p class="hero-sub text-lg max-w-xl font-light opacity-90 leading-relaxed" id="hero-sub">
+      Utilizing state-of-the-art robotic technology to ensure millimetric precision, resulting in a joint that feels as natural as your own.
+    </p>
+  </div>
+  <div class="absolute bottom-6 left-1/2 -translate-x-1/2 z-20">
+    <div class="scroll-bob flex flex-col items-center gap-2 opacity-50">
+      <span class="text-[9px] uppercase tracking-[0.25em] text-white/70">Scroll</span>
+      <div class="w-px h-8 bg-white/40"></div>
+    </div>
+  </div>
 </section>
+
 <section class="py-24 bg-white dark:bg-black">
-<div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
-<div>
-<span class="text-xs uppercase tracking-[0.3em] text-secondary mb-4 block">Advanced Technology</span>
-<h2 class="text-4xl md:text-5xl font-display mb-8">Millimetric Precision for Life.</h2>
-<div class="space-y-6 text-gray-600 dark:text-gray-400 font-light leading-relaxed">
-<p>
-                        Our surgical approach integrates the latest Mako® robotic technology. Unlike traditional surgery, this system allows for a highly personalized plan based on your unique anatomy before we even enter the operating room.
-                    </p>
-<p>
-                        During the procedure, the robotic arm provides real-time feedback and intelligent data, ensuring the implant is positioned with a level of accuracy that was previously impossible. This results in less trauma to the surrounding tissue and a faster return to your active lifestyle.
-                    </p>
-</div>
-<div class="mt-12 grid grid-cols-2 gap-8 border-t border-gray-100 dark:border-gray-800 pt-8">
-<div>
-<span class="block text-2xl font-display mb-1">98%</span>
-<span class="text-[10px] uppercase tracking-widest text-secondary">Patient Satisfaction</span>
-</div>
-<div>
-<span class="block text-2xl font-display mb-1">40%</span>
-<span class="text-[10px] uppercase tracking-widest text-secondary">Faster Recovery Time</span>
-</div>
-</div>
-</div>
-<div class="relative group">
-<img alt="Advanced medical visualization" class="w-full grayscale hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCppjtYR0MeH12xW5r5chAyI94uZAl8ZtN11_3K3zOFY97kn1kzOOJjgcUWylbsISLADiXlJBFKSgyi_B8VXRvG3v9pIfRTQg_c8W9lNMHLx18nxLPrEqxxDAA_S4RVV19zkOsTFhLCdVqlaTUkQNXpumYYF2HlbU7_xower5jD-khs13y7iSjBzKFOrgplfhS1HXYhthSjt064bRRNkF-jZcTROsx7mdstIIye0EXcqJHgpljGk4tP52XC0D391kjTN41sKE00eNLR"/>
-<div class="absolute -bottom-6 -left-6 bg-background-light dark:bg-zinc-900 p-8 shadow-xl max-w-xs border border-gray-200 dark:border-gray-800">
-<span class="material-icons-outlined text-secondary mb-4">biotech</span>
-<p class="text-sm italic font-display">"The technology allows us to tailor the surgery to the individual, not the average."</p>
-</div>
-</div>
-</div>
+  <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+
+    <div>
+      <span class="eyebrow-rv text-xs uppercase text-secondary_page mb-4 block" id="tech-eyebrow">Advanced Technology</span>
+      <h2 style="font-family:'Playfair Display',serif" class="text-4xl md:text-5xl mb-8">
+        <span class="sh-line">Millimetric Precision</span>
+        <span class="sh-line">for Life.</span>
+      </h2>
+      <div class="sg space-y-6 text-gray-600 dark:text-gray-400 font-light leading-relaxed">
+        <p>
+          Our surgical approach integrates the latest Mako® robotic technology. Unlike traditional surgery, this system allows for a highly personalized plan based on your unique anatomy before we even enter the operating room.
+        </p>
+        <p>
+          During the procedure, the robotic arm provides real-time feedback and intelligent data, ensuring the implant is positioned with a level of accuracy that was previously impossible. This results in less trauma to the surrounding tissue and a faster return to your active lifestyle.
+        </p>
+      </div>
+      <div class="mt-12 grid grid-cols-2 gap-8 border-t border-gray-100 dark:border-gray-800 pt-8">
+        <div class="stat-wrap" id="stat1" style="transition-delay:0s">
+          <span class="block text-2xl mb-1" style="font-family:'Playfair Display',serif" data-count="98" data-suffix="%">98%</span>
+          <span class="text-[10px] uppercase tracking-widest text-secondary_page">Patient Satisfaction</span>
+        </div>
+        <div class="stat-wrap" id="stat2" style="transition-delay:0.12s">
+          <span class="block text-2xl mb-1" style="font-family:'Playfair Display',serif" data-count="40" data-suffix="%">40%</span>
+          <span class="text-[10px] uppercase tracking-widest text-secondary_page">Faster Recovery Time</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="img-wipe rv-r relative group" id="tech-img-wrap">
+      <img alt="Advanced medical visualization"
+           class="w-full grayscale hover:grayscale-0 transition-all duration-700"
+           src="https://lh3.googleusercontent.com/aida-public/AB6AXuCppjtYR0MeH12xW5r5chAyI94uZAl8ZtN11_3K3zOFY97kn1kzOOJjgcUWylbsISLADiXlJBFKSgyi_B8VXRvG3v9pIfRTQg_c8W9lNMHLx18nxLPrEqxxDAA_S4RVV19zkOsTFhLCdVqlaTUkQNXpumYYF2HlbU7_xower5jD-khs13y7iSjBzKFOrgplfhS1HXYhthSjt064bRRNkF-jZcTROsx7mdstIIye0EXcqJHgpljGk4tP52XC0D391kjTN41sKE00eNLR"/>
+      <div class="quote-card bg-background-light dark:bg-zinc-900 p-8 shadow-xl max-w-xs border border-gray-200 dark:border-gray-800 rv" style="transition-delay:0.5s">
+        <span class="material-symbols-outlined text-secondary_page mb-4 block">biotech</span>
+        <p style="font-family:'Playfair Display',serif" class="text-sm italic">"The technology allows us to tailor the surgery to the individual, not the average."</p>
+      </div>
+    </div>
+
+  </div>
 </section>
+
 <section class="py-24 bg-background-light dark:bg-background-dark">
-<div class="max-w-7xl mx-auto px-6">
-<div class="text-center mb-20">
-<span class="text-xs uppercase tracking-[0.3em] text-secondary mb-4 block">The Process</span>
-<h2 class="text-4xl md:text-5xl font-display">Your Recovery Journey.</h2>
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-20">
+      <span class="eyebrow-rv text-xs uppercase text-secondary_page mb-4 block" id="journey-eyebrow">The Process</span>
+      <h2 style="font-family:'Playfair Display',serif" class="text-4xl md:text-5xl">
+        <span class="sh-line">Your Recovery Journey.</span>
+      </h2>
+    </div>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+  <div class="journey-card card-wipe card-lift group bg-white dark:bg-zinc-900 p-10 relative overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-3" style="transition-delay:0.00s">
+    <span class="ghost-num text-7xl absolute top-6 right-6 opacity-5 transition-all duration-700 group-hover:opacity-20 group-hover:scale-110 group-hover:-translate-x-2 select-none pointer-events-none" style="font-family:'Playfair Display',serif">01</span>
+    <div class="relative z-10">
+      <div class="w-8 h-px bg-secondary_page mb-6 transition-all duration-500 group-hover:w-16"></div>
+      <h3 style="font-family:'Playfair Display',serif" class="text-xl mb-4">Pre-Op Planning</h3>
+      <p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">A 3D virtual model is created to map your anatomy and plan the exact placement of your implant.</p>
+    </div>
+  </div>
+
+  <div class="journey-card card-wipe card-lift group bg-white dark:bg-zinc-900 p-10 relative overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-3" style="transition-delay:0.1s">
+    <span class="ghost-num text-7xl absolute top-6 right-6 opacity-5 transition-all duration-700 group-hover:opacity-20 group-hover:scale-110 group-hover:-translate-x-2 select-none pointer-events-none" style="font-family:'Playfair Display',serif">02</span>
+    <div class="relative z-10">
+      <div class="w-8 h-px bg-secondary_page mb-6 transition-all duration-500 group-hover:w-16"></div>
+      <h3 style="font-family:'Playfair Display',serif" class="text-xl mb-4">Day of Surgery</h3>
+      <p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">Robotic-assisted procedure focusing on tissue preservation and precise alignment.</p>
+    </div>
+  </div>
+
+  <div class="journey-card card-wipe card-lift group bg-white dark:bg-zinc-900 p-10 relative overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-3" style="transition-delay:0.2s">
+    <span class="ghost-num text-7xl absolute top-6 right-6 opacity-5 transition-all duration-700 group-hover:opacity-20 group-hover:scale-110 group-hover:-translate-x-2 select-none pointer-events-none" style="font-family:'Playfair Display',serif">03</span>
+    <div class="relative z-10">
+      <div class="w-8 h-px bg-secondary_page mb-6 transition-all duration-500 group-hover:w-16"></div>
+      <h3 style="font-family:'Playfair Display',serif" class="text-xl mb-4">Early Mobility</h3>
+      <p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">Most patients are walking within hours of surgery, starting the rehabilitation process immediately.</p>
+    </div>
+  </div>
+
+  <div class="journey-card card-wipe card-lift group bg-white dark:bg-zinc-900 p-10 relative overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-3" style="transition-delay:0.3s">
+    <span class="ghost-num text-7xl absolute top-6 right-6 opacity-5 transition-all duration-700 group-hover:opacity-20 group-hover:scale-110 group-hover:-translate-x-2 select-none pointer-events-none" style="font-family:'Playfair Display',serif">04</span>
+    <div class="relative z-10">
+      <div class="w-8 h-px bg-secondary_page mb-6 transition-all duration-500 group-hover:w-16"></div>
+      <h3 style="font-family:'Playfair Display',serif" class="text-xl mb-4">Peak Performance</h3>
+      <p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">Return to low-impact sports and daily activities within 4-6 weeks with a personalized PT plan.</p>
+    </div>
+  </div>
 </div>
-<div class="grid grid-cols-1 md:grid-cols-4 gap-4">
-<div class="bg-white dark:bg-zinc-900 p-10 relative overflow-hidden group hover:bg-zinc-50 dark:hover:bg-zinc-800 transition-colors">
-<span class="text-7xl font-display opacity-5 absolute -top-4 -right-2">01</span>
-<h3 class="text-xl font-display mb-4 relative z-10">Pre-Op Planning</h3>
-<p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed relative z-10">A 3D virtual model is created to map your anatomy and plan the exact placement of your implant.</p>
-</div>
-<div class="bg-white dark:bg-zinc-900 p-10 relative overflow-hidden group hover:bg-zinc-50 dark:hover:bg-zinc-800 transition-colors">
-<span class="text-7xl font-display opacity-5 absolute -top-4 -right-2">02</span>
-<h3 class="text-xl font-display mb-4 relative z-10">Day of Surgery</h3>
-<p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed relative z-10">Robotic-assisted procedure focusing on tissue preservation and precise alignment.</p>
-</div>
-<div class="bg-white dark:bg-zinc-900 p-10 relative overflow-hidden group hover:bg-zinc-50 dark:hover:bg-zinc-800 transition-colors">
-<span class="text-7xl font-display opacity-5 absolute -top-4 -right-2">03</span>
-<h3 class="text-xl font-display mb-4 relative z-10">Early Mobility</h3>
-<p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed relative z-10">Most patients are walking within hours of surgery, starting the rehabilitation process immediately.</p>
-</div>
-<div class="bg-white dark:bg-zinc-900 p-10 relative overflow-hidden group hover:bg-zinc-50 dark:hover:bg-zinc-800 transition-colors">
-<span class="text-7xl font-display opacity-5 absolute -top-4 -right-2">04</span>
-<h3 class="text-xl font-display mb-4 relative z-10">Peak Performance</h3>
-<p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed relative z-10">Return to low-impact sports and daily activities within 4-6 weeks with a personalized PT plan.</p>
-</div>
-</div>
-</div>
+  </div>
 </section>
+
 <section class="py-24 bg-white dark:bg-black border-t border-gray-100 dark:border-gray-900">
-<div class="max-w-5xl mx-auto px-6">
-<div class="text-center">
-<span class="material-icons-outlined text-secondary text-5xl mb-8">format_quote</span>
-<blockquote class="text-3xl md:text-4xl font-display italic leading-snug mb-10">
-                    "After years of chronic pain, I finally feel like myself again. Three months after my robotic knee replacement, I'm back on the golf course without even thinking about my knee."
-                </blockquote>
-<div class="flex flex-col items-center">
-<div class="w-16 h-16 rounded-full overflow-hidden mb-4">
-<img alt="Patient portrait" class="w-full h-full object-cover grayscale" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrYpVKvee4NZm46I6KZoH0apst5-l8pauH5NnDduZIZl0Pja5pACcOMiMOsCKW1F9c_mCU83h4nXzzSS3rwkCw9X0rRqopRYuNfBu16rKuVlcTSnfYRq-kX2bYlXN2tsQ9aNHwBvULbHz9SMdaoFURAn4JEpy-96jAbRzMi1RFQ_G3B2VItwWjdsCoHVPcn-0HjYxtUww0-DcAX757jQSkEiC6M8S4lTvb0-vfBKOyKgApVeRvtDHExqzmbHL4v1ssI3NF4_s2YOh6"/>
-</div>
-<cite class="not-italic">
-<span class="block font-medium uppercase tracking-widest text-xs">Sarah Montgomery</span>
-<span class="text-secondary text-xs">Patient, Recovered Athlete</span>
-</cite>
-</div>
-</div>
-</div>
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="text-center">
+      <span class="material-symbols-outlined quote-icon text-secondary_page mb-8 block" style="font-size:3rem">format_quote</span>
+      <blockquote style="font-family:'Playfair Display',serif" class="text-3xl md:text-4xl italic leading-snug mb-10" id="testi-quote">
+        "After years of chronic pain, I finally feel like myself again. Three months after my robotic knee replacement, I'm back on the golf course without even thinking about my knee."
+      </blockquote>
+      <div class="flex flex-col items-center">
+        <div class="w-16 h-16 rounded-full overflow-hidden mb-4 avatar-reveal" id="avatar">
+          <img alt="Patient portrait" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+               src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrYpVKvee4NZm46I6KZoH0apst5-l8pauH5NnDduZIZl0Pja5pACcOMiMOsCKW1F9c_mCU83h4nXzzSS3rwkCw9X0rRqopRYuNfBu16rKuVlcTSnfYRq-kX2bYlXN2tsQ9aNHwBvULbHz9SMdaoFURAn4JEpy-96jAbRzMi1RFQ_G3B2VItwWjdsCoHVPcn-0HjYxtUww0-DcAX757jQSkEiC6M8S4lTvb0-vfBKOyKgApVeRvtDHExqzmbHL4v1ssI3NF4_s2YOh6"/>
+        </div>
+        <cite class="cite-rv not-italic" id="testi-cite">
+          <span class="block font-medium uppercase tracking-widest text-xs">Sarah Montgomery</span>
+          <span class="text-secondary_page text-xs">Patient, Recovered Athlete</span>
+        </cite>
+      </div>
+    </div>
+  </div>
 </section>
-<footer class="bg-white py-20 border-t border-border-light">
-<div class="max-w-7xl mx-auto px-6 lg:px-12">
-<div class="grid md:grid-cols-12 gap-16 mb-20">
-<div class="md:col-span-5">
-<div class="text-2xl font-display tracking-[0.2em] uppercase text-text-primary mb-8">
-                        Dr. Abhishek <span class="font-light italic text-beige">Shenoy</span>
-</div>
-<p class="max-w-xs text-text-secondary text-sm leading-relaxed mb-10">
-                        Dedicated to providing advanced orthopaedic solutions through innovation, precision, and compassionate care.
-                    </p>
-<div class="flex gap-6">
-<a class="text-text-secondary hover:text-beige transition-colors" href="#">Instagram</a>
-<a class="text-text-secondary hover:text-beige transition-colors" href="#">LinkedIn</a>
-<a class="text-text-secondary hover:text-beige transition-colors" href="#">Twitter</a>
-</div>
-</div>
-<div class="md:col-span-3">
-<h5 class="font-bold uppercase tracking-[0.3em] text-[10px] text-text-primary mb-10">The Clinic</h5>
-<ul class="space-y-4 text-text-secondary text-xs tracking-widest uppercase">
-<li><a class="hover:text-beige transition-colors" href="#about">Philosophy</a></li>
-<li><a class="hover:text-beige transition-colors" href="#services">Procedures</a></li>
-<li><a class="hover:text-beige transition-colors" href="#patient-stories">Stories</a></li>
-<li><a class="hover:text-beige transition-colors" href="#contact">Inquiry</a></li>
-</ul>
-</div>
-<div class="md:col-span-4">
-<h5 class="font-bold uppercase tracking-[0.3em] text-[10px] text-text-primary mb-10">Subscribe to Health Notes</h5>
-<p class="text-text-secondary text-xs leading-relaxed mb-6">Expert insights on joint health and longevity delivered monthly.</p>
-<div class="flex border-b border-border-light">
-<input class="bg-transparent border-0 focus:ring-0 text-xs py-3 px-0 w-full text-text-primary placeholder:text-border-light" placeholder="Email Address" type="email"/>
-<button class="text-beige text-[10px] font-bold uppercase tracking-widest pl-4">Join</button>
-</div>
-</div>
-</div>
-<div class="pt-10 border-t border-border-light flex flex-col md:flex-row justify-between items-center gap-6">
-<p class="text-[9px] text-text-secondary uppercase tracking-[0.3em]">
-                    © 2024 Dr. Abhishek Shenoy. Meticulously Crafted Care.
-                </p>
-<div class="flex items-center gap-8 text-[9px] uppercase tracking-[0.3em] font-medium text-text-secondary">
-<a class="hover:text-beige" href="#">Privacy Policy</a>
-<a class="hover:text-beige" href="#">Terms of Care</a>
-</div>
-</div>
-</div>
+
+<footer class="bg-white py-20 border-t border-gray-100">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12">
+    <div class="grid md:grid-cols-12 gap-16 mb-20">
+      <div class="md:col-span-5 foot-rv" style="transition-delay:0s">
+        <div style="font-family:'Playfair Display',serif" class="text-2xl tracking-[0.2em] uppercase text-primary_page mb-8">
+          Dr. Abhishek <span class="font-light italic text-secondary_page">Shenoy</span>
+        </div>
+        <p class="max-w-xs text-gray-500 text-sm leading-relaxed mb-10">
+          Dedicated to providing advanced orthopaedic solutions through innovation, precision, and compassionate care.
+        </p>
+        <div class="flex gap-6">
+          <a class="text-gray-500 hover:text-secondary_page transition-colors" href="#">Instagram</a>
+          <a class="text-gray-500 hover:text-secondary_page transition-colors" href="#">LinkedIn</a>
+          <a class="text-gray-500 hover:text-secondary_page transition-colors" href="#">Twitter</a>
+        </div>
+      </div>
+      <div class="md:col-span-3 foot-rv" style="transition-delay:0.1s">
+        <h5 class="font-bold uppercase tracking-[0.3em] text-[10px] text-primary_page mb-10">The Clinic</h5>
+        <ul class="space-y-4 text-gray-500 text-xs tracking-widest uppercase">
+          <li><a class="hover:text-secondary_page transition-colors" href="#">Philosophy</a></li>
+          <li><a class="hover:text-secondary_page transition-colors" href="#">Procedures</a></li>
+          <li><a class="hover:text-secondary_page transition-colors" href="#">Stories</a></li>
+          <li><a class="hover:text-secondary_page transition-colors" href="#">Inquiry</a></li>
+        </ul>
+      </div>
+      <div class="md:col-span-4 foot-rv" style="transition-delay:0.2s">
+        <h5 class="font-bold uppercase tracking-[0.3em] text-[10px] text-primary_page mb-10">Subscribe to Health Notes</h5>
+        <p class="text-gray-500 text-xs leading-relaxed mb-6">Expert insights on joint health and longevity delivered monthly.</p>
+        <div class="flex border-b border-gray-200">
+          <input class="bg-transparent border-0 focus:ring-0 text-xs py-3 px-0 w-full text-primary_page placeholder:text-gray-300" placeholder="Email Address" type="email"/>
+          <button class="btn-sh text-secondary_page text-[10px] font-bold uppercase tracking-widest pl-4">Join</button>
+        </div>
+      </div>
+    </div>
+    <div class="pt-10 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center gap-6">
+      <p class="text-[9px] text-gray-400 uppercase tracking-[0.3em]">
+        © 2024 Dr. Abhishek Shenoy. Meticulously Crafted Care.
+      </p>
+      <div class="flex items-center gap-8 text-[9px] uppercase tracking-[0.3em] font-medium text-gray-400">
+        <a class="hover:text-secondary_page" href="#">Privacy Policy</a>
+        <a class="hover:text-secondary_page" href="#">Terms of Care</a>
+      </div>
+    </div>
+  </div>
 </footer>
+
+<script>
+/* ── Cursor ─────────────────────────────────── */
+const dot=document.getElementById('cdot'), ring=document.getElementById('cring');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;});
+(function loop(){
+  rx+=(mx-rx)*0.16; ry+=(my-ry)*0.16;
+  dot.style.left=mx+'px'; dot.style.top=my+'px';
+  ring.style.left=rx+'px'; ring.style.top=ry+'px';
+  requestAnimationFrame(loop);
+})();
+
+/* ── Progress bar ────────────────────────────── */
+const rp=document.getElementById('rp');
+window.addEventListener('scroll',()=>{
+  rp.style.width=Math.round(window.scrollY/(document.body.scrollHeight-window.innerHeight)*100)+'%';
+});
+
+/* ── Nav shadow ──────────────────────────────── */
+const navEl=document.querySelector('nav');
+window.addEventListener('scroll',()=>{
+  navEl.style.boxShadow=window.scrollY>50?'0 1px 28px rgba(26,26,26,0.07)':'none';
+});
+
+/* ── IO factory ──────────────────────────────── */
+function observe(sel,threshold,cb){
+  const io=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if(!e.isIntersecting)return;
+      cb?cb(e.target):e.target.classList.add('on');
+      io.unobserve(e.target);
+    });
+  },{threshold});
+  document.querySelectorAll(sel).forEach(el=>io.observe(el));
+}
+
+// Generic reveals
+observe('.rv,.rv-l,.rv-r,.rv-sc',0.15);
+observe('.sg',0.2);
+observe('.card-wipe',0.1);
+observe('.foot-rv',0.3);
+
+/* ── Hero on load ─────────────────────────────── */
+setTimeout(()=>{
+  document.getElementById('hero-eyebrow').classList.add('on');
+  document.getElementById('hl1').classList.add('on');
+  setTimeout(()=>document.getElementById('hl2').classList.add('on'),160);
+  setTimeout(()=>document.getElementById('hero-sub').classList.add('on'),200);
+},300);
+
+/* ── Eyebrows ─────────────────────────────────── */
+['tech-eyebrow','journey-eyebrow'].forEach(id=>{
+  observe('#'+id,0.3,el=>el.classList.add('on'));
+});
+
+/* ── Section headings ─────────────────────────── */
+['tech-h1','tech-h2','tech-img-wrap','journey-h'].forEach(id=>{
+  observe('#'+id,0.2,el=>el.classList.add('on'));
+});
+
+/* ── Image wipe ───────────────────────────────── */
+observe('#tech-img-wrap',0.15,el=>el.classList.add('on'));
+
+/* ── Stats count-up ───────────────────────────── */
+function countUp(el,target,suffix,dur=1200){
+  const start=performance.now();
+  const numEl=el.querySelector('[data-count]');
+  if(!numEl)return;
+  (function step(now){
+    const p=Math.min((now-start)/dur,1);
+    const ease=1-Math.pow(1-p,3);
+    numEl.textContent=Math.floor(ease*target)+suffix;
+    if(p<1)requestAnimationFrame(step);
+    else numEl.textContent=target+suffix;
+  })(start);
+}
+observe('.stat-wrap',0.4,el=>{
+  el.classList.add('on');
+  const numEl=el.querySelector('[data-count]');
+  if(numEl)countUp(el,parseInt(numEl.dataset.count),numEl.dataset.suffix||'');
+});
+
+/* ── Testimonial quote word-by-word ───────────── */
+const tq=document.getElementById('testi-quote');
+const ioTq=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(!e.isIntersecting)return;
+    const words=e.target.textContent.trim().split(/\s+/);
+    e.target.innerHTML=words.map((w,i)=>
+      `<span class="q-word" style="transition-delay:${i*0.04}s">${w} </span>`
+    ).join(' ');
+    setTimeout(()=>e.target.querySelectorAll('.q-word').forEach(w=>w.classList.add('on')),60);
+    ioTq.unobserve(e.target);
+  });
+},{threshold:0.3});
+ioTq.observe(tq);
+
+/* ── Avatar & cite ────────────────────────────── */
+observe('#avatar',0.4,el=>el.classList.add('on'));
+observe('#testi-cite',0.4,el=>{setTimeout(()=>el.classList.add('on'),600);});
+</script>
 
 </body></html>
