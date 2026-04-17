@@ -13,6 +13,15 @@
     theme: {
       extend: {
         colors: {
+          "on-surface": "#1A1A1A",         // New deeper black
+    "on-surface-variant": "#404040", // New medium gray
+    "primary": "#1A1A1A",             // New primary brand color
+    "tertiary-container": "#C8B89E", // New earthy beige
+    "inverse-primary": "#ffffff",
+    "outline-variant": "#b1b3a9", 
+    "on-primary": "#faf7f6",
+    "surface": "#fbf9f4",
+    "background": "#fbf9f4",
           "tertiary-container": "#fef2e1","on-secondary-fixed-variant": "#625b4e",
           "surface-container-highest": "#e2e3d9","primary-dim": "#535252",
           "on-primary-fixed-variant": "#5c5b5b","on-secondary": "#fff8f0",
@@ -40,7 +49,9 @@
           "surface-container": "#efeee6"
         },
         fontFamily: {
-          "headline": ["Newsreader"],"body": ["Manrope"],"label": ["Manrope"]
+          "headline": ["Newsreader"],"body": ["Manrope"],"label": ["Manrope"],
+          "newsreader": ["Newsreader", "serif"],
+    "manrope": ["Manrope", "sans-serif"]
         },
         borderRadius: {"DEFAULT": "0px","lg": "0px","xl": "0px","full": "9999px"},
       },
@@ -414,7 +425,7 @@
 </style>
 </head>
 
-<body class="bg-surface text-on-surface font-manrope selection:bg-secondary-container">
+<body class="bg-white text-on-surface font-manrope selection:bg-secondary-container">
 
 <!-- Cursor -->
 <div id="cdot"></div>
@@ -424,15 +435,15 @@
 <div id="rp" style="width:0%"></div>
 
 <!-- ── Nav ──────────────────────────────────────────────── -->
-<nav class="fixed top-0 w-full z-50 bg-[#fbf9f4]/80 dark:bg-[#31332c]/80 backdrop-blur-xl flex justify-between items-center px-6 md:px-12 py-6 max-w-[1920px] mx-auto">
+<nav class="fixed top-0 w-full z-50 bg-white dark:bg-[#31332c]/80 backdrop-blur-xl flex justify-between items-center px-6 md:px-12 py-6 max-w-[1920px] mx-auto">
   <div class="text-2xl text-[#31332c] leading-tight tracking-tight" style="opacity:0;animation:navSlideDown 0.7s cubic-bezier(0.22,1,0.36,1) 0.4s forwards">Dr. Abhishek Shenoy</div>
   <div class="hidden md:flex gap-8 items-center" style="opacity:0;animation:navSlideDown 0.7s cubic-bezier(0.22,1,0.36,1) 0.5s forwards">
-    <a class="uppercase tracking-widest text-xs font-semibold text-[#31332c] dark:text-[#fbf9f4] border-b border-[#31332c] dark:border-[#fbf9f4] pb-1 hover:opacity-100 transition-opacity duration-300" href="/index.html">Home</a>
-    <a class="uppercase tracking-widest text-xs font-semibold text-[#5f5e5e] dark:text-[#ece1d1] opacity-70 hover:opacity-100 transition-opacity duration-300" href="/service.html">Expertise</a>
+    <a class="uppercase tracking-widest text-xs font-semibold text-[#31332c] dark:text-[#fbf9f4]  hover:opacity-100 opacity-70 transition-opacity duration-300" href="/index.html">Home</a>
+    <a class="uppercase tracking-widest text-xs font-semibold text-[#5f5e5e] dark:text-[#ece1d1] hover:opacity-100 transition-opacity duration-300 border-b border-[#31332c] dark:border-[#fbf9f4] pb-1" href="/service.html">Expertise</a>
     <a class="uppercase tracking-widest text-xs font-semibold text-[#5f5e5e] dark:text-[#ece1d1] opacity-70 hover:opacity-100 transition-opacity duration-300" href="#">Stories</a>
     <a class="uppercase tracking-widest text-xs font-semibold text-[#5f5e5e] dark:text-[#ece1d1] opacity-70 hover:opacity-100 transition-opacity duration-300" href="/Contact.html">Contact</a>
   </div>
-  <button class="btn-shimmer bg-primary text-on-primary px-6 py-3 text-xs uppercase tracking-widest font-bold hover:opacity-90 transition-all active:scale-[0.99]" style="opacity:0;animation:navSlideDown 0.7s cubic-bezier(0.22,1,0.36,1) 0.6s forwards">
+  <button class="btn-shimmer bg-black text-on-primary px-6 py-3 text-xs uppercase tracking-widest font-bold hover:opacity-90 transition-all active:scale-[0.99]" style="opacity:0;animation:navSlideDown 0.7s cubic-bezier(0.22,1,0.36,1) 0.6s forwards">
     Book Consultation
   </button>
 </nav>
@@ -445,20 +456,20 @@
 
       <div class="md:col-span-8">
         <!-- Eyebrow -->
-        <span class="eyebrow font-label uppercase text-xs text-outline mb-6 block" id="hero-eyebrow">
+        <span class="eyebrow font-label  uppercase text-xs text-outline mb-6 block font-semibold" id="hero-eyebrow">
           Specialized Orthopedics
         </span>
 
         <!-- Headline with line-by-line reveal -->
         <h1 class="font-headline text-7xl md:text-9xl text-on-surface tracking-tighter leading-none mb-8">
           <span class="hl-line"><span class="hl-inner" id="hl1" style="transition-delay:0.35s">Precision</span></span>
-          <span class="hl-line"><span class="hl-inner italic font-light" id="hl2" style="transition-delay:0.5s">for Life.</span></span>
+          <span class="hl-line"><span class="hl-inner italic" id="hl2" style="transition-delay:0.5s">for Life.</span></span>
         </h1>
       </div>
 
       <!-- Side text -->
       <div class="md:col-span-4 pb-4 hero-sub" id="hero-sub">
-        <p class="font-body text-lg text-primary leading-relaxed border-l border-outline-variant pl-8">
+        <p class="font-body text-lg text-primary font-semibold leading-relaxed border-l border-outline-variant pl-8">
           Restoring mobility through clinical excellence and the advanced application of robotic surgical systems.
         </p>
       </div>
@@ -466,74 +477,74 @@
     </div>
 
     <!-- Scroll cue -->
-    <div class="flex justify-start mt-12 ml-2">
+    <!-- <div class="flex justify-start mt-12 ml-2">
       <div class="scroll-bob flex flex-col items-center gap-2 opacity-40">
         <span class="font-label text-[9px] uppercase tracking-[0.25em] text-outline">Scroll</span>
         <div class="w-px h-8 bg-outline-variant/50"></div>
       </div>
-    </div>
+    </div> -->
   </section>
 
   <!-- ── Services Bento Grid ───────────────────────────── -->
-  <section class="px-12 py-24 bg-surface-container-low">
+  <section class="px-12 py-24 bg-white">
     <div class="max-w-[1440px] mx-auto">
       <div class="grid grid-cols-1 md:grid-cols-4 gap-px bg-outline-variant/20">
 
         <!-- 01 -->
-        <div class="svc-card card-wipe card-lift bg-surface-container-low p-10 relative group overflow-hidden"
+        <div class="svc-card card-wipe card-lift bg-black p-10 relative group overflow-hidden"
              style="transition-delay:0.00s">
-          <span class="svc-num absolute top-8 right-8 font-headline text-8xl text-outline-variant/10 pointer-events-none">01</span>
+          <span class="svc-num absolute top-8 right-8 font-headline text-8xl text-outline-variant/20 pointer-events-none">01</span>
           <div class="relative z-10">
-            <h3 class="font-headline text-3xl mb-6 text-on-surface">Knee Replacement</h3>
-            <p class="font-body text-sm text-primary leading-relaxed mb-8">
+            <h3 class="font-headline text-3xl mb-6 text-white">Knee Replacement</h3>
+            <p class="font-body text-sm text-primary leading-relaxed mb-8 text-white opacity-80">
               Specialized arthroplasty focused on joint preservation and total restoration using patient-specific alignment protocols.
             </p>
-            <a class="svc-link inline-flex items-center gap-2 font-label uppercase tracking-widest text-[10px] text-on-surface" href="#">
+            <a class="svc-link inline-flex items-center gap-2 font-label uppercase tracking-widest text-[10px] text-white opacity-70 hover:opacity-100 transition-opacity duration-300" href="#">
               View Procedure <span class="material-symbols-outlined text-sm">arrow_forward</span>
             </a>
           </div>
         </div>
 
         <!-- 02 -->
-        <div class="svc-card card-wipe card-lift bg-surface-container-low p-10 relative group overflow-hidden border-l border-outline-variant/10"
+        <div class="svc-card card-wipe card-lift bg-black p-10 relative group overflow-hidden border-l border-outline-variant/10"
              style="transition-delay:0.1s">
-          <span class="svc-num absolute top-8 right-8 font-headline text-8xl text-outline-variant/10 pointer-events-none">02</span>
+          <span class="svc-num absolute top-8 right-8 font-headline text-8xl text-outline-variant/20 pointer-events-none">02</span>
           <div class="relative z-10">
-            <h3 class="font-headline text-3xl mb-6 text-on-surface">Hip Replacement</h3>
-            <p class="font-body text-sm text-primary leading-relaxed mb-8">
+            <h3 class="font-headline text-3xl mb-6 text-white">Hip Replacement</h3>
+            <p class="font-body text-sm text-primary leading-relaxed mb-8 text-white opacity-80">
               Advanced reconstruction techniques including anterior approach options for faster recovery and enhanced joint stability.
             </p>
-            <a class="svc-link inline-flex items-center gap-2 font-label uppercase tracking-widest text-[10px] text-on-surface" href="#">
+            <a class="svc-link inline-flex items-center gap-2 font-label uppercase tracking-widest text-[10px] text-white opacity-70 hover:opacity-100 transition-opacity duration-300" href="#">
               View Procedure <span class="material-symbols-outlined text-sm">arrow_forward</span>
             </a>
           </div>
         </div>
 
         <!-- 03 -->
-        <div class="svc-card card-wipe card-lift bg-surface-container-low p-10 relative group overflow-hidden border-l border-outline-variant/10"
+        <div class="svc-card card-wipe card-lift bg-black p-10 relative group overflow-hidden border-l border-outline-variant/10"
              style="transition-delay:0.2s">
-          <span class="svc-num absolute top-8 right-8 font-headline text-8xl text-outline-variant/10 pointer-events-none">03</span>
+          <span class="svc-num absolute top-8 right-8 font-headline text-8xl text-outline-variant/20 pointer-events-none">03</span>
           <div class="relative z-10">
-            <h3 class="font-headline text-3xl mb-6 text-on-surface">Sports Medicine</h3>
-            <p class="font-body text-sm text-primary leading-relaxed mb-8">
+            <h3 class="font-headline text-3xl mb-6 text-white">Sports Medicine</h3>
+            <p class="font-body text-sm text-primary leading-relaxed mb-8 text-white opacity-80">
               Minimally invasive arthroscopic solutions for ligament repairs, meniscus injuries, and cartilage preservation.
             </p>
-            <a class="svc-link inline-flex items-center gap-2 font-label uppercase tracking-widest text-[10px] text-on-surface" href="#">
+            <a class="svc-link inline-flex items-center gap-2 font-label uppercase tracking-widest text-[10px] text-white opacity-70 hover:opacity-100 transition-opacity duration-300" href="#">
               View Procedure <span class="material-symbols-outlined text-sm">arrow_forward</span>
             </a>
           </div>
         </div>
 
         <!-- 04 -->
-        <div class="svc-card card-wipe card-lift bg-surface-container-low p-10 relative group overflow-hidden border-l border-outline-variant/10"
+        <div class="svc-card card-wipe card-lift bg-black p-10 relative group overflow-hidden border-l border-outline-variant/10"
              style="transition-delay:0.3s">
-          <span class="svc-num absolute top-8 right-8 font-headline text-8xl text-outline-variant/10 pointer-events-none">04</span>
+          <span class="svc-num absolute top-8 right-8 font-headline text-8xl text-outline-variant/20 pointer-events-none">04</span>
           <div class="relative z-10">
-            <h3 class="font-headline text-3xl mb-6 text-on-surface">Fracture Care</h3>
-            <p class="font-body text-sm text-primary leading-relaxed mb-8">
+            <h3 class="font-headline text-3xl mb-6 text-white">Fracture Care</h3>
+            <p class="font-body text-sm text-primary leading-relaxed mb-8 text-white opacity-80">
               Expert management of complex orthopedic trauma and secondary reconstructive procedures for optimal healing.
             </p>
-            <a class="svc-link inline-flex items-center gap-2 font-label uppercase tracking-widest text-[10px] text-on-surface" href="#">
+            <a class="svc-link inline-flex items-center gap-2 font-label uppercase tracking-widest text-[10px] text-white opacity-70 hover:opacity-100 transition-opacity duration-300" href="#">
               View Procedure <span class="material-symbols-outlined text-sm">arrow_forward</span>
             </a>
           </div>
@@ -551,12 +562,12 @@
       <div class="md:col-span-5 rv-l">
         <div class="aspect-[4/5] bg-surface-container img-wipe relative" id="robotic-img-wrap">
           <img alt="Robotic surgery interface"
-               class="w-full h-full object-cover filter grayscale contrast-125 kb-img img-reveal"
+               class="w-full h-full object-cover filter contrast-125 kb-img img-reveal"
                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDULFgxiz5HEYchzB5FAxfwEv5wQ80OMux0IEmfEZ_O_g0FELui2YvNEMZ4hjosYwMSUpajcZOemTP1llZ3-pDh1fukBefizEeDhVJbZPx0K7PmFtfg4TQi_9N4KT3Wwi7sKJOH9DmX0tnRDA5GQ2WOaaDwW0VFbLuQucZNWuWwUEaosHS2XtrJxLNZ_qsSrcfvxPklFnbkGJr3LVhgq-3dQP24RwVOi3GEXBSNyzjyLmTB-d__WSIoKx4FTGZlyKzlyp23snpiCdnL"/>
           <!-- Floating dark card -->
-          <div class="float-card bg-[#4A473E] p-10 text-surface max-w-xs rv" style="transition-delay:0.6s">
-            <h4 class="font-headline text-2xl mb-4 italic">The Digital Edge</h4>
-            <p class="font-body text-sm leading-relaxed opacity-80">
+          <div class="float-card bg-black p-10 text-surface max-w-xs rv" style="transition-delay:0.6s">
+            <h4 class="font-headline text-2xl mb-4 italic text-[#C8B89E] ">The Digital Edge</h4>
+            <p class="font-body text-sm leading-relaxed">
               Using sub-millimeter precision to ensure every implant is placed with mathematical perfection tailored to your unique anatomy.
             </p>
           </div>
@@ -564,12 +575,12 @@
       </div>
 
       <!-- Text -->
-      <div class="md:col-span-6 md:col-start-7 space-y-0">
-        <span class="eyebrow font-label uppercase text-xs text-outline mb-6 block" id="rob-eyebrow">Innovation</span>
-        <h2 class="rv font-headline text-5xl text-on-surface mb-10 leading-tight" style="transition-delay:0.1s">
-          Robotic Joint<br/> Restoration
+      <div class="md:col-span-6 md:col-start-7 space-y-3">
+        <span class="eyebrow font-label uppercase text-xs text-outline mb-6 block font-semibold" id="rob-eyebrow">Innovation</span>
+        <h2 class="rv font-headline text-5xl text-black mb-10 leading-tight" style="transition-delay:0.1s">
+          Robotic Joint Restoration
         </h2>
-        <div class="sg space-y-8 font-body text-lg text-primary leading-relaxed">
+        <div class="sg space-y-8 font-body text-lg text-primary leading-relaxed font-semibold">
           <p>
             Traditional orthopedic surgery relies on the surgeon's eye. While experience is vital, robotic assistance provides real-time data and intra-operative mapping that ensures unparalleled accuracy.
           </p>
@@ -592,7 +603,7 @@
   </section>
 
   <!-- ── Philosophy Section ────────────────────────────── -->
-  <section class="py-32 phil-section">
+  <section class="py-32 phil-section bg-[#C8B89E]">
     <div class="max-w-[1440px] mx-auto px-12">
       <div class="flex flex-col items-center text-center">
 
@@ -605,7 +616,7 @@
           </h2>
         </blockquote>
 
-        <cite class="cite-tag mt-12 not-italic font-label uppercase tracking-[0.4em] text-sm text-outline" id="phil-cite">
+        <cite class="cite-tag mt-12 not-italic font-bold uppercase tracking-[0.4em] text-sm text-outline text-black" id="phil-cite">
           — Dr. Abhishek Shenoy
         </cite>
 
@@ -615,16 +626,16 @@
 
   <!-- ── CTA Section ───────────────────────────────────── -->
   <section class="px-12 py-32 max-w-[1440px] mx-auto">
-    <div class="cta-box rv-sc bg-on-surface p-16 md:p-24 flex flex-col md:flex-row justify-between items-center gap-12">
+    <div class="cta-box rv-sc bg-black p-16 md:p-24 flex flex-col md:flex-row justify-between items-center gap-12">
       <div>
-        <h2 class="font-headline text-5xl text-surface mb-4">
+        <h2 class="font-headline text-5xl text-[#C8B89E] mb-4">
           <span class="cta-line">Begin Your Recovery</span>
         </h2>
         <p class="rv font-body text-surface/60 text-lg" style="transition-delay:0.25s" id="cta-sub">
           Consultations available for complex joint cases.
         </p>
       </div>
-      <button class="btn-sh rv bg-surface text-on-surface px-12 py-5 font-label uppercase tracking-widest text-sm hover:bg-secondary-container transition-colors" style="transition-delay:0.35s" id="cta-btn">
+      <button class="btn-sh rv  text-on-surface px-12 py-5 font-label uppercase tracking-widest text-sm hover:bg-[#C8B89E] bg-secondary-container transition-colors" style="transition-delay:0.35s" id="cta-btn">
         Request Appointment
       </button>
     </div>
@@ -633,50 +644,22 @@
 </main>
 
 <!-- ── Footer ────────────────────────────────────────────── -->
-<footer class="bg-white py-20 border-t border-border-light">
-<div class="max-w-7xl mx-auto px-6 lg:px-12">
-<div class="grid md:grid-cols-12 gap-16 mb-20">
-<div class="md:col-span-5">
-<div class="text-2xl font-display tracking-[0.2em] uppercase text-text-primary mb-8">
-                        Dr. Abhishek <span class="font-light italic text-beige">Shenoy</span>
-</div>
-<p class="max-w-xs text-text-secondary text-sm leading-relaxed mb-10">
-                        Dedicated to providing advanced orthopaedic solutions through innovation, precision, and compassionate care.
-                    </p>
-<div class="flex gap-6">
-<a class="text-text-secondary hover:text-beige transition-colors" href="#">Instagram</a>
-<a class="text-text-secondary hover:text-beige transition-colors" href="#">LinkedIn</a>
-<a class="text-text-secondary hover:text-beige transition-colors" href="#">Twitter</a>
-</div>
-</div>
-<div class="md:col-span-3">
-<h5 class="font-bold uppercase tracking-[0.3em] text-[10px] text-text-primary mb-10">The Clinic</h5>
-<ul class="space-y-4 text-text-secondary text-xs tracking-widest uppercase">
-<li><a class="hover:text-beige transition-colors" href="#about">Philosophy</a></li>
-<li><a class="hover:text-beige transition-colors" href="#services">Procedures</a></li>
-<li><a class="hover:text-beige transition-colors" href="#patient-stories">Stories</a></li>
-<li><a class="hover:text-beige transition-colors" href="#contact">Inquiry</a></li>
-</ul>
-</div>
-<div class="md:col-span-4">
-<h5 class="font-bold uppercase tracking-[0.3em] text-[10px] text-text-primary mb-10">Subscribe to Health Notes</h5>
-<p class="text-text-secondary text-xs leading-relaxed mb-6">Expert insights on joint health and longevity delivered monthly.</p>
-<div class="flex border-b border-border-light">
-<input class="bg-transparent border-0 focus:ring-0 text-xs py-3 px-0 w-full text-text-primary placeholder:text-border-light" placeholder="Email Address" type="email"/>
-<button class="text-beige text-[10px] font-bold uppercase tracking-widest pl-4">Join</button>
-</div>
-</div>
-</div>
-<div class="pt-10 border-t border-border-light flex flex-col md:flex-row justify-between items-center gap-6">
-<p class="text-[9px] text-text-secondary uppercase tracking-[0.3em]">
-                    © 2024 Dr. Abhishek Shenoy. Meticulously Crafted Care.
-                </p>
-<div class="flex items-center gap-8 text-[9px] uppercase tracking-[0.3em] font-medium text-text-secondary">
-<a class="hover:text-beige" href="#">Privacy Policy</a>
-<a class="hover:text-beige" href="#">Terms of Care</a>
-</div>
-</div>
-</div>
+<footer class="bg-white w-full border-t border-black/5">
+  <div class="flex flex-col md:flex-row justify-between items-center px-6 md:px-12 py-20 gap-8 max-w-[1920px] mx-auto">
+    <div class="flex flex-col items-center md:items-start gap-4">
+      <div class="font-newsreader text-xl font-bold text-on-surface">Dr. Abhishek Shenoy</div>
+      <p class="font-manrope text-[10px] tracking-wider uppercase text-on-surface-variant">
+        © 2024 Dr. Abhishek Shenoy. All rights reserved. <br class="md:hidden"/>
+        Surgical Precision & Human Restoration.
+      </p>
+    </div>
+    <div class="flex gap-8">
+      <a class="font-manrope text-[10px] tracking-wider uppercase text-on-surface-variant hover:text-primary font-bold transition-colors" href="#">Privacy Policy</a>
+      <a class="font-manrope text-[10px] tracking-wider uppercase text-on-surface-variant hover:text-primary font-bold transition-colors" href="#">Terms of Service</a>
+      <a class="font-manrope text-[10px] tracking-wider uppercase text-on-surface-variant hover:text-primary font-bold transition-colors" href="#">Clinical Credits</a>
+      <a class="font-manrope text-[10px] tracking-wider uppercase text-on-surface-variant hover:text-primary font-bold transition-colors" href="#">Accessibility</a>
+    </div>
+  </div>
 </footer>
 
 <!-- ── JS ─────────────────────────────────────────────────── -->
