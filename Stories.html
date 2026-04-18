@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Insights & Stories | Dr. Abhishek Shenoy</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Manrope:wght@200..800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-surface": "#1A1A1A",
+                        "on-surface-variant": "#404040",
+                        "primary": "#1A1A1A",
+                        "tertiary-container": "#C8B89E",
+                        "surface": "#FFFFFF",
+                        "background": "#FFFFFF",
+                        "on-primary": "#FFFFFF",
+                        "outline-variant": "#AFB3B0",
+                        "surface-container-low": "#F5F5F5",
+                        "surface-container-lowest": "#FFFFFF"
+                    },
+                    fontFamily: {
+                        "headline": ["Newsreader"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    },
+                    borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+                    animation: {
+                        'marquee': 'marquee 40s linear infinite',
+                    },
+                    keyframes: {
+                        marquee: {
+                            '0%': { transform: 'translateX(0%)' },
+                            '100%': { transform: 'translateX(-100%)' },
+                        }
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Manrope', sans-serif; }
+        h1, h2, h3, h4 { font-family: 'Newsreader', serif; }
+        
+        @keyframes navSlideDown {
+            from { transform: translateY(-100%); opacity: 0; }
+            to   { transform: translateY(0); opacity: 1; }
+        }
+        nav { animation: navSlideDown 0.7s cubic-bezier(0.22,1,0.36,1) 0.2s both; }
+        
+        .video-card-shadow {
+            box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.15);
+        }
+
+        video {
+            background: #000;
+            object-fit: cover;
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .editorial-shadow {
+            box-shadow: 0 20px 40px -15px rgba(49, 51, 44, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-white text-on-surface selection:bg-tertiary-container selection:text-on-primary">
+
+<nav class="fixed top-0 w-full z-[60] bg-white/90 backdrop-blur-xl border-b border-black/5">
+  <div class="flex justify-between items-center px-6 md:px-12 py-6 max-w-[1920px] mx-auto">
+    
+    <div class="font-headline text-2xl md:text-2xl text-on-surface shrink-0">
+      Dr. Abhishek Shenoy
+    </div>
+
+    <div class="hidden md:flex gap-8 items-center absolute left-1/2 -translate-x-1/2">
+      <a class="uppercase tracking-widest text-xs font-bold text-on-surface border-b-2 border-on-surface pb-1 transition-opacity" href="/">Home</a>
+      <a class="uppercase tracking-widest text-xs font-bold text-on-surface-variant opacity-70 hover:opacity-100 transition-opacity" href="/expertise.html">Expertise</a>
+      <a class="uppercase tracking-widest text-xs font-bold text-on-surface-variant opacity-70 hover:opacity-100 transition-opacity" href="/stories.html">Stories</a>
+      <a class="uppercase tracking-widest text-xs font-bold text-on-surface-variant opacity-70 hover:opacity-100 transition-opacity" href="/contact.html">Contact</a>
+    </div>
+
+    <div class="flex items-center gap-3 md:gap-6">
+      <button class="hidden md:block bg-primary text-on-primary px-6 py-3 text-xs uppercase tracking-widest font-bold hover:bg-tertiary-container hover:text-on-tertiary-container transition-all active:scale-[0.99]">
+        Book Consultation
+      </button>
+      
+      <button id="menu-toggle" class="md:hidden flex items-center justify-center text-on-surface">
+        <span class="material-symbols-outlined text-3xl">menu</span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div id="mobile-menu" class="fixed inset-0 z-[70] invisible md:hidden">
+    
+    <div id="menu-backdrop" class="absolute inset-0 bg-black/40 backdrop-blur-sm opacity-0 transition-opacity duration-500"></div>
+
+    <div id="menu-drawer" class="absolute right-0 top-0 h-full w-[85%] max-w-sm bg-white translate-x-full transition-transform duration-500 ease-in-out border-l border-black/5 shadow-2xl">
+
+        <div class="flex flex-col h-full px-10 py-12">
+
+            <div class="flex justify-between items-center mb-16">
+                <div class="space-y-1">
+                    <div class="font-label text-2xl tracking-wide uppercase font-bold text-on-surface">Menu</div>
+                    <div class="h-[2px] w-8 bg-tertiary-container"></div>
+                </div>
+                <button id="menu-close" class="text-on-surface hover:rotate-90 transition-transform duration-300 active:scale-90">
+                    <span class="material-symbols-outlined text-3xl">close</span>
+                </button>
+            </div>
+            
+            <div class="flex flex-col gap-0">
+
+                <a class="group flex items-center justify-between py-6 border-b border-black/5 font-label text-2xl tracking-wide text-on-surface-variant hover:text-primary transition-all active:scale-95 active:bg-black/5" href="/">
+                    <div class="flex items-center gap-4">
+                        <span class="material-symbols-outlined text-xl group-hover:translate-x-1 transition">home</span>
+                        <span>Home</span>
+                    </div>
+                    <span class="material-symbols-outlined opacity-0 group-hover:opacity-100 transition-opacity text-sm">arrow_forward_ios</span>
+                </a>
+
+                <a class="group flex items-center justify-between py-6 border-b border-black/5 font-label text-2xl tracking-wide text-on-surface-variant hover:text-primary transition-all active:scale-95 active:bg-black/5" href="/expertise.html">
+                    <div class="flex items-center gap-4">
+                        <span class="material-symbols-outlined text-xl group-hover:translate-x-1 transition">medical_services</span>
+                        <span>Expertise</span>
+                    </div>
+                    <span class="material-symbols-outlined opacity-0 group-hover:opacity-100 transition-opacity text-sm">arrow_forward_ios</span>
+                </a>
+
+                <a class="group flex items-center justify-between py-6 border-b border-black/5 font-label text-2xl tracking-wide bg-tertiary-container/10 text-primary px-2 -mx-2 transition-all active:scale-95" href="/stories.html">
+                    <div class="flex items-center gap-4">
+                        <span class="material-symbols-outlined text-xl text-tertiary-container">auto_stories</span>
+                        <span class="relative">
+                            Stories
+                        </span>
+                    </div>
+                    <span class="material-symbols-outlined text-sm text-tertiary-container">fiber_manual_record</span>
+                </a>
+
+                <a class="group flex items-center justify-between py-6 border-b border-black/5 font-label text-2xl tracking-wide text-on-surface-variant hover:text-primary transition-all active:scale-95 active:bg-black/5" href="/contact.html">
+                    <div class="flex items-center gap-4">
+                        <span class="material-symbols-outlined text-xl group-hover:translate-x-1 transition">call</span>
+                        <span>Contact</span>
+                    </div>
+                    <span class="material-symbols-outlined opacity-0 group-hover:opacity-100 transition-opacity text-sm">arrow_forward_ios</span>
+                </a>
+
+            </div>
+
+            <div class="mt-12 space-y-4 opacity-60">
+                <p class="font-label text-[15px] uppercase tracking-[0.2em] text-black font-bold">Location</p>
+                <p class="font-label text-sm leading-relaxed text-black">
+                    Superhealth Hospital<br/>
+                    No. 12, 1st Cross, 5th Block,
+Koramangala, Bangalore,
+Karnataka 560034
+                </p>
+            </div>
+
+            <div class="mt-auto pt-8">
+                <button class="w-full border-2 border-primary bg-primary text-on-primary py-5 font-label text-[10px] uppercase tracking-[0.3em] font-bold 
+                hover:bg-tertiary-container hover:text-on-tertiary-container hover:border-tertiary-container 
+                transition-all duration-300 flex items-center justify-center gap-2 active:scale-95">
+                    Book Consultation
+                </button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<main class="pt-32">
+    <header class="max-w-4xl mx-auto mb-16 text-center px-6">
+        <span class="font-body text-[0.7rem] uppercase tracking-[0.4em] font-semibold mb-8 block">Education through Precision</span>
+        <h1 class="font-headline text-5xl md:text-7xl leading-[1.1] text-on-surface ">
+            Clinical <span class="italic">Insights</span> 
+        </h1>
+        <h1 class="font-headline text-5xl md:text-7xl leading-[1.1] text-[#C8B89E] mb-6">
+            Patient Journeys
+        </h1>
+        <p class="font-body text-base  max-w-xl mx-auto leading-relaxed font-semibold ">
+            Real recovery captured at the moment. Explore our archive of clinical observations and success stories.
+        </p>
+    </header>
+
+    <section class="max-w-5xl mx-auto px-6 mb-32">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="space-y-4">
+                <div class="relative aspect-[9/16] bg-black overflow-hidden video-card-shadow border border-black/5">
+                    <video class="w-full h-full grayscale hover:grayscale-0 transition-all duration-500" controls playsinline>
+                        <source src="/assets/herovideo.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="px-2">
+                    <span class="text-[0.6rem] font-bold uppercase tracking-widest text-tertiary-container">Recovery Step 01</span>
+                    <h3 class="font-headline text-xl mt-1 leading-tight">Post-Op Mobility Basics</h3>
+                </div>
+            </div>
+
+            <div class="space-y-4">
+                <div class="relative aspect-[9/16] bg-black overflow-hidden video-card-shadow border border-black/5">
+                    <video class="w-full h-full grayscale hover:grayscale-0 transition-all duration-500" controls playsinline>
+                        <source src="/assets/video2.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="px-2">
+                    <span class="text-[0.6rem] font-bold uppercase tracking-widest text-tertiary-container">Patient Story</span>
+                    <h3 class="font-headline text-xl mt-1 leading-tight">Sarah: Week 4 Progress</h3>
+                </div>
+            </div>
+
+            <div class="space-y-4">
+                <div class="relative aspect-[9/16] bg-black overflow-hidden video-card-shadow border border-black/5">
+                    <video class="w-full h-full grayscale hover:grayscale-0 transition-all duration-500" controls playsinline>
+                        <source src="/assets/video1.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="px-2">
+                    <span class="text-[0.6rem] font-bold uppercase tracking-widest text-tertiary-container">Clinical Tip</span>
+                    <h3 class="font-headline text-xl mt-1 leading-tight">Correcting Biomechanics</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-surface-container-low overflow-hidden">
+    <div class="max-w-[1440px] mx-auto px-6 md:px-12 relative">
+
+        <!-- HEADER -->
+        <div class="flex items-center justify-between mb-16">
+            <h2 class="font-label text-2xl uppercase tracking-[0.2em] text-black font-semibold ">
+                Selected Testimonials
+            </h2>
+
+            <div class="flex gap-6">
+                <button id="prevBtn" class="hover:opacity-50 transition">
+                    <span class="material-symbols-outlined text-3xl">chevron_left</span>
+                </button>
+                <button id="nextBtn" class="hover:opacity-50 transition">
+                    <span class="material-symbols-outlined text-3xl">chevron_right</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- SLIDER -->
+        <div id="testimonialSlider"
+     class="flex overflow-x-auto gap-10 snap-x snap-mandatory scroll-smooth no-scrollbar"
+     style="scroll-behavior: smooth;">
+            <!-- REVIEW 1 -->
+            <div class="w-full md:w-[700px] flex-shrink-0 snap-center">
+                <div class="p-10 md:p-14 editorial-shadow border border-black/5 bg-white">
+                    <blockquote class="text-lg md:text-2xl italic leading-relaxed mb-8">
+                        Cannot recommend Superhealth enough. Especially for preventative physician consultations.
+                        Saw 8 doctors and got 4 tests — all under 4.5 hours at a price &lt;80% of other hospitals.
+                        Dr. Shenoy’s approach is bar none.
+                    </blockquote>
+                    <p class="font-bold uppercase text-sm tracking-widest">Aryaman Ramanathan</p>
+                </div>
+            </div>
+
+            <!-- REVIEW 2 -->
+            <div class="w-full md:w-[700px] flex-shrink-0 snap-center">
+                <div class="p-10 md:p-14 editorial-shadow border border-black/5 bg-white">
+                    <blockquote class="text-lg md:text-2xl italic leading-relaxed mb-8">
+                        The staff was very polite and supportive. The hospital was clean and well maintained.
+                        Dr. Abhishek explained everything clearly. Tests were efficient and facilities modern.
+                    </blockquote>
+                    <p class="font-bold uppercase text-sm tracking-widest">Gyan Deep Boruah</p>
+                </div>
+            </div>
+
+            <!-- REVIEW 3 -->
+            <div class="w-full md:w-[700px] flex-shrink-0 snap-center">
+                <div class="p-10 md:p-14 editorial-shadow border border-black/5 bg-white">
+                    <blockquote class="text-lg md:text-2xl italic leading-relaxed mb-8">
+                        Consulted Dr. Abhishek Shenoy for chronic knee pain and underwent knee replacement.
+                        Practical, confident and clear. Very positive orthopaedic experience overall.
+                    </blockquote>
+                    <p class="font-bold uppercase text-sm tracking-widest">Mansi Singh</p>
+                </div>
+            </div>
+
+            <!-- REVIEW 4 -->
+            <div class="w-full md:w-[700px] flex-shrink-0 snap-center">
+                <div class="p-10 md:p-14 editorial-shadow border border-black/5 bg-white">
+                    <blockquote class="text-lg md:text-2xl italic leading-relaxed mb-8">
+                        Excellent experience. Surgery, insurance handling, physiotherapy and follow-ups were seamless.
+                        Dr. Shenoy explained everything clearly and care was top-notch.
+                    </blockquote>
+                    <p class="font-bold uppercase text-sm tracking-widest">Venkatesh K</p>
+                </div>
+            </div>
+
+            <!-- REVIEW 5 -->
+            <div class="w-full md:w-[700px] flex-shrink-0 snap-center">
+                <div class="p-10 md:p-14 editorial-shadow border border-black/5 bg-white">
+                    <blockquote class="text-lg md:text-2xl italic leading-relaxed mb-8">
+                        Smooth and reassuring experience. Dr. Shenoy is patient, honest and empathetic.
+                        Focused on practical solutions. My recovery has been encouraging.
+                    </blockquote>
+                    <p class="font-bold uppercase text-sm tracking-widest">Surekha Nayak</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+    <section class="py-24 bg-surface overflow-hidden">
+        <div class="flex flex-col gap-8">
+            <div class="flex gap-8 animate-marquee whitespace-nowrap">
+                <div class="flex gap-8 min-w-full items-center">
+    <img class="w-[300px] h-[400px] object-cover  opacity-90 hover:opacity-100 transition-opacity" src="/assets/stories-marquee/image1.jpeg" alt="Clinical Precision"/>
+    <img class="w-[300px] h-[400px] object-cover  opacity-90 hover:opacity-100 transition-opacity" src="/assets/stories-marquee/image2.jpeg" alt="Movement Assessment"/>
+    <img class="w-[300px] h-[400px] object-cover  opacity-90 hover:opacity-100 transition-opacity" src="/assets/stories-marquee/image3.jpeg" alt="Minimalist Facility"/>
+    <img class="w-[300px] h-[400px] object-cover  opacity-90 hover:opacity-100 transition-opacity" src="/assets/stories-marquee/image4.jpeg" alt="Diagnostic Focus"/>
+    <img class="w-[300px] h-[400px] object-cover  opacity-90 hover:opacity-100 transition-opacity" src="/assets/stories-marquee/image5.jpeg" alt="Recovery Workspace"/>
+    <img class="w-[300px] h-[400px] object-cover  opacity-90 hover:opacity-100 transition-opacity" src="/assets/stories-marquee/image6.jpeg" alt="Physiotherapy Studio"/>
+    <img class="w-[300px] h-[400px] object-cover  opacity-90 hover:opacity-100 transition-opacity" src="/assets/stories-marquee/image7.jpeg" alt="Surgical Clarity"/>
+    <img class="w-[300px] h-[400px] object-cover  opacity-90 hover:opacity-100 transition-opacity" src="/assets/stories-marquee/image8.jpeg" alt="Human Motion"/>
+    <img class="w-[300px] h-[400px] object-cover  opacity-90 hover:opacity-100 transition-opacity" src="/assets/stories-marquee/image9.jpeg" alt="Extra Image 1"/>
+    <img class="w-[300px] h-[400px] object-cover  opacity-90 hover:opacity-100 transition-opacity" src="/assets/stories-marquee/image10.jpeg" alt="Extra Image 2"/>
+    <img class="w-[300px] h-[400px] object-cover  opacity-90 hover:opacity-100 transition-opacity" src="/assets/stories-marquee/image11.jpeg" alt="Extra Image 3"/>
+</div>
+                
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="bg-white w-full border-t border-black/5">
+  <div class="flex flex-col md:flex-row justify-between items-center px-6 md:px-12 py-20 gap-8 max-w-[1920px] mx-auto">
+    <div class="flex flex-col items-center md:items-start gap-4">
+      <div class="font-headline text-xl font-bold text-on-surface">Dr. Abhishek Shenoy</div>
+      <p class="font-body text-[10px] tracking-wider uppercase text-on-surface-variant">
+        © 2024 Dr. Abhishek Shenoy. All rights reserved. <br class="md:hidden"/>
+        Surgical Precision & Human Restoration.
+      </p>
+    </div>
+    <div class="flex gap-8">
+      <a class="font-body text-[10px] tracking-wider uppercase text-on-surface-variant hover:text-primary font-bold transition-colors" href="#">Privacy Policy</a>
+      <a class="font-body text-[10px] tracking-wider uppercase text-on-surface-variant hover:text-primary font-bold transition-colors" href="#">Terms of Service</a>
+      <a class="font-body text-[10px] tracking-wider uppercase text-on-surface-variant hover:text-primary font-bold transition-colors" href="#">Clinical Credits</a>
+      <a class="font-body text-[10px] tracking-wider uppercase text-on-surface-variant hover:text-primary font-bold transition-colors" href="#">Accessibility</a>
+    </div>
+  </div>
+</footer>
+<script>
+const slider = document.getElementById("testimonialSlider");
+const slides = slider.children;
+const nextBtn = document.getElementById("nextBtn");
+const prevBtn = document.getElementById("prevBtn");
+
+let index = 0;
+
+function updateSlider() {
+    const slideWidth = slides[0].offsetWidth + 40; // includes gap
+    slider.scrollTo({
+        left: index * slideWidth,
+        behavior: "smooth"
+    });
+}
+
+nextBtn.addEventListener("click", () => {
+    if (index < slides.length - 1) {
+        index++;
+        updateSlider();
+    }
+});
+
+prevBtn.addEventListener("click", () => {
+    if (index > 0) {
+        index--;
+        updateSlider();
+    }
+});
+/* ── Mobile Sidebar Logic ──────────────────────── */
+const menuToggle = document.getElementById('menu-toggle');
+const menuClose = document.getElementById('menu-close');
+const mobileMenu = document.getElementById('mobile-menu');
+const menuDrawer = document.getElementById('menu-drawer');
+const menuBackdrop = document.getElementById('menu-backdrop');
+
+function openMenu() {
+    mobileMenu.classList.remove('invisible');
+    menuBackdrop.classList.add('opacity-100');
+    menuDrawer.classList.remove('translate-x-full');
+    document.body.style.overflow = 'hidden'; // Prevents background scrolling
+}
+
+function closeMenu() {
+    menuBackdrop.classList.remove('opacity-100');
+    menuDrawer.classList.add('translate-x-full');
+    setTimeout(() => {
+        mobileMenu.classList.add('invisible');
+        document.body.style.overflow = '';
+    }, 500);
+}
+
+menuToggle?.addEventListener('click', openMenu);
+menuClose?.addEventListener('click', closeMenu);
+menuBackdrop?.addEventListener('click', closeMenu);
+</script>
+</body>
+</html>
