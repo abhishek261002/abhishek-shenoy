@@ -470,57 +470,130 @@
 <div id="read-progress" style="width:0%"></div>
 
 <!-- ─── Top Navigation ─────────────────────────────────────────── -->
-<nav class="fixed top-0 w-full z-50 bg-white dark:bg-[#31332c]/80 backdrop-blur-xl flex justify-between items-center px-6 md:px-12 py-6 max-w-[1920px] mx-auto">
-  <div class="text-2xl text-[#31332c] leading-tight tracking-tight" style="opacity:0;animation:navSlideDown 0.7s cubic-bezier(0.22,1,0.36,1) 0.4s forwards">Dr. Abhishek Shenoy</div>
-  <div class="hidden md:flex gap-8 items-center" style="opacity:0;animation:navSlideDown 0.7s cubic-bezier(0.22,1,0.36,1) 0.5s forwards">
-    <a class="uppercase tracking-widest text-xs font-semibold text-[#31332c] dark:text-[#fbf9f4] border-b border-[#31332c] dark:border-[#fbf9f4] pb-1 hover:opacity-100 transition-opacity duration-300" href="/">Home</a>
-    <a class="uppercase tracking-widest text-xs font-semibold text-[#5f5e5e] dark:text-[#ece1d1] opacity-70 hover:opacity-100 transition-opacity duration-300" href="/service.html">Expertise</a>
-    <a class="uppercase tracking-widest text-xs font-semibold text-[#5f5e5e] dark:text-[#ece1d1] opacity-70 hover:opacity-100 transition-opacity duration-300" href="#">Stories</a>
-    <a class="uppercase tracking-widest text-xs font-semibold text-[#5f5e5e] dark:text-[#ece1d1] opacity-70 hover:opacity-100 transition-opacity duration-300" href="/Contact.html">Contact</a>
+<nav class="fixed top-0 w-full z-[60] bg-white/90 backdrop-blur-xl border-b border-black/5">
+  <div class="flex justify-between items-center px-6 md:px-12 py-6 max-w-[1920px] mx-auto">
+    
+    <div class="font-headline text-2xl md:text-2xl text-on-surface shrink-0">
+      <a href="index.html">Dr. Abhishek Shenoy</a>
+    </div>
+
+    <div class="hidden md:flex gap-8 items-center absolute left-1/2 -translate-x-1/2">
+      <a class="uppercase tracking-widest text-xs font-bold text-on-surface border-b-2 border-on-surface pb-1 transition-opacity" href="/">Home</a>
+      <a class="uppercase tracking-widest text-xs font-bold text-on-surface-variant opacity-70 hover:opacity-100 transition-opacity" href="/service.html">Expertise</a>
+      <a class="uppercase tracking-widest text-xs font-bold text-on-surface-variant opacity-70 hover:opacity-100 transition-opacity" href="/stories.html">Stories</a>
+      <a class="uppercase tracking-widest text-xs font-bold text-on-surface-variant opacity-70 hover:opacity-100 transition-opacity" href="/">Contact</a>
+    </div>
+
+    <div class="flex items-center gap-3 md:gap-6">
+      <button class="hidden md:block bg-primary text-on-primary px-6 py-3 text-xs uppercase tracking-widest font-bold hover:bg-tertiary-container hover:text-on-tertiary-container transition-all active:scale-[0.99]">
+        <a href="https://www.superhealth.co.in/appointment/koramangala/doctors/dr-abhishek-shenoy-orthopedics" target="_blank" rel="noopener noreferrer">Book Consultation</a>
+      </button>
+      
+      <button id="menu-toggle" class="md:hidden flex items-center justify-center text-on-surface">
+        <span class="material-symbols-outlined text-3xl">menu</span>
+      </button>
+    </div>
   </div>
-  <button class="btn-shimmer bg-black text-on-primary px-6 py-3 text-xs uppercase tracking-widest font-bold hover:opacity-90 transition-all active:scale-[0.99]" style="opacity:0;animation:navSlideDown 0.7s cubic-bezier(0.22,1,0.36,1) 0.6s forwards">
-    Book Consultation
-  </button>
 </nav>
 
-<!-- ─── Hero Section ────────────────────────────────────────────── -->
-<section class="pt-32 pb-20 md:pt-48 md:pb-32 px-6 md:px-12">
-  <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-    <div class="space-y-8">
+<div id="mobile-menu" class="fixed inset-0 z-[70] invisible md:hidden">
+    
+    <div id="menu-backdrop" class="absolute inset-0 bg-black/40 backdrop-blur-sm opacity-0 transition-opacity duration-500"></div>
 
-      <!-- Eyebrow tag -->
+    <div id="menu-drawer" class="absolute right-0 top-0 h-full w-[85%] max-w-sm bg-white translate-x-full transition-transform duration-500 ease-in-out border-l border-black/5 shadow-2xl">
+
+        <div class="flex flex-col h-full px-10 py-12">
+
+            <div class="flex justify-between items-center mb-16">
+                <div class="space-y-1">
+                    <div class="font-label text-2xl tracking-wide uppercase font-bold text-on-surface">Menu</div>
+                    <div class="h-[2px] w-8 bg-tertiary-container"></div>
+                </div>
+                <button id="menu-close" class="text-on-surface hover:rotate-90 transition-transform duration-300 active:scale-90">
+                    <span class="material-symbols-outlined text-3xl">close</span>
+                </button>
+            </div>
+            
+            <div class="flex flex-col gap-0">
+                <a class="group flex items-center justify-between py-6 border-b border-black/55 font-label text-2xl tracking-wide bg-black text-white px-2 -mx-2 transition-all active:scale-95" href="/">
+                    <div class="flex items-center gap-4">
+                        <span class="material-symbols-outlined text-xl text-tertiary-container">home</span>
+                        <span class="relative">
+                            Home
+                        </span>
+                    </div>
+                    <span class="material-symbols-outlined text-sm text-tertiary-container">fiber_manual_record</span>
+                </a>
+              
+
+                <a class="group flex items-center justify-between py-6 border-b border-black/95 font-label text-2xl tracking-wide text-on-surface-variant hover:text-primary transition-all active:scale-95 active:bg-black/5" href="/expertise.html">
+                    <div class="flex items-center gap-4">
+                        <span class="material-symbols-outlined text-xl group-hover:translate-x-1 transition">medical_services</span>
+                        <span>Expertise</span>
+                    </div>
+                    <span class="material-symbols-outlined opacity-0 group-hover:opacity-100 transition-opacity text-sm">arrow_forward_ios</span>
+                </a>
+                <a class="group flex items-center justify-between py-6 border-b border-black/95 font-label text-2xl tracking-wide text-on-surface-variant hover:text-primary transition-all active:scale-95 active:bg-black/5" href="/stories.html">
+                    <div class="flex items-center gap-4">
+                        <span class="material-symbols-outlined text-xl group-hover:translate-x-1 transition">auto_stories</span>
+                        <span>Stories</span>
+                    </div>
+                    <span class="material-symbols-outlined opacity-0 group-hover:opacity-100 transition-opacity text-sm">arrow_forward_ios</span>
+                </a>
+                <a class="group flex items-center justify-between py-6 border-b border-black/95 font-label text-2xl tracking-wide text-on-surface-variant hover:text-primary transition-all active:scale-95 active:bg-black/5" href="/contact.html">
+                    <div class="flex items-center gap-4">
+                        <span class="material-symbols-outlined text-xl group-hover:translate-x-1 transition">call</span>
+                        <span>Contact</span>
+                    </div>
+                    <span class="material-symbols-outlined opacity-0 group-hover:opacity-100 transition-opacity text-sm">arrow_forward_ios</span>
+                </a>
+
+            </div>
+
+            <div class="mt-12 space-y-4 opacity-60">
+                <p class="font-label text-[20px] uppercase tracking-[0.2em] text-black font-bold">Location</p>
+                <p class="font-label text-[18px] leading-relaxed text-black font-semibold">
+                    Superhealth Hospital<br/>
+                    No. 12, 1st Cross, 5th Block, <br/> Koramangala, Bangalore, <br/>
+Karnataka 560034
+                </p>
+            </div>
+
+            <div class="mt-auto pt-8">
+                <button class="btn-shimmer bg-[#1A1A1A] text-on-primary px-8 py-4 text-sm uppercase tracking-widest font-bold hover:opacity-95 transition-all active:scale-[0.99]">
+          Book Consultation
+        </button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- ─── Hero Section ────────────────────────────────────────────── -->
+<section class="pt-32 pb-10 md:pt-48 md:pb-32 px-6 md:px-12">
+  <div class="max-w-7xl mx-auto flex flex-col md:grid md:grid-cols-2 gap-16 items-center">
+    
+    <div class="img-wipe-wrap hero-img-wrap reveal-right order-1 md:order-2" style="transition-delay:0.5s">
+      <img alt="Dr. Abhishek Shenoy"
+           class="lg:w-[464px] lg:h-[586px] object-cover contrast-110 mix-blend-multiply img-hover-color"
+           src="/assets/Group 1.png"/>
+    </div>
+
+    <div class="space-y-8 order-2 md:order-1">
+
       <div class="reveal" style="transition-delay:0.3s">
         <div class="inline-block border-l-2 border-primary pl-4 py-1">
           <span class="text-sm uppercase tracking-[0.2em] font-medium text-outline">Precision Orthopedics</span>
         </div>
       </div>
 
-      <!-- Hero headline — word-by-word -->
       <h1 class="text-6xl md:text-8xl leading-tight tracking-tight" id="hero-headline">
-        Dr.&nbsp;Abhishek&nbsp;Shenoy
+        Dr. Abhishek Shenoy
       </h1>
 
       <p class="reveal text-on-surface-variant leading-relaxed max-w-lg text-xl" style="transition-delay:0.9s">
-        is an experienced Orthopaedic Surgeon with over a decade of clinical expertise in managing joint disorders, sports injuries, and complex trauma. With advanced fellowship training in Trauma Surgery, Joint Replacement, and Arthroscopy &amp; Sports Medicine from leading orthopaedic centres in India, he combines surgical precision with thoughtful clinical judgment.
+        is an experienced Orthopaedic Surgeon with over a decade of clinical expertise in managing joint disorders, sports injuries, and complex trauma. With advanced fellowship training in Trauma Surgery, Joint Replacement, and Arthroscopy & Sports Medicine from leading orthopaedic centres in India, he combines surgical precision with thoughtful clinical judgment.
       </p>
-
-      <!-- Stats row -->
-      <!-- <div class="flex gap-10 pt-2">
-        <div class="stat-block" style="transition-delay:1.0s">
-          <div class="text-3xl font-headline font-light" data-count="10">10+</div>
-          <div class="text-xs uppercase tracking-widest text-outline mt-1">Years Experience</div>
-        </div>
-        <div class="stat-block w-px bg-outline-variant/30" style="transition-delay:1.05s"></div>
-        <div class="stat-block" style="transition-delay:1.1s">
-          <div class="text-3xl font-headline font-light" data-count="2000">2000+</div>
-          <div class="text-xs uppercase tracking-widest text-outline mt-1">Surgeries</div>
-        </div>
-        <div class="stat-block w-px bg-outline-variant/30" style="transition-delay:1.15s"></div>
-        <div class="stat-block" style="transition-delay:1.2s">
-          <div class="text-3xl font-headline font-light" data-count="3">3</div>
-          <div class="text-xs uppercase tracking-widest text-outline mt-1">Fellowships</div>
-        </div>
-      </div> -->
 
       <div class="flex flex-wrap gap-4 pt-4 reveal" style="transition-delay:1.3s">
         <button class="btn-shimmer bg-[#1A1A1A] text-on-primary px-8 py-4 text-sm uppercase tracking-widest font-bold hover:opacity-95 transition-all active:scale-[0.99]">
@@ -532,28 +605,13 @@
       </div>
     </div>
 
-    <!-- Hero image with wipe reveal + ken-burns -->
-    <div class="img-wipe-wrap hero-img-wrap reveal-right" style="transition-delay:0.5s">
-      <img alt="Dr. Abhishek Shenoy"
-           class="w-[464px] h-[586px] object-cover contrast-110 mix-blend-multiply img-hover-color"
-           src="/assets/Group 1.png"/>
-    </div>
-
   </div>
-
-  <!-- Scroll indicator -->
-  <!-- <div class="flex justify-center mt-16 md:mt-24">
-    <div class="scroll-bob flex flex-col items-center gap-2 opacity-50">
-      <span class="text-[10px] uppercase tracking-[0.25em] font-semibold text-outline">Scroll</span>
-      <div class="w-px h-10 bg-outline-variant/50"></div>
-    </div>
-  </div> -->
 </section>
 
 <!-- ─── Core Positioning Section ───────────────────────────────── -->
-<section class="bg-white-container-low py-24 md:py-40 px-6 md:px-12">
+<section class="bg-white-container-low py-14 md:py-40 px-6 md:px-12">
   <div class="max-w-7xl mx-auto">
-    <div class="grid md:grid-cols-12 gap-12 items-start">
+    <div class="grid md:grid-cols-12 gap-2 items-start">
 
       <div class="md:col-span-5 reveal-left">
         <h2 class="text-4xl md:text-6xl leading-tight mb-8">
@@ -567,7 +625,7 @@
         </p>
 
         <!-- 3-column approach cards -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 stagger-children">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-1 stagger-children">
           <div class="space-y-4 card-lift p-6 bg-white">
             <span class="float-num text-4xl font-headline italic text-outline-variant/90">01</span>
             <h3 class="text-xl font-medium">Avoid injuries</h3>
@@ -591,20 +649,18 @@
 </section>
 
 <!-- ─── Primary Focus Section (Sports & ACL) ─────────────────── -->
-<section class="py-24 md:py-40 px-6 md:px-12 overflow-hidden">
+<section class="py-4 md:py-40 px-6 md:px-12 overflow-hidden">
   <div class="max-w-7xl mx-auto">
     <div class="flex flex-col md:flex-row gap-20 items-center">
 
-      <!-- Image column -->
       <div class="w-full md:w-1/2 order-2 md:order-1 relative">
         <div class="aspect-square bg-surface-container overflow-hidden img-wipe-wrap reveal-left">
           <img alt="Sports Performance"
                class="w-full h-full object-cover img-hover-color"
                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJ2MZYZkYLc4mZ6IYsKDOlCsFoDI9KiqoA2lHrpXuczJl3_aqQFrEMNTg5CSTZ_0-veEtKliMW86VaZ-cVghUJdm3nlFKIHUgUf1y8aXSztuXMI_umPAZWShJIBFFsmtg7lRzucyRi1WDBO5KwQR6SrsCapSxAbJ9XFJpq1axF4eoqgo1YH_RmX8Z3AQHA1lYweWGo7r5bKK7HJLrYJS7RZoLETYocYiSxL_UIZPwpAbivdavppQnOwZzEyyvsAqfjWb6DyhB3G_CP"/>
         </div>
-        <!-- Floating arthroscopic techniques card -->
-        <div class="arthro-card absolute -bottom-10 -right-10 hidden md:block w-64 h-80 bg-secondary-container p-8">
-          <h4 class="text-2xl italic  mb-4">Arthroscopic Techniques</h4>
+        <div class="arthro-card relative z-10 mx-auto -mt-20 md:mt-0 md:absolute md:-bottom-10 md:-right-10 w-[85%] md:w-64 h-auto md:h-80 bg-secondary-container p-8 shadow-xl">
+          <h4 class="text-2xl italic mb-4">Arthroscopic Techniques</h4>
           <ul class="text-xs uppercase tracking-widest space-y-4 font-semibold text-on-secondary-container stagger-children">
             <li>• Minimally Invasive</li>
             <li>• Faster Recovery</li>
@@ -614,9 +670,8 @@
         </div>
       </div>
 
-      <!-- Text column -->
       <div class="w-full md:w-1/2 order-1 md:order-2 space-y-8">
-        <h2 class="reveal text-4xl md:text-5xl">Sports Medicine &amp; <span class="italic">ACL Reconstruction</span></h2>
+        <h2 class="reveal text-4xl md:text-5xl">Sports Medicine & <span class="italic">ACL Reconstruction</span></h2>
         <p class="reveal text-on-surface-variant leading-relaxed" style="transition-delay:0.1s">
           A major focus of Dr. Shenoy's practice is sports injury management, especially ACL injuries and ligament reconstruction. Using advanced arthroscopic techniques, we ensure a safe return to peak performance.
         </p>
@@ -644,7 +699,7 @@
 <section class="bg-black py-24 md:py-40 px-6 md:px-12">
   <div class="max-w-7xl mx-auto">
 
-    <div class="text-center mb-24 max-w-3xl mx-auto">
+    <div class="text-center lg:mb-24 mb-10 max-w-3xl mx-auto">
       <h2 class="reveal text-white text-5xl md:text-7xl font-light mb-6">Preventive Orthopaedics</h2>
       <p class="reveal  text-xl italic font-headline  text-[#C8B89E]" style="transition-delay:0.15s">Stop Problems Before They Start</p>
       <div class="line-draw h-[4px] bg-[#C8B89E] mx-auto mt-8 reveal" style="transition-delay:0.3s"></div>
@@ -687,7 +742,7 @@
 </section>
 
 <!-- ─── Minimizing Surgery / Bento ─────────────────────────────── -->
-<section class="py-24 md:py-40 px-6 md:px-12 bg-white">
+<section class="py-14 md:py-40 px-6 md:px-12 bg-white">
   <div class="max-w-7xl mx-auto">
     <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
       <div>
@@ -702,7 +757,7 @@
 
       <div class="bento-card md:col-span-2 bg-black p-12 flex flex-col justify-between card-lift" style="transition-delay:0.0s">
         <span class="text-xs uppercase tracking-widest text-[#C8B89E]">Methodology 01</span>
-        <div class="mt-20">
+        <div class="md:mt-20 mt-10">
           <h3 class="text-3xl font-light mb-4 text-white">Integrated Risk Assessment</h3>
           <p class="text-on-surface-variant leading-relaxed max-w-md text-white opacity-70">Comprehensive biomechanical profiling that combines clinical expertise with movement analysis to predict and prevent future injuries.</p>
         </div>
@@ -710,7 +765,7 @@
 
       <div class="bento-card bg-secondary-container p-12 flex flex-col justify-between card-lift" style="transition-delay:0.15s">
         <span class="text-xs uppercase tracking-widest font-bold opacity-50">Methodology 02</span>
-        <div class="mt-20">
+        <div class="md:mt-20 mt-10">
           <h3 class="text-2xl  mb-4">Posture &amp; Ergonomics</h3>
           <p class="text-sm  leading-relaxed">Correcting the foundation of daily movement to alleviate chronic strain.</p>
         </div>
@@ -718,7 +773,7 @@
 
       <div class="bento-card bg-white border border-black border-[2px] p-12 flex flex-col justify-between card-lift" style="transition-delay:0.3s">
         <span class="text-xs uppercase tracking-widest font-bold opacity-50">Methodology 03</span>
-        <div class="mt-20">
+        <div class="md:mt-20 mt-10">
           <h3 class="text-2xl mb-4">Conditioning</h3>
           <p class="text-sm  leading-relaxed">Strength protocols designed for joint longevity and stability.</p>
         </div>
@@ -738,9 +793,9 @@
 </section>
 
 <!-- ─── Secondary Services ──────────────────────────────────────── -->
-<section class="bg-white py-24 md:py-40 px-6 md:px-12">
+<section class="bg-white py-14 md:py-20 px-6 md:px-12 border border-outline-variant/90">
   <div class="max-w-7xl mx-auto">
-    <h2 class="reveal text-4xl md:text-5xl mb-16 text-center md:text-left">Advanced Surgical Care <br/><span class="italic">When Needed</span></h2>
+    <h2 class="reveal text-4xl md:text-5xl md:mb-16 mb-6 text-center md:text-left">Advanced Surgical Care <br/><span class="italic">When Needed</span></h2>
     <div class="grid md:grid-cols-2 gap-px bg-outline-variant/20">
 
       <div class="bento-card reveal-left bg-white p-12 space-y-8 card-lift" style="transition-delay:0.1s">
@@ -778,7 +833,7 @@
 </section>
 
 <!-- ─── Philosophy Section ──────────────────────────────────────── -->
-<section class="py-24 md:py-48 px-6 md:px-12">
+<section class="py-14 md:py-20 px-6 md:px-12">
   <div class="max-w-4xl mx-auto text-center">
     <div class="vline-grow w-px bg-surface-tint mx-auto mb-12"></div>
     <blockquote class="text-4xl md:text-6xl font-light leading-tight text-on-surface" id="philosophy-quote">
@@ -800,7 +855,7 @@
 
   <div class="max-w-7xl mx-auto relative z-10">
     <div class="max-w-2xl">
-      <h2 class="text-5xl md:text-7xl font-light mb-8">
+      <h2 class="text-4xl md:text-7xl font-light mb-8">
         <span class="cta-title-line"><span class="cta-title-inner">Don't Wait for</span></span>
         <span class="cta-title-line"><span class="cta-title-inner italic text-[#E6D3BA]" style="transition-delay:0.15s">Pain to Start</span></span>
       </h2>
@@ -1005,6 +1060,32 @@ if (arthroCard) {
   }, { threshold: 0.3 });
   ioArt.observe(arthroCard);
 }
+/* ── Mobile Sidebar Logic ──────────────────────── */
+const menuToggle = document.getElementById('menu-toggle');
+const menuClose = document.getElementById('menu-close');
+const mobileMenu = document.getElementById('mobile-menu');
+const menuDrawer = document.getElementById('menu-drawer');
+const menuBackdrop = document.getElementById('menu-backdrop');
+
+function openMenu() {
+    mobileMenu.classList.remove('invisible');
+    menuBackdrop.classList.add('opacity-100');
+    menuDrawer.classList.remove('translate-x-full');
+    document.body.style.overflow = 'hidden'; // Prevents background scrolling
+}
+
+function closeMenu() {
+    menuBackdrop.classList.remove('opacity-100');
+    menuDrawer.classList.add('translate-x-full');
+    setTimeout(() => {
+        mobileMenu.classList.add('invisible');
+        document.body.style.overflow = '';
+    }, 500);
+}
+
+menuToggle?.addEventListener('click', openMenu);
+menuClose?.addEventListener('click', closeMenu);
+menuBackdrop?.addEventListener('click', closeMenu);
 </script>
 
 </body></html>
