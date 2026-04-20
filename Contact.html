@@ -1,11 +1,17 @@
-<!DOCTYPE html>
+<!doctype html>
 <html class="light" lang="en">
-<head>
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Contact | Dr. Abhishek Shenoy - Precision Orthopedics</title>
-    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Manrope:wght@200..800&display=swap" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Manrope:wght@200..800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <script id="tailwind-config">
       tailwind.config = {
@@ -13,635 +19,1062 @@
         theme: {
           extend: {
             colors: {
-              "error-dim": "#5C1202","on-primary-container": "#525151",
-              "surface-container-highest": "#E0E3E0","on-background": "#2F3331",
-              "error-container": "#FE8B70","surface-container": "#EDEEEB",
-              "primary-fixed-dim": "#D6D4D3","surface-container-lowest": "#FFFFFF",
-              "tertiary-dim": "#575348","primary-container": "#E5E2E1",
-              "on-tertiary-container": "#605B51","on-secondary": "#FFF8F1",
-              "surface-container-low": "#F3F4F1","tertiary-fixed-dim": "#ECE5D7",
-              "background": "#F5F4ED","on-primary-fixed": "#403F3F",
-              "surface-variant": "#E0E3E0","secondary-dim": "#5F513A",
-              "inverse-surface": "#0D0E0E","error": "#9E422C",
-              "secondary-fixed-dim": "#E5D2B4","secondary-fixed": "#F4E0C1",
-              "primary-fixed": "#E5E2E1","tertiary-fixed": "#FAF3E5",
-              "on-error-container": "#742410","on-tertiary-fixed-variant": "#6A665B",
-              "on-primary-fixed-variant": "#5C5B5B","surface-dim": "#D6DBD7",
-              "outline": "#777C79","surface-container-high": "#E6E9E6",
-              "surface-bright": "#FAF9F7","inverse-primary": "#FFFFFF",
-              "on-surface": "#2F3331","surface-tint": "#5F5E5E",
-              "on-secondary-fixed-variant": "#675A41","primary-dim": "#535252",
-              "surface": "#FAF9F7","secondary-container": "#F4E0C1",
-              "secondary": "#6B5D45","outline-variant": "#AFB3B0",
-              "on-secondary-container": "#5D5038","on-primary": "#FAF7F6",
-              "tertiary": "#635F54","on-tertiary-fixed": "#4D493F",
-              "on-surface-variant": "#5C605D","on-error": "#FFF7F6",
-              "inverse-on-surface": "#9D9D9B","on-secondary-fixed": "#4A3E27",
-              "tertiary-container": "#FAF3E5","on-tertiary": "#FFF8EC",
-              "primary": "#5F5E5E"
+              "error-dim": "#5C1202",
+              "on-primary-container": "#525151",
+              "surface-container-highest": "#E0E3E0",
+              "on-background": "#2F3331",
+              "error-container": "#FE8B70",
+              "surface-container": "#EDEEEB",
+              "primary-fixed-dim": "#D6D4D3",
+              "surface-container-lowest": "#FFFFFF",
+              "tertiary-dim": "#575348",
+              "primary-container": "#E5E2E1",
+              "on-tertiary-container": "#605B51",
+              "on-secondary": "#FFF8F1",
+              "surface-container-low": "#F3F4F1",
+              "tertiary-fixed-dim": "#ECE5D7",
+              background: "#F5F4ED",
+              "on-primary-fixed": "#403F3F",
+              "surface-variant": "#E0E3E0",
+              "secondary-dim": "#5F513A",
+              "inverse-surface": "#0D0E0E",
+              error: "#9E422C",
+              "secondary-fixed-dim": "#E5D2B4",
+              "secondary-fixed": "#F4E0C1",
+              "primary-fixed": "#E5E2E1",
+              "tertiary-fixed": "#FAF3E5",
+              "on-error-container": "#742410",
+              "on-tertiary-fixed-variant": "#6A665B",
+              "on-primary-fixed-variant": "#5C5B5B",
+              "surface-dim": "#D6DBD7",
+              outline: "#777C79",
+              "surface-container-high": "#E6E9E6",
+              "surface-bright": "#FAF9F7",
+              "inverse-primary": "#FFFFFF",
+              "on-surface": "#2F3331",
+              "surface-tint": "#5F5E5E",
+              "on-secondary-fixed-variant": "#675A41",
+              "primary-dim": "#535252",
+              surface: "#FAF9F7",
+              "secondary-container": "#F4E0C1",
+              secondary: "#6B5D45",
+              "outline-variant": "#AFB3B0",
+              "on-secondary-container": "#5D5038",
+              "on-primary": "#FAF7F6",
+              tertiary: "#635F54",
+              "on-tertiary-fixed": "#4D493F",
+              "on-surface-variant": "#5C605D",
+              "on-error": "#FFF7F6",
+              "inverse-on-surface": "#9D9D9B",
+              "on-secondary-fixed": "#4A3E27",
+              "tertiary-container": "#FAF3E5",
+              "on-tertiary": "#FFF8EC",
+              primary: "#5F5E5E",
             },
             fontFamily: {
-              "headline": ["Newsreader"],"body": ["Manrope"],"label": ["Manrope"],
-              "newsreader": ["Newsreader", "serif"],
-    "manrope": ["Manrope", "sans-serif"]
+              headline: ["Newsreader"],
+              body: ["Manrope"],
+              label: ["Manrope"],
+              newsreader: ["Newsreader", "serif"],
+              manrope: ["Manrope", "sans-serif"],
             },
-            borderRadius: {"DEFAULT":"0rem","lg":"0rem","xl":"0rem","full":"9999px"},
+            borderRadius: {
+              DEFAULT: "0rem",
+              lg: "0rem",
+              xl: "0rem",
+              full: "9999px",
+            },
           },
         },
-      }
+      };
     </script>
 
-<style>
-  /* ── Base ─────────────────────────────────────── */
-  .material-symbols-outlined {
-    font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24;
-  }
-  .editorial-shadow { box-shadow: 0 20px 40px -15px rgba(49,51,44,0.05); }
-  ::-webkit-scrollbar { width: 6px; }
-  ::-webkit-scrollbar-track { background: #FAF9F7; }
-  ::-webkit-scrollbar-thumb { background: #EDEEEB; }
+    <style>
+      /* ── Base ─────────────────────────────────────── */
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 200,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+      .editorial-shadow {
+        box-shadow: 0 20px 40px -15px rgba(49, 51, 44, 0.05);
+      }
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #faf9f7;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #edeeeb;
+      }
 
-  /* ── Page reveal ──────────────────────────────── */
-  @keyframes pageIn { from { opacity:0 } to { opacity:1 } }
-  body { animation: pageIn 0.5s ease both; }
+      @keyframes pageIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      body {
+        animation: pageIn 0.5s ease both;
+      }
 
-  /* ── Nav ──────────────────────────────────────── */
-  @keyframes navSlideDown {
-    from { transform: translateY(-100%); opacity: 0; }
-    to   { transform: translateY(0);     opacity: 1; }
-  }
-  nav { animation: navSlideDown 0.7s cubic-bezier(0.22,1,0.36,1) 0.2s both; }
+      /* ── Nav ──────────────────────────────────────── */
+      @keyframes navSlideDown {
+        from {
+          transform: translateY(-100%);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+      nav {
+        animation: navSlideDown 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both;
+      }
 
-  nav a { position: relative; }
-  nav a::after {
-    content: '';
-    position: absolute; bottom: -2px; left: 0;
-    width: 0; height: 1px; background: currentColor;
-    transition: width 0.35s cubic-bezier(0.22,1,0.36,1);
-  }
-  nav a:hover::after { width: 100%; }
+      nav a {
+        position: relative;
+      }
+      nav a::after {
+        content: "";
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 0;
+        height: 1px;
+        background: currentColor;
+        transition: width 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      nav a:hover::after {
+        width: 100%;
+      }
 
-  nav button { position: relative; overflow: hidden; }
-  nav button::before {
-    content: '';
-    position: absolute; inset: 0;
-    background: rgba(255,255,255,0.12);
-    transform: translateX(-100%);
-    transition: transform 0.4s cubic-bezier(0.22,1,0.36,1);
-  }
-  nav button:hover::before { transform: translateX(0); }
+      nav button {
+        position: relative;
+        overflow: hidden;
+      }
+      nav button::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(255, 255, 255, 0.12);
+        transform: translateX(-100%);
+        transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      nav button:hover::before {
+        transform: translateX(0);
+      }
 
-  /* ── Progress bar ─────────────────────────────── */
-  #rp {
-    position: fixed; top: 0; left: 0;
-    height: 2px; background: #5f5e5e; z-index: 9999;
-    transition: width 0.08s linear; pointer-events: none;
-  }
+      /* ── Progress bar ─────────────────────────────── */
+      #rp {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 2px;
+        background: #5f5e5e;
+        z-index: 9999;
+        transition: width 0.08s linear;
+        pointer-events: none;
+      }
 
-  /* ── Custom cursor ────────────────────────────── */
-  #cdot {
-    position: fixed; width: 7px; height: 7px;
-    border-radius: 50%; background: #5f5e5e;
-    pointer-events: none; z-index: 9999;
-    transform: translate(-50%,-50%); mix-blend-mode: multiply;
-  }
-  #cring {
-    position: fixed; width: 34px; height: 34px;
-    border-radius: 50%; border: 1px solid rgba(95,94,94,0.35);
-    pointer-events: none; z-index: 9998;
-    transform: translate(-50%,-50%);
-    transition: width 0.3s, height 0.3s, border-color 0.3s;
-  }
-  body:has(a:hover) #cring,
-  body:has(button:hover) #cring {
-    width: 52px; height: 52px;
-    border-color: rgba(95,94,94,0.65);
-  }
+      /* ── Custom cursor ────────────────────────────── */
+      #cdot {
+        position: fixed;
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: #5f5e5e;
+        pointer-events: none;
+        z-index: 9999;
+        transform: translate(-50%, -50%);
+        mix-blend-mode: multiply;
+      }
+      #cring {
+        position: fixed;
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        border: 1px solid rgba(95, 94, 94, 0.35);
+        pointer-events: none;
+        z-index: 9998;
+        transform: translate(-50%, -50%);
+        transition:
+          width 0.3s,
+          height 0.3s,
+          border-color 0.3s;
+      }
+      body:has(a:hover) #cring,
+      body:has(button:hover) #cring {
+        width: 52px;
+        height: 52px;
+        border-color: rgba(95, 94, 94, 0.65);
+      }
 
-  /* ── Generic scroll reveal ────────────────────── */
-  .rv {
-    opacity: 0; transform: translateY(26px);
-    transition: opacity 0.75s cubic-bezier(0.22,1,0.36,1),
-                transform 0.75s cubic-bezier(0.22,1,0.36,1);
-  }
-  .rv.on { opacity: 1; transform: translateY(0); }
+      /* ── Scroll reveals ───────────────────────────── */
+      .rv {
+        opacity: 0;
+        transform: translateY(26px);
+        transition:
+          opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+          transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      .rv.on {
+        opacity: 1;
+        transform: translateY(0);
+      }
 
-  .rv-l {
-    opacity: 0; transform: translateX(-28px);
-    transition: opacity 0.8s cubic-bezier(0.22,1,0.36,1),
-                transform 0.8s cubic-bezier(0.22,1,0.36,1);
-  }
-  .rv-l.on { opacity: 1; transform: translateX(0); }
+      .rv-l {
+        opacity: 0;
+        transform: translateX(-28px);
+        transition:
+          opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+          transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      .rv-l.on {
+        opacity: 1;
+        transform: translateX(0);
+      }
 
-  .rv-r {
-    opacity: 0; transform: translateX(28px);
-    transition: opacity 0.8s cubic-bezier(0.22,1,0.36,1),
-                transform 0.8s cubic-bezier(0.22,1,0.36,1);
-  }
-  .rv-r.on { opacity: 1; transform: translateX(0); }
+      .rv-r {
+        opacity: 0;
+        transform: translateX(28px);
+        transition:
+          opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+          transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      .rv-r.on {
+        opacity: 1;
+        transform: translateX(0);
+      }
 
-  /* Stagger children */
-  .sg > * {
-    opacity: 0; transform: translateY(16px);
-    transition: opacity 0.55s cubic-bezier(0.22,1,0.36,1),
-                transform 0.55s cubic-bezier(0.22,1,0.36,1);
-  }
-  .sg.on > *:nth-child(1) { opacity:1; transform:none; transition-delay:0.00s; }
-  .sg.on > *:nth-child(2) { opacity:1; transform:none; transition-delay:0.09s; }
-  .sg.on > *:nth-child(3) { opacity:1; transform:none; transition-delay:0.18s; }
-  .sg.on > *:nth-child(4) { opacity:1; transform:none; transition-delay:0.27s; }
+      /* Stagger children */
+      .sg > * {
+        opacity: 0;
+        transform: translateY(16px);
+        transition:
+          opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+          transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      .sg.on > *:nth-child(1) {
+        opacity: 1;
+        transform: none;
+        transition-delay: 0s;
+      }
+      .sg.on > *:nth-child(2) {
+        opacity: 1;
+        transform: none;
+        transition-delay: 0.09s;
+      }
+      .sg.on > *:nth-child(3) {
+        opacity: 1;
+        transform: none;
+        transition-delay: 0.18s;
+      }
+      .sg.on > *:nth-child(4) {
+        opacity: 1;
+        transform: none;
+        transition-delay: 0.27s;
+      }
 
-  /* ── Header ───────────────────────────────────── */
-  /* Eyebrow letter-spacing expand */
-  .eyebrow-rv {
-    opacity: 0; letter-spacing: 0.1em; transform: translateX(-10px);
-    transition: opacity 0.7s ease, letter-spacing 0.8s ease, transform 0.7s ease;
-  }
-  .eyebrow-rv.on { opacity: 1; letter-spacing: 0.3em; transform: translateX(0); }
+      /* ── Eyebrow ─────────────────────────────────── */
+      .eyebrow-rv {
+        opacity: 0;
+        letter-spacing: 0.1em;
+        transform: translateX(-10px);
+        transition:
+          opacity 0.7s ease,
+          letter-spacing 0.8s ease,
+          transform 0.7s ease;
+      }
+      .eyebrow-rv.on {
+        opacity: 1;
+        letter-spacing: 0.3em;
+        transform: translateX(0);
+      }
 
-  /* Headline split */
-  .hl-line { overflow: hidden; display: block; padding: 0.15em 0; margin: -0.15em 0; }
-  .hl-inner {
-    display: block; opacity: 0; transform: translateY(80px);
-    transition: opacity 0.85s cubic-bezier(0.22,1,0.36,1),
-                transform 0.85s cubic-bezier(0.22,1,0.36,1);
-  }
-  .hl-inner.on { opacity: 1; transform: translateY(0); }
+      /* ── Headline split ──────────────────────────── */
+      .hl-line {
+        overflow: hidden;
+        display: block;
+        padding: 0.1em 0;
+        margin: -0.1em 0;
+      }
+      .hl-inner {
+        display: block;
+        opacity: 0;
+        transform: translateY(80px);
+        transition:
+          opacity 0.85s cubic-bezier(0.22, 1, 0.36, 1),
+          transform 0.85s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      .hl-inner.on {
+        opacity: 1;
+        transform: translateY(0);
+      }
 
-  /* Border-bottom draw */
-  .border-draw {
-    position: relative;
-  }
-  .border-draw::after {
-    content: '';
-    position: absolute; bottom: 0; left: 0;
-    width: 0; height: 1px;
-    background: #AFB3B0;
-    transition: width 1.2s cubic-bezier(0.22,1,0.36,1);
-  }
-  .border-draw.on::after { width: 100%; }
-  /* Remove the tailwind border-b so our animated one takes over */
-  .border-draw { border-bottom: none !important; padding-bottom: 3rem; }
+      /* ── Border draw ─────────────────────────────── */
+      .border-draw {
+        position: relative;
+        border-bottom: none !important;
+        padding-bottom: 3rem;
+      }
+      .border-draw::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 1px;
+        background: #afb3b0;
+        transition: width 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      .border-draw.on::after {
+        width: 100%;
+      }
 
-  /* ── Form panel ───────────────────────────────── */
-  /* Wipe reveal */
-  .panel-wipe {
-    position: relative; overflow: hidden;
-  }
-  .panel-wipe::before {
-    content: '';
-    position: absolute; inset: 0; z-index: 1;
-    background: #F3F4F1;
-    transform: scaleY(1); transform-origin: top;
-    transition: transform 1s cubic-bezier(0.77,0,0.18,1);
-    pointer-events: none;
-  }
-  .panel-wipe.on::before { transform: scaleY(0); transform-origin: bottom; }
+      /* ── Clinic card border grow ─────────────────── */
+      .clinic-card {
+        position: relative;
+        border-top: 4px solid transparent;
+        transition: border-color 0.6s ease;
+      }
+      .clinic-card.on {
+        border-color: #c8b89e;
+      }
 
-  /* Form field: underline expand on focus */
-  .form-field {
-    position: relative;
-  }
-  .form-field input,
-  .form-field textarea,
-  .form-field select {
-    transition: border-color 0.3s ease;
-  }
-  .form-field input:focus,
-  .form-field textarea:focus,
-  .form-field select:focus {
-    border-color: #2F3331 !important;
-    outline: none;
-    box-shadow: none;
-  }
+      /* ── Contact row hover ───────────────────────── */
+      .contact-row {
+        transition: padding-left 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+        cursor: pointer;
+      }
+      .contact-row:hover {
+        padding-left: 6px;
+      }
+      .contact-row .material-symbols-outlined {
+        transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      .contact-row:hover .material-symbols-outlined {
+        transform: scale(1.2);
+      }
+      .icon-box {
+        transition:
+          background 0.3s ease,
+          transform 0.3s ease;
+      }
+      .contact-row:hover .icon-box {
+        background: #333;
+        transform: scale(1.08);
+      }
 
-  /* Label float-up on focus */
-  .form-field label {
-    transition: color 0.3s ease, transform 0.3s ease;
-  }
-  /* Ensures the custom dropdown arrow matches the focus state of the label */
-  .form-field:focus-within .material-symbols-outlined {
-    color: #2F3331;
-    transform: translateY(-2px);
-  }
+      /* ── Hours rows ──────────────────────────────── */
+      .hours-row {
+        opacity: 0;
+        transform: translateX(12px);
+        transition:
+          opacity 0.5s ease,
+          transform 0.5s ease;
+      }
+      .hours-row.on {
+        opacity: 1;
+        transform: translateX(0);
+      }
 
-  /* Submit button shimmer */
-  .btn-sh { position: relative; overflow: hidden; }
-  .btn-sh::after {
-    content: '';
-    position: absolute; top: 0; left: -100%;
-    width: 55%; height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
-    transition: left 0.5s cubic-bezier(0.22,1,0.36,1);
-    pointer-events: none;
-  }
-  .btn-sh:hover::after { left: 140%; }
+      /* ── Emergency ───────────────────────────────── */
+      .emergency-strip {
+        opacity: 0;
+        transform: translateY(20px);
+        transition:
+          opacity 0.7s ease,
+          transform 0.7s ease;
+      }
+      .emergency-strip.on {
+        opacity: 1;
+        transform: translateY(0);
+      }
 
-  /* Form field stagger */
-  .form-stagger > * {
-    opacity: 0; transform: translateY(14px);
-    transition: opacity 0.5s cubic-bezier(0.22,1,0.36,1),
-                transform 0.5s cubic-bezier(0.22,1,0.36,1);
-  }
-  .form-stagger.on > *:nth-child(1) { opacity:1; transform:none; transition-delay:0.05s; }
-  .form-stagger.on > *:nth-child(2) { opacity:1; transform:none; transition-delay:0.13s; }
-  .form-stagger.on > *:nth-child(3) { opacity:1; transform:none; transition-delay:0.21s; }
-  .form-stagger.on > *:nth-child(4) { opacity:1; transform:none; transition-delay:0.29s; }
-  .form-stagger.on > *:nth-child(5) { opacity:1; transform:none; transition-delay:0.37s; }
+      @keyframes emergPulse {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.12);
+        }
+      }
+      .emerg-icon {
+        animation: emergPulse 2.5s ease-in-out infinite;
+      }
 
-  /* ── Info cards ───────────────────────────────── */
-  /* Clinic card border grows */
-  .clinic-card {
-    position: relative;
-    border-top: 4px solid transparent;
-    transition: border-color 0.6s ease;
-  }
-  .clinic-card.on { border-color: #6B5D45; }
+      .emerg-btn {
+        position: relative;
+        overflow: hidden;
+      }
+      .emerg-btn::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 55%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.15),
+          transparent
+        );
+        transition: left 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+        pointer-events: none;
+      }
+      .emerg-btn:hover::after {
+        left: 140%;
+      }
 
-  /* Contact row hover */
-  .contact-row {
-    transition: padding-left 0.3s cubic-bezier(0.22,1,0.36,1);
-    cursor: pointer;
-  }
-  .contact-row:hover { padding-left: 6px; }
-  .contact-row .material-symbols-outlined {
-    transition: transform 0.3s cubic-bezier(0.22,1,0.36,1);
-  }
-  .contact-row:hover .material-symbols-outlined {
-    transform: scale(1.2);
-  }
+      /* ── Button shimmer ──────────────────────────── */
+      .btn-sh {
+        position: relative;
+        overflow: hidden;
+      }
+      .btn-sh::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 55%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.1),
+          transparent
+        );
+        transition: left 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+        pointer-events: none;
+      }
+      .btn-sh:hover::after {
+        left: 140%;
+      }
 
-  /* Icon box pulse on hover */
-  .icon-box {
-    transition: background 0.3s ease, transform 0.3s ease;
-  }
-  .contact-row:hover .icon-box {
-    background: #EDEEEB;
-    transform: scale(1.08);
-  }
+      /* ── Footer ──────────────────────────────────── */
+      .foot-rv {
+        opacity: 0;
+        transform: translateY(12px);
+        transition:
+          opacity 0.6s ease,
+          transform 0.6s ease;
+      }
+      .foot-rv.on {
+        opacity: 1;
+        transform: translateY(0);
+      }
 
-  /* ── Hours card ───────────────────────────────── */
-  /* Rows slide in one-by-one */
-  .hours-row {
-    opacity: 0; transform: translateX(12px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-  }
-  .hours-row.on { opacity: 1; transform: translateX(0); }
+      footer a {
+        position: relative;
+        text-decoration: none;
+      }
+      footer a::after {
+        content: "";
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 0;
+        height: 1px;
+        background: #2f3331;
+        transition: width 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      footer a:hover::after {
+        width: 100%;
+      }
 
-  /* ── Map ──────────────────────────────────────── */
-  .map-wipe {
-    position: relative; overflow: hidden;
-  }
-  .map-wipe::before {
-    content: '';
-    position: absolute; inset: 0; z-index: 1;
-    background: #EDEEEB;
-    transform: scaleX(1); transform-origin: right;
-    transition: transform 1s cubic-bezier(0.77,0,0.18,1);
-    pointer-events: none;
-  }
-  .map-wipe.on::before { transform: scaleX(0); }
-  .map-wipe img {
-    transition: opacity 0.5s ease, filter 0.6s ease;
-  }
-  .map-wipe:hover img { opacity: 1; filter: grayscale(0) contrast(100%); }
+      /* ── Card equal height ───────────────────────── */
+      .cards-row {
+        display: grid;
+      }
+    </style>
+  </head>
 
-  /* ── Emergency strip ──────────────────────────── */
-  .emergency-strip {
-    opacity: 0; transform: translateY(20px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
-  }
-  .emergency-strip.on { opacity: 1; transform: translateY(0); }
+  <body
+    class="bg-white font-body text-on-surface selection:bg-secondary-container selection:text-on-secondary-container"
+  >
+    <!-- Cursor -->
+    <div id="cdot"></div>
+    <div id="cring"></div>
+    <!-- Progress bar -->
+    <div id="rp" style="width: 0%"></div>
 
-  /* Emergency icon pulse */
-  @keyframes emergPulse {
-    0%,100% { transform: scale(1); }
-    50%      { transform: scale(1.12); }
-  }
-  .emerg-icon { animation: emergPulse 2.5s ease-in-out infinite; }
-
-  /* Emergency CTA shimmer */
-  .emerg-btn { position: relative; overflow: hidden; }
-  .emerg-btn::after {
-    content: '';
-    position: absolute; top: 0; left: -100%;
-    width: 55%; height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
-    transition: left 0.5s cubic-bezier(0.22,1,0.36,1);
-    pointer-events: none;
-  }
-  .emerg-btn:hover::after { left: 140%; }
-
-  /* ── Footer ───────────────────────────────────── */
-  .foot-rv {
-    opacity: 0; transform: translateY(12px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-  }
-  .foot-rv.on { opacity: 1; transform: translateY(0); }
-
-  footer a { position: relative; text-decoration: none; }
-  footer a::after {
-    content: '';
-    position: absolute; bottom: -2px; left: 0;
-    width: 0; height: 1px; background: #2F3331;
-    transition: width 0.3s cubic-bezier(0.22,1,0.36,1);
-  }
-  footer a:hover::after { width: 100%; }
-</style>
-</head>
-
-<body class="bg-surface font-body text-on-surface selection:bg-secondary-container selection:text-on-secondary-container">
-
-<!-- Cursor -->
-<div id="cdot"></div>
-<div id="cring"></div>
-
-<!-- Progress bar -->
-<div id="rp" style="width:0%"></div>
-
-<!-- ══════════════════════════════════════════════
-     NAV — exact match to index.html
+    <!-- ══════════════════════════════════════════════
+     NAV
 ════════════════════════════════════════════════ -->
-<nav class="fixed top-0 w-full z-50 bg-white dark:bg-[#31332c]/80 backdrop-blur-xl flex justify-between items-center px-6 md:px-12 py-6 max-w-[1920px] mx-auto">
-  <div class="font-headline text-2xl text-[#31332c] leading-tight tracking-tight"
-       style="opacity:0;animation:navSlideDown 0.7s cubic-bezier(0.22,1,0.36,1) 0.4s forwards">
-    Dr. Abhishek Shenoy
-  </div>
-  <div class="hidden md:flex gap-8 items-center"
-       style="opacity:0;animation:navSlideDown 0.7s cubic-bezier(0.22,1,0.36,1) 0.5s forwards">
-    <a class="uppercase tracking-widest text-xs font-semibold text-[#31332c] opacity-70 hover:opacity-100 transition-opacity duration-300" href="/">Home</a>
-    <a class="uppercase tracking-widest text-xs font-semibold text-[#5f5e5e] opacity-70 hover:opacity-100 transition-opacity duration-300" href="/service.html">Expertise</a>
-    <a class="uppercase tracking-widest text-xs font-semibold text-[#5f5e5e] opacity-70 hover:opacity-100 transition-opacity duration-300" href="#">Stories</a>
-    <a class="uppercase tracking-widest text-xs font-semibold text-[#5f5e5e] border-b border-[#31332c] pb-1 hover:opacity-100 transition-opacity duration-300" href="#">Contact</a>
-  </div>
-  <button class="btn-sh bg-black text-on-primary px-6 py-3 text-xs uppercase tracking-widest font-bold hover:opacity-90 transition-all active:scale-[0.99] font-label"
-          style="opacity:0;animation:navSlideDown 0.7s cubic-bezier(0.22,1,0.36,1) 0.6s forwards">
-    Book Consultation
-  </button>
-</nav>
-
-<!-- ══════════════════════════════════════════════
-     MAIN
-════════════════════════════════════════════════ -->
-<main class="pt-32 pb-24 px-12 bg-white">
-
-  <!-- ── Page Header ──────────────────────────────── -->
-  <header class="max-w-7xl mx-auto mb-20">
-    <div class="flex flex-col md:flex-row md:items-end justify-between gap-8 border-draw" id="header-border">
-      <div class="max-w-2xl">
-        <span class="eyebrow-rv font-label text-[0.75rem] uppercase text-secondary mb-4 block font-semibold" id="header-eyebrow">
-          Get in Touch
-        </span>
-        <h1 class="font-headline text-[4.5rem] leading-[0.9] text-on-background">
-          <span class="hl-line"><span class="hl-inner" id="hl1" style="transition-delay:0.35s">Contact <span class="italic">Precision</span></span></span>
-          <span class="hl-line text-[#C8B89E]"><span class="hl-inner" id="hl2" style="transition-delay:0.5s ">Orthopedics</span></span>
-        </h1>
-      </div>
-      <div class="max-w-xs rv" id="header-sub" style="transition-delay:0.65s">
-        <p class="font-body text-on-surface-variant leading-relaxed font-semibold">
-          Dedicated to restorative care and surgical excellence. Reach out to schedule a clinical evaluation or surgical consultation.
-        </p>
-      </div>
-    </div>
-  </header>
-
-  <!-- ── Content Grid ─────────────────────────────── -->
-  <section class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12">
-
-    <!-- Form Panel -->
-    <div class="lg:col-span-7 panel-wipe bg-surface-container-lowest p-12 editorial-shadow" id="form-panel">
-      <h2 class="font-headline text-3xl mb-12 rv font-semibold" id="form-title" style="transition-delay:0.1s">Send an Inquiry</h2>
-      <form class="space-y-12 form-stagger" id="form-body">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-          <div class="form-field">
-            <label class="block font-label text-[0.75rem] uppercase tracking-[0.2em] text-on-surface-variant mb-2 font-semibold">Full Name</label>
-            <input class="w-full bg-transparent border-0 border-b border-outline-variant py-3 px-0 focus:ring-0 placeholder:text-outline/40 font-body text-lg" placeholder="Johnathan Doe" type="text"/>
-          </div>
-          <div class="form-field">
-            <label class="block font-label text-[0.75rem] uppercase tracking-[0.2em] text-on-surface-variant mb-2 font-semibold">Email Address</label>
-            <input class="w-full bg-transparent border-0 border-b border-outline-variant py-3 px-0 focus:ring-0 placeholder:text-outline/40 font-body text-lg" placeholder="j.doe@example.com" type="email"/>
-          </div>
+    <nav
+      class="fixed top-0 w-full z-[60] bg-white/90 backdrop-blur-xl border-b border-black/5"
+    >
+      <div
+        class="flex justify-between items-center px-6 md:px-12 py-6 max-w-[1920px] mx-auto"
+      >
+        <div
+          class="font-headline text-2xl md:text-2xl text-on-surface shrink-0"
+        >
+          <a href="index.html">Dr. Abhishek Shenoy</a>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-          <div class="form-field">
-            <label class="block font-label text-[0.75rem] uppercase tracking-[0.2em] text-on-surface-variant mb-2 font-semibold">Phone Number</label>
-            <input class="w-full bg-transparent border-0 border-b border-outline-variant py-3 px-0 focus:ring-0 placeholder:text-outline/40 font-body text-lg" placeholder="+91 00000 00000" type="tel"/>
-          </div>
-          <div class="form-field">
-            <label class="block font-label text-[0.75rem] uppercase tracking-[0.2em] text-on-surface-variant mb-2 font-semibold">Subject</label>
-            <select class="w-full bg-transparent border-0 border-b border-outline-variant py-3 px-0 focus:ring-0 font-body text-lg">
-              <option>General Consultation</option>
-              <option>Surgical Inquiry</option>
-              <option>Post-Op Follow-up</option>
-              <option>Medical Report Request</option>
-            </select>
-          </div>
+
+        <div
+          class="hidden md:flex gap-8 items-center absolute left-1/2 -translate-x-1/2"
+        >
+          <a
+            class="uppercase tracking-widest text-xs font-bold text-on-surface-variant opacity-70 hover:opacity-100 transition-opacity"
+            href="/"
+            >Home</a
+          >
+          <a
+            class="uppercase tracking-widest text-xs font-bold text-on-surface-variant opacity-70 hover:opacity-100 transition-opacity"
+            href="/service.html"
+            >Expertise</a
+          >
+          <a
+            class="uppercase tracking-widest text-xs font-bold text-on-surface-variant opacity-70 hover:opacity-100 transition-opacity"
+            href="/stories.html"
+            >Stories</a
+          >
+          <a
+            class="uppercase tracking-widest text-xs font-bold text-on-surface border-b-2 border-on-surface pb-1 transition-all"
+            href="/Contact.html"
+            >Contact</a
+          >
         </div>
-        <div class="form-field">
-          <label class="block font-label text-[0.75rem] uppercase tracking-[0.2em] text-on-surface-variant mb-2 font-semibold">Message</label>
-          <textarea class="w-full bg-transparent border-0 border-b border-outline-variant py-3 px-0 focus:ring-0 placeholder:text-outline/40 font-body text-lg resize-none" placeholder="How can we assist your recovery journey?" rows="4"></textarea>
-        </div>
-        <div class="pt-6">
-          <button class="btn-sh bg-on-background  py-5 px-12 font-label text-[0.75rem] uppercase tracking-[0.2em] hover:bg-primary transition-colors flex items-center gap-4 group text-[#C8B89E] font-semibold" type="submit">
-            Submit Inquiry
-            <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+
+        <div class="flex items-center gap-3 md:gap-6">
+          <button
+            class="hidden md:block bg-primary text-on-primary px-6 py-3 text-xs uppercase tracking-widest font-bold hover:bg-tertiary-container hover:text-on-tertiary-container transition-all active:scale-[0.99]"
+          >
+            <a
+              href="https://www.superhealth.co.in/appointment/koramangala/doctors/dr-abhishek-shenoy-orthopedics"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Book Consultation</a
+            >
+          </button>
+
+          <button
+            id="menu-toggle"
+            class="md:hidden flex items-center justify-center text-on-surface"
+          >
+            <span class="material-symbols-outlined text-3xl">menu</span>
           </button>
         </div>
-      </form>
-    </div>
+      </div>
+    </nav>
 
-    <!-- Info sidebar -->
-    <div class="lg:col-span-5 flex flex-col gap-12">
+    <div id="mobile-menu" class="fixed inset-0 z-[70] invisible md:hidden">
+      <div
+        id="menu-backdrop"
+        class="absolute inset-0 bg-black/40 backdrop-blur-sm opacity-0 transition-opacity duration-500"
+      ></div>
 
-      <!-- Clinic card -->
-      <div class="clinic-card bg-black p-10" id="clinic-card">
-        <span class="eyebrow-rv font-label text-[0.75rem] uppercase tracking-[0.3em]  mb-6 block text-[#C8B89E] font-semibold" id="clinic-eyebrow">Primary Clinic</span>
-        <h3 class="rv font-headline text-2xl mb-4  text-white" id="clinic-title" style="transition-delay:0.1s">Superhealth Hospitals</h3>
-        <p class="rv font-body text-on-surface-variant leading-relaxed mb-8  text-white" id="clinic-addr" style="transition-delay:0.18s">
-          No. 12, 1st Cross, 5th Block,<br/>
-          Koramangala, Bangalore,<br/>
-          Karnataka 560034
-        </p>
-        <div class="space-y-4 sg" id="clinic-contacts">
-          <div class="contact-row flex items-center gap-4">
-            <div class="icon-box w-10 h-10 flex items-center justify-center bg-surface-container-highest">
-              <span class="material-symbols-outlined text-secondary">call</span>
+      <div
+        id="menu-drawer"
+        class="absolute right-0 top-0 h-full w-[85%] max-w-sm bg-white translate-x-full transition-transform duration-500 ease-in-out border-l border-black/5 shadow-2xl"
+      >
+        <div class="flex flex-col h-full px-10 py-12">
+          <div class="flex justify-between items-center mb-16">
+            <div class="space-y-1">
+              <div
+                class="font-label text-2xl tracking-wide uppercase font-bold text-on-surface"
+              >
+                Menu
+              </div>
+              <div class="h-[2px] w-8 bg-tertiary-container"></div>
             </div>
-            <span class="font-body font-medium  transition-colors text-[#C8B89E]">+91 80 4567 8900</span>
+            <button
+              id="menu-close"
+              class="text-on-surface hover:rotate-90 transition-transform duration-300 active:scale-90"
+            >
+              <span class="material-symbols-outlined text-3xl">close</span>
+            </button>
           </div>
-          <div class="contact-row flex items-center gap-4">
-            <div class="icon-box w-10 h-10 flex items-center justify-center bg-surface-container-highest">
-              <span class="material-symbols-outlined text-secondary">mail</span>
+
+          <div class="flex flex-col gap-0">
+            <a
+              class="group flex items-center justify-between py-6 border-b border-black/90 font-label text-2xl tracking-wide text-on-surface-variant hover:text-primary transition-all active:scale-95"
+              href="/"
+            >
+              <div class="flex items-center gap-4">
+                <span
+                  class="material-symbols-outlined text-xl group-hover:translate-x-1 transition"
+                  >home</span
+                ><span>Home</span>
+              </div>
+              <span
+                class="material-symbols-outlined opacity-0 group-hover:opacity-100 transition-opacity text-sm"
+                >arrow_forward_ios</span
+              >
+            </a>
+
+            <a
+              class="group flex items-center justify-between py-6 border-b border-black/95 font-label text-2xl tracking-wide text-on-surface-variant hover:text-primary transition-all active:scale-95 active:bg-black/5"
+              href="/service.html"
+            >
+              <div class="flex items-center gap-4">
+                <span
+                  class="material-symbols-outlined text-xl group-hover:translate-x-1 transition"
+                  >medical_services</span
+                >
+                <span>Expertise</span>
+              </div>
+              <span
+                class="material-symbols-outlined opacity-0 group-hover:opacity-100 transition-opacity text-sm"
+                >arrow_forward_ios</span
+              >
+            </a>
+            <a
+              class="group flex items-center justify-between py-6 border-b border-black/95 font-label text-2xl tracking-wide text-on-surface-variant hover:text-primary transition-all active:scale-95 active:bg-black/5"
+              href="/Stories.html"
+            >
+              <div class="flex items-center gap-4">
+                <span
+                  class="material-symbols-outlined text-xl group-hover:translate-x-1 transition"
+                  >auto_stories</span
+                >
+                <span>Stories</span>
+              </div>
+              <span
+                class="material-symbols-outlined opacity-0 group-hover:opacity-100 transition-opacity text-sm"
+                >arrow_forward_ios</span
+              >
+            </a>
+            
+            <a class="group flex items-center justify-between py-6 border-b border-black/55 font-label text-2xl tracking-wide bg-black text-white px-2 -mx-2 transition-all active:scale-95" href="/Contact.html">
+                    <div class="flex items-center gap-4">
+                        <span class="material-symbols-outlined text-xl text-tertiary-container">call</span>
+                        <span class="relative">
+                            Contact
+                        </span>
+                    </div>
+                    <span class="material-symbols-outlined text-sm text-tertiary-container">fiber_manual_record</span>
+                </a>
+          </div>
+
+          <div class="mt-12 space-y-4 opacity-60">
+            <p
+              class="font-label text-[20px] uppercase tracking-[0.2em] text-black font-bold"
+            >
+              Location
+            </p>
+            <p
+              class="font-label text-[18px] leading-relaxed text-black font-semibold"
+            >
+              Superhealth Hospital<br />
+              No. 12, 1st Cross, 5th Block, <br />
+              Koramangala, Bangalore, <br />
+              Karnataka 560034
+            </p>
+          </div>
+
+          <div class="mt-auto pt-8">
+            <button
+              class="btn-shimmer bg-[#1A1A1A] text-on-primary px-8 py-4 text-sm uppercase tracking-widest font-bold hover:opacity-95 transition-all active:scale-[0.99]"
+            >
+              Book Consultation
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════════
+     MAIN
+════════════════════════════════════════════════ -->
+    <main class="pt-24 md:pt-32 pb-16 md:pb-24 px-5 md:px-12 bg-white">
+      <!-- ── Page Header ──────────────────────────────── -->
+      <header class="max-w-7xl mx-auto mb-12 md:mb-20">
+        <div
+          class="flex flex-col md:flex-row md:items-end justify-between gap-6 md:gap-8 border-draw"
+          id="header-border"
+        >
+          <div class="max-w-2xl">
+            <span
+              class="eyebrow-rv font-label text-[0.7rem] uppercase text-secondary mb-3 md:mb-4 block font-semibold"
+              id="header-eyebrow"
+            >
+              Get in Touch
+            </span>
+            <h1
+              class="font-headline text-[2.75rem] md:text-[4.5rem] leading-[0.9] text-on-background"
+            >
+              <span class="hl-line"
+                ><span class="hl-inner" id="hl1" style="transition-delay: 0.35s"
+                  >Contact <span class="italic">Precision</span></span
+                ></span
+              >
+              <span class="hl-line text-[#C8B89E]"
+                ><span class="hl-inner" id="hl2" style="transition-delay: 0.5s"
+                  >Orthopedics</span
+                ></span
+              >
+            </h1>
+          </div>
+          <div
+            class="max-w-xs rv"
+            id="header-sub"
+            style="transition-delay: 0.65s"
+          >
+            <p
+              class="font-body text-sm md:text-base text-on-surface-variant leading-relaxed font-semibold"
+            >
+              Dedicated to restorative care and surgical excellence. Reach out
+              to schedule a clinical evaluation or surgical consultation.
+            </p>
+          </div>
+        </div>
+      </header>
+
+      <!-- ══════════════════════════════════════════════
+       CARDS — side by side on md+, stacked on mobile
+  ══════════════════════════════════════════════ -->
+      <section class="max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+          <!-- ── Clinic Card ─────────────────────────── -->
+          <div
+            class="clinic-card rv-l bg-black p-8 md:p-10 flex flex-col justify-between"
+            id="clinic-card"
+            style="min-height: 320px"
+          >
+            <div>
+              <span
+                class="eyebrow-rv font-label text-[0.7rem] uppercase tracking-[0.25em] mb-5 md:mb-6 block text-[#C8B89E] font-semibold"
+                id="clinic-eyebrow"
+                >Primary Clinic</span
+              >
+              <h3
+                class="rv font-headline text-xl md:text-2xl mb-3 md:mb-4 text-white"
+                id="clinic-title"
+                style="transition-delay: 0.1s"
+              >
+                Superhealth Hospitals
+              </h3>
+              <p
+                class="rv font-body text-sm md:text-base text-white/70 leading-relaxed mb-6 md:mb-8"
+                id="clinic-addr"
+                style="transition-delay: 0.18s"
+              >
+                No. 12, 1st Cross, 5th Block,<br />
+                Koramangala, Bangalore,<br />
+                Karnataka 560034
+              </p>
             </div>
-            <span class="font-body font-medium hover:text-secondary transition-colors  text-[#C8B89E]">clinical@drabshenoy.com</span>
+            <div class="space-y-3 md:space-y-4 sg" id="clinic-contacts">
+              <div class="contact-row flex items-center gap-3 md:gap-4">
+                <div
+                  class="icon-box w-9 h-9 md:w-10 md:h-10 flex items-center justify-center bg-white/10 shrink-0"
+                >
+                  <span
+                    class="material-symbols-outlined text-[#C8B89E] text-base md:text-xl"
+                    >call</span
+                  >
+                </div>
+                <span
+                  class="font-body font-medium text-sm md:text-base text-[#C8B89E]"
+                  >+91 80 4567 8900</span
+                >
+              </div>
+              <div class="contact-row flex items-center gap-3 md:gap-4">
+                <div
+                  class="icon-box w-9 h-9 md:w-10 md:h-10 flex items-center justify-center bg-white/10 shrink-0"
+                >
+                  <span
+                    class="material-symbols-outlined text-[#C8B89E] text-base md:text-xl"
+                    >mail</span
+                  >
+                </div>
+                <span
+                  class="font-body font-medium text-sm md:text-base text-[#C8B89E] break-all md:break-normal"
+                  >clinical@drabshenoy.com</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- ── Hours Card ──────────────────────────── -->
+          <div
+            class="rv-r bg-on-background text-surface p-8 md:p-10 flex flex-col justify-between"
+            id="hours-card"
+            style="min-height: 320px; transition-delay: 0.1s"
+          >
+            <div>
+              <span
+                class="eyebrow-rv font-label text-[0.7rem] uppercase tracking-[0.25em] text-secondary-fixed mb-5 md:mb-6 block"
+                id="hours-eyebrow"
+                >Consultation Hours</span
+              >
+              <div class="space-y-3 md:space-y-4 font-body">
+                <div
+                  class="hours-row flex justify-between border-b border-surface/10 pb-2 md:pb-3 text-sm md:text-base"
+                  id="hr1"
+                  style="transition-delay: 0s"
+                >
+                  <span>Mon — Fri</span>
+                  <span class="font-semibold text-secondary-fixed"
+                    >09:00 — 17:00</span
+                  >
+                </div>
+                <div
+                  class="hours-row flex justify-between border-b border-surface/10 pb-2 md:pb-3 text-sm md:text-base"
+                  id="hr2"
+                  style="transition-delay: 0.1s"
+                >
+                  <span>Saturday</span>
+                  <span class="font-semibold text-secondary-fixed"
+                    >10:00 — 14:00</span
+                  >
+                </div>
+                <div
+                  class="hours-row flex justify-between text-surface/50 text-sm md:text-base"
+                  id="hr3"
+                  style="transition-delay: 0.2s"
+                >
+                  <span>Sunday</span>
+                  <span class="italic">By Appointment Only</span>
+                </div>
+              </div>
+            </div>
+            <!-- Book CTA inside hours card -->
+            <div class="mt-8 md:mt-10 pt-6 border-t border-surface/10">
+              <a
+                href="https://www.superhealth.co.in/appointment/koramangala/doctors/dr-abhishek-shenoy-orthopedics"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-sh inline-flex items-center gap-3 bg-[#C8B89E] text-black px-6 py-3 font-label text-[0.7rem] uppercase tracking-[0.25em] font-bold hover:bg-white transition-colors w-full md:w-auto justify-center md:justify-start"
+              >
+                Book Appointment
+                <span
+                  class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform"
+                  >arrow_forward</span
+                >
+              </a>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
 
-      <!-- Hours card -->
-      <div class="bg-on-background text-surface p-10 rv" id="hours-card" style="transition-delay:0.1s">
-        <span class="eyebrow-rv font-label text-[0.75rem] uppercase tracking-[0.3em] text-secondary-fixed mb-6 block" id="hours-eyebrow">Consultation Hours</span>
-        <div class="space-y-4 font-body">
-          <div class="hours-row flex justify-between border-b border-surface/10 pb-2" id="hr1" style="transition-delay:0s">
-            <span>Mon — Fri</span>
-            <span class="font-semibold text-secondary-fixed">09:00 — 17:00</span>
+      <!-- ── Emergency Strip ──────────────────────────── -->
+      <section class="max-w-7xl mx-auto mt-8 md:mt-12 border-4 border-black">
+        <div
+          class="emergency-strip bg-surface-container-low p-6 md:p-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 md:gap-8"
+          id="emerg-strip"
+        >
+          <div class="flex gap-4 md:gap-6 items-start md:items-center">
+            <div class="p-3 md:p-4 bg-error-container/50 shrink-0">
+              <span
+                class="material-symbols-outlined text-red-900 text-2xl md:text-3xl emerg-icon"
+                >emergency_home</span
+              >
+            </div>
+            <div>
+              <h4 class="font-headline text-lg md:text-2xl font-semibold mb-1">
+                Emergency Inquiries
+              </h4>
+              <p
+                class="font-body text-xs md:text-sm text-black leading-relaxed"
+              >
+                For acute trauma or post-surgical emergencies, please contact
+                the hospital's 24/7 ER directly.
+              </p>
+            </div>
           </div>
-          <div class="hours-row flex justify-between border-b border-surface/10 pb-2" id="hr2" style="transition-delay:0.1s">
-            <span>Saturday</span>
-            <span class="font-semibold text-secondary-fixed">10:00 — 14:00</span>
-          </div>
-          <div class="hours-row flex justify-between text-surface/50" id="hr3" style="transition-delay:0.2s">
-            <span>Sunday</span>
-            <span class="italic">By Appointment Only</span>
-          </div>
+          <a
+            class="emerg-btn font-label text-[0.7rem] md:text-[0.75rem] uppercase tracking-[0.25em] md:tracking-[0.3em] border border-on-background px-6 md:px-8 py-3 hover:bg-on-background hover:text-surface transition-all bg-black text-white font-semibold shrink-0 w-full md:w-auto text-center"
+            href="tel:108"
+          >
+            Emergency: 108
+          </a>
         </div>
-      </div>
+      </section>
+    </main>
 
-      <!-- Map -->
-      <!-- <div class="map-wipe relative h-64 w-full" id="map-wrap">
-        <img class="w-full h-full object-cover grayscale contrast-125 opacity-80"
-             src="https://lh3.googleusercontent.com/aida-public/AB6AXuASp-tN2c9zp4ADBjDVqHLKj0YLBaqoWlRlkWk8D5eLFIGVtbnlnLTjiOQfYXakNwmPSdNpU-mXfbA5igipOnw02yRRNmdfKtRoSGQ2kfB_HFPfGQPUoWioD0ge4j8Oc4d1qkQEEAZpfs1i2-DtzFe0Kt-8Ay52-6-aLk0x1i-rz0e8pbWGi_UpS3n8TQJ6nRw9G3CSDqSPCbQI9DeAVX-N2tZCIdfApwxRXtVQ-1Ycu7yRCYa5oAkiIhIoa-Sq_E1RpWnrx2HSjYXd"
-             alt="Clinic location map"/>
-        <div class="absolute inset-0 border border-outline-variant/20 pointer-events-none z-10"></div>
-      </div> -->
-
-    </div>
-  </section>
-
-  <!-- ── Emergency Strip ──────────────────────────── -->
-  <section class="max-w-7xl mx-auto mt-24 border border-[4px] border-black">
-    <div class="emergency-strip bg-surface-container-low p-12 flex flex-col md:flex-row items-center justify-between gap-8" id="emerg-strip">
-      <div class="flex gap-6 items-center">
-        <div class="p-4 bg-error-container/50">
-          <span class="material-symbols-outlined text-red-900 text-3xl emerg-icon">emergency_home</span>
-        </div>
-        <div>
-          <h4 class="font-headline text-2xl font-semibold mb-1">Emergency Inquiries</h4>
-          <p class="font-body text-sm text-black">For acute trauma or post-surgical emergencies, please contact the hospital's 24/7 ER directly.</p>
-        </div>
-      </div>
-      <a class="emerg-btn font-label text-[0.75rem] uppercase tracking-[0.3em] border border-on-background px-8 py-3 hover:bg-on-background hover:text-surface transition-all bg-black text-white font-semibold" href="tel:108">
-        Emergency: 108
-      </a>
-    </div>
-  </section>
-
-</main>
-
-<!-- ══════════════════════════════════════════════
+    <!-- ══════════════════════════════════════════════
      FOOTER
 ════════════════════════════════════════════════ -->
-<footer class="bg-white w-full border-t border-black/5">
-  <div class="flex flex-col md:flex-row justify-between items-center px-6 md:px-12 py-20 gap-8 max-w-[1920px] mx-auto">
-    <div class="flex flex-col items-center md:items-start gap-4">
-      <div class="font-newsreader text-xl font-bold text-on-surface">Dr. Abhishek Shenoy</div>
-      <p class="font-manrope text-[10px] tracking-wider uppercase text-on-surface-variant">
-        © 2024 Dr. Abhishek Shenoy. All rights reserved. <br class="md:hidden"/>
-        Surgical Precision & Human Restoration.
-      </p>
-    </div>
-    <div class="flex gap-8">
-      <a class="font-manrope text-[10px] tracking-wider uppercase text-on-surface-variant hover:text-primary font-bold transition-colors" href="#">Privacy Policy</a>
-      <a class="font-manrope text-[10px] tracking-wider uppercase text-on-surface-variant hover:text-primary font-bold transition-colors" href="#">Terms of Service</a>
-      <a class="font-manrope text-[10px] tracking-wider uppercase text-on-surface-variant hover:text-primary font-bold transition-colors" href="#">Clinical Credits</a>
-      <a class="font-manrope text-[10px] tracking-wider uppercase text-on-surface-variant hover:text-primary font-bold transition-colors" href="#">Accessibility</a>
-    </div>
-  </div>
-</footer>
+    <footer class="bg-white w-full border-t border-black/5">
+      <div
+        class="flex flex-col md:flex-row justify-between items-center px-5 md:px-12 py-12 md:py-20 gap-5 md:gap-8 max-w-[1920px] mx-auto"
+      >
+        <div
+          class="foot-rv flex flex-col items-center md:items-start gap-3 md:gap-4"
+          id="foot1"
+        >
+          <div class="font-newsreader text-xl font-bold text-on-surface">
+            Dr. Abhishek Shenoy
+          </div>
+          <p
+            class="font-manrope text-[10px] tracking-wider uppercase text-on-surface-variant text-center md:text-left"
+          >
+            © 2024 Dr. Abhishek Shenoy. All rights reserved.<br />
+            Surgical Precision &amp; Human Restoration.
+          </p>
+        </div>
+        <div
+          class="foot-rv flex flex-wrap justify-center md:justify-end gap-4 md:gap-8"
+          id="foot2"
+          style="transition-delay: 0.12s"
+        >
+          <a
+            class="font-manrope text-[10px] tracking-wider uppercase text-on-surface-variant font-bold"
+            href="#"
+            >Privacy Policy</a
+          >
+          <a
+            class="font-manrope text-[10px] tracking-wider uppercase text-on-surface-variant font-bold"
+            href="#"
+            >Terms of Service</a
+          >
+          <a
+            class="font-manrope text-[10px] tracking-wider uppercase text-on-surface-variant font-bold"
+            href="#"
+            >Clinical Credits</a
+          >
+          <a
+            class="font-manrope text-[10px] tracking-wider uppercase text-on-surface-variant font-bold"
+            href="#"
+            >Accessibility</a
+          >
+        </div>
+      </div>
+    </footer>
 
-<!-- ══════════════════════════════════════════════
-     JS
+    <!-- ══════════════════════════════════════════════
+     JS — all animations preserved unchanged
 ════════════════════════════════════════════════ -->
-<script>
-/* ── Cursor ─────────────────────────────────── */
-const dot=document.getElementById('cdot'),ring=document.getElementById('cring');
-let mx=0,my=0,rx=0,ry=0;
-document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;});
-(function loop(){
-  rx+=(mx-rx)*0.16;ry+=(my-ry)*0.16;
-  dot.style.left=mx+'px';dot.style.top=my+'px';
-  ring.style.left=rx+'px';ring.style.top=ry+'px';
-  requestAnimationFrame(loop);
-})();
+    <script>
+      /* ── Cursor ─────────────────────────────────── */
+      const dot = document.getElementById("cdot"),
+        ring = document.getElementById("cring");
+      let mx = 0,
+        my = 0,
+        rx = 0,
+        ry = 0;
+      document.addEventListener("mousemove", (e) => {
+        mx = e.clientX;
+        my = e.clientY;
+      });
+      (function loop() {
+        rx += (mx - rx) * 0.16;
+        ry += (my - ry) * 0.16;
+        dot.style.left = mx + "px";
+        dot.style.top = my + "px";
+        ring.style.left = rx + "px";
+        ring.style.top = ry + "px";
+        requestAnimationFrame(loop);
+      })();
 
-/* ── Progress bar ────────────────────────────── */
-const rp=document.getElementById('rp');
-window.addEventListener('scroll',()=>{
-  const pct=window.scrollY/(document.body.scrollHeight-window.innerHeight);
-  rp.style.width=Math.round(pct*100)+'%';
-});
+      /* ── Progress bar ────────────────────────────── */
+      const rp = document.getElementById("rp");
+      window.addEventListener("scroll", () => {
+        const pct =
+          window.scrollY / (document.body.scrollHeight - window.innerHeight);
+        rp.style.width = Math.round(pct * 100) + "%";
+      });
 
-/* ── Nav shadow ──────────────────────────────── */
-window.addEventListener('scroll',()=>{
-  document.querySelector('nav').style.boxShadow=
-    window.scrollY>50?'0 1px 28px rgba(47,51,49,0.07)':'none';
-});
+      /* ── Nav shadow ──────────────────────────────── */
+      window.addEventListener("scroll", () => {
+        document.querySelector("nav").style.boxShadow =
+          window.scrollY > 50 ? "0 1px 28px rgba(47,51,49,0.07)" : "none";
+      });
 
-/* ── IO factory ──────────────────────────────── */
-function observe(sel,threshold,cb){
-  const io=new IntersectionObserver(entries=>{
-    entries.forEach(e=>{
-      if(!e.isIntersecting)return;
-      cb?cb(e.target):e.target.classList.add('on');
-      io.unobserve(e.target);
-    });
-  },{threshold});
-  if(typeof sel==='string'){
-    document.querySelectorAll(sel).forEach(el=>io.observe(el));
-  }else{
-    io.observe(sel);
-  }
-}
+      /* ── IO factory ──────────────────────────────── */
+      function observe(sel, threshold, cb) {
+        const io = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((e) => {
+              if (!e.isIntersecting) return;
+              cb ? cb(e.target) : e.target.classList.add("on");
+              io.unobserve(e.target);
+            });
+          },
+          { threshold },
+        );
+        if (typeof sel === "string") {
+          document.querySelectorAll(sel).forEach((el) => io.observe(el));
+        } else {
+          io.observe(sel);
+        }
+      }
 
-/* ── Hero header — on load ───────────────────── */
-setTimeout(()=>{
-  document.getElementById('header-eyebrow').classList.add('on');
-  document.getElementById('hl1').classList.add('on');
-  setTimeout(()=>document.getElementById('hl2').classList.add('on'),180);
-  setTimeout(()=>{
-    document.getElementById('header-sub').classList.add('on');
-    document.getElementById('header-border').classList.add('on');
-  },350);
-},300);
+      /* ── Header — on load ────────────────────────── */
+      setTimeout(() => {
+        document.getElementById("header-eyebrow").classList.add("on");
+        document.getElementById("hl1").classList.add("on");
+        setTimeout(
+          () => document.getElementById("hl2").classList.add("on"),
+          180,
+        );
+        setTimeout(() => {
+          document.getElementById("header-sub").classList.add("on");
+          document.getElementById("header-border").classList.add("on");
+        }, 350);
+      }, 300);
 
-/* ── Generic reveals ─────────────────────────── */
-observe('.rv',0.15);
-observe('.rv-l',0.15);
-observe('.rv-r',0.15);
-observe('.foot-rv',0.3);
+      /* ── Generic reveals ─────────────────────────── */
+      observe(".rv", 0.15);
+      observe(".rv-l", 0.15);
+      observe(".rv-r", 0.15);
 
-/* ── Form panel wipe ─────────────────────────── */
-observe('#form-panel',0.1,el=>el.classList.add('on'));
-observe('#form-title',0.2,el=>el.classList.add('on'));
-observe('#form-body',0.1,el=>el.classList.add('on'));
+      /* ── Clinic card ─────────────────────────────── */
+      observe("#clinic-card", 0.2, (el) => el.classList.add("on"));
+      observe("#clinic-eyebrow", 0.3, (el) => el.classList.add("on"));
+      observe("#clinic-title", 0.3, (el) => el.classList.add("on"));
+      observe("#clinic-addr", 0.3, (el) => el.classList.add("on"));
+      observe("#clinic-contacts", 0.3, (el) => el.classList.add("on"));
 
-/* ── Clinic card ─────────────────────────────── */
-observe('#clinic-card',0.2,el=>el.classList.add('on'));
-observe('#clinic-eyebrow',0.3,el=>el.classList.add('on'));
-observe('#clinic-title',0.3,el=>el.classList.add('on'));
-observe('#clinic-addr',0.3,el=>el.classList.add('on'));
-observe('#clinic-contacts',0.3,el=>el.classList.add('on'));
+      /* ── Hours eyebrow ───────────────────────────── */
+      observe("#hours-eyebrow", 0.3, (el) => el.classList.add("on"));
 
-/* ── Hours eyebrow ───────────────────────────── */
-observe('#hours-eyebrow',0.3,el=>el.classList.add('on'));
+      /* ── Hours rows stagger ──────────────────────── */
+      observe("#hours-card", 0.2, () => {
+        ["hr1", "hr2", "hr3"].forEach((id, i) => {
+          setTimeout(
+            () => document.getElementById(id).classList.add("on"),
+            i * 120,
+          );
+        });
+      });
 
-/* ── Hours rows — stagger ────────────────────── */
-observe('#hours-card',0.2,()=>{
-  ['hr1','hr2','hr3'].forEach((id,i)=>{
-    setTimeout(()=>document.getElementById(id).classList.add('on'),i*120);
-  });
-});
+      /* ── Emergency strip ─────────────────────────── */
+      observe("#emerg-strip", 0.2, (el) => el.classList.add("on"));
 
-/* ── Map wipe ────────────────────────────────── */
-observe('#map-wrap',0.2,el=>el.classList.add('on'));
+      /* ── Footer ──────────────────────────────────── */
+      observe("#foot1", 0.3, (el) => el.classList.add("on"));
+      observe("#foot2", 0.3, (el) =>
+        setTimeout(() => el.classList.add("on"), 120),
+      );
+      const menuToggle = document.getElementById("menu-toggle");
+      const menuClose = document.getElementById("menu-close");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const menuDrawer = document.getElementById("menu-drawer");
+      const menuBackdrop = document.getElementById("menu-backdrop");
 
-/* ── Emergency strip ─────────────────────────── */
-observe('#emerg-strip',0.2,el=>el.classList.add('on'));
+      function openMenu() {
+        mobileMenu.classList.remove("invisible");
+        menuBackdrop.classList.add("opacity-100");
+        menuDrawer.classList.remove("translate-x-full");
+        document.body.style.overflow = "hidden"; // Prevents background scrolling
+      }
 
-/* ── Footer ──────────────────────────────────── */
-observe('#foot1',0.3,el=>el.classList.add('on'));
-observe('#foot2',0.3,el=>setTimeout(()=>el.classList.add('on'),120));
-</script>
+      function closeMenu() {
+        menuBackdrop.classList.remove("opacity-100");
+        menuDrawer.classList.add("translate-x-full");
+        setTimeout(() => {
+          mobileMenu.classList.add("invisible");
+          document.body.style.overflow = "";
+        }, 500);
+      }
 
-</body>
+      menuToggle?.addEventListener("click", openMenu);
+      menuClose?.addEventListener("click", closeMenu);
+      menuBackdrop?.addEventListener("click", closeMenu);
+    </script>
+  </body>
 </html>
