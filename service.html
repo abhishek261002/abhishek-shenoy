@@ -461,7 +461,6 @@
     footer p { text-align: center; }
 
     /* ── Mobile menu drawer ─────────────────────── */
-    #menu-drawer { padding: 2rem 1.5rem !important; }
   }
 </style>
 </head>
@@ -481,7 +480,7 @@
 <nav class="fixed top-0 w-full z-[60] bg-white/90 backdrop-blur-xl border-b border-black/5">
   <div class="flex justify-between items-center px-6 md:px-12 py-4 md:py-6 max-w-[1920px] mx-auto">
 
-    <div class="font-headline text-xl md:text-2xl text-on-surface shrink-0">
+    <div class="font-headline text-2xl text-on-surface shrink-0">
       <a href="index.html">Dr. Abhishek Shenoy</a>
     </div>
 
@@ -490,6 +489,8 @@
       <a class="uppercase tracking-widest text-xs font-bold text-on-surface transition-opacity border-b-2 border-on-surface pb-1" href="/service.html">Expertise</a>
       <a class="uppercase tracking-widest text-xs font-bold text-on-surface-variant opacity-70 hover:opacity-100 transition-opacity" href="/stories.html">Stories</a>
       <a class="uppercase tracking-widest text-xs font-bold text-on-surface-variant opacity-70 hover:opacity-100 transition-opacity" href="/">Contact</a>
+      <a class="uppercase tracking-widest text-xs font-bold text-on-surface-variant opacity-70 hover:opacity-100 transition-opacity" href="/Blogs.html">Blogs</a>
+
     </div>
 
     <div class="flex items-center gap-3 md:gap-6">
@@ -508,57 +509,84 @@
      MOBILE MENU
 ════════════════════════════════════════════════ -->
 <div id="mobile-menu" class="fixed inset-0 z-[70] invisible md:hidden">
-  <div id="menu-backdrop" class="absolute inset-0 bg-black/40 backdrop-blur-sm opacity-0 transition-opacity duration-500"></div>
-  <div id="menu-drawer" class="absolute right-0 top-0 h-full w-[85%] max-w-sm bg-white translate-x-full transition-transform duration-500 ease-in-out border-l border-black/5 shadow-2xl">
-    <div class="flex flex-col h-full px-10 py-12">
-      <div class="flex justify-between items-center mb-16">
-        <div class="space-y-1">
-          <div class="font-label text-2xl tracking-wide uppercase font-bold text-on-surface">Menu</div>
-          <div class="h-[2px] w-8 bg-[#CFC1AA]"></div>
+    
+    <div id="menu-backdrop" class="absolute inset-0 bg-black/40 backdrop-blur-sm opacity-0 transition-opacity duration-500"></div>
+
+    <div id="menu-drawer" class="absolute right-0 top-0 h-full w-[85%] max-w-sm bg-white translate-x-full transition-transform duration-500 ease-in-out border-l border-black/5 shadow-2xl">
+
+        <div class="flex flex-col h-full px-10 py-12">
+
+            <div class="flex justify-between items-center mb-16">
+                <div class="space-y-1">
+                    <div class="font-label text-2xl tracking-wide uppercase font-bold text-on-surface">Menu</div>
+                    <div class="h-[2px] w-8 bg-tertiary-container"></div>
+                </div>
+                <button id="menu-close" class="text-on-surface hover:rotate-90 transition-transform duration-300 active:scale-90">
+                    <span class="material-symbols-outlined text-3xl">close</span>
+                </button>
+            </div>
+            
+            <div class="flex flex-col gap-0">
+
+                <a class="group flex items-center justify-between py-6 border-b border-black/95 font-label text-2xl tracking-wide text-on-surface-variant hover:text-primary transition-all active:scale-95 active:bg-black/5" href="/">
+                    <div class="flex items-center gap-4">
+                        <span class="material-symbols-outlined text-xl group-hover:translate-x-1 transition">home</span>
+                        <span>Home</span>
+                    </div>
+                    <span class="material-symbols-outlined opacity-0 group-hover:opacity-100 transition-opacity text-sm">arrow_forward_ios</span>
+                </a>
+
+                <a class="group flex items-center justify-between py-6 border-b border-black/55 font-label text-2xl tracking-wide bg-black text-white px-2 -mx-2 transition-all active:scale-95" href="/service.html">
+                    <div class="flex items-center gap-4">
+                        <span class="material-symbols-outlined text-xl text-tertiary-container">medical_services</span>
+                        <span class="relative">Expertise</span>
+                    </div>
+                    <span class="material-symbols-outlined text-sm text-tertiary-container">fiber_manual_record</span>
+                </a>
+
+                <a class="group flex items-center justify-between py-6 border-b border-black/95 font-label text-2xl tracking-wide text-on-surface-variant hover:text-primary transition-all active:scale-95 active:bg-black/5" href="/stories.html">
+                    <div class="flex items-center gap-4">
+                        <span class="material-symbols-outlined text-xl group-hover:translate-x-1 transition">auto_stories</span>
+                        <span>Stories</span>
+                    </div>
+                    <span class="material-symbols-outlined opacity-0 group-hover:opacity-100 transition-opacity text-sm">arrow_forward_ios</span>
+                </a>
+
+                <a class="group flex items-center justify-between py-6 border-b border-black/95 font-label text-2xl tracking-wide text-on-surface-variant hover:text-primary transition-all active:scale-95 active:bg-black/5" href="/contact.html">
+                    <div class="flex items-center gap-4">
+                        <span class="material-symbols-outlined text-xl group-hover:translate-x-1 transition">call</span>
+                        <span>Contact</span>
+                    </div>
+                    <span class="material-symbols-outlined opacity-0 group-hover:opacity-100 transition-opacity text-sm">arrow_forward_ios</span>
+                </a>
+
+                <a class="group flex items-center justify-between py-6 border-b border-black/95 font-label text-2xl tracking-wide text-on-surface-variant hover:text-primary transition-all active:scale-95 active:bg-black/5" href="/blogs.html">
+                    <div class="flex items-center gap-4">
+                        <span class="material-symbols-outlined text-xl group-hover:translate-x-1 transition">feed</span>
+                        <span>Blogs</span>
+                    </div>
+                    <span class="material-symbols-outlined opacity-0 group-hover:opacity-100 transition-opacity text-sm">arrow_forward_ios</span>
+                </a>
+
+            </div>
+
+            <div class="mt-12 space-y-4 opacity-60">
+                <p class="font-label text-[20px] uppercase tracking-[0.2em] text-black font-bold">Location</p>
+                <p class="font-label text-[18px] leading-relaxed text-black font-semibold">
+                    Superhealth Hospital<br/>
+                    No. 12, 1st Cross, 5th Block, <br/> Koramangala, Bangalore, <br/>
+                    Karnataka 560034
+                </p>
+            </div>
+
+            <div class="mt-auto pt-8">
+                <button class="btn-shimmer bg-[#1A1A1A] text-on-primary px-8 py-4 text-sm uppercase tracking-widest font-bold hover:opacity-95 transition-all active:scale-[0.99]">
+                    Book Consultation
+                </button>
+            </div>
+
         </div>
-        <button id="menu-close" class="text-on-surface hover:rotate-90 transition-transform duration-300 active:scale-90">
-          <span class="material-symbols-outlined text-3xl">close</span>
-        </button>
-      </div>
-
-      <div class="flex flex-col gap-0">
-        <a class="group flex items-center justify-between py-6 border-b border-black/10 font-label text-2xl tracking-wide text-on-surface-variant hover:text-primary transition-all active:scale-95 active:bg-black/5" href="/">
-          <div class="flex items-center gap-4"><span class="material-symbols-outlined text-xl group-hover:translate-x-1 transition">home</span><span>Home</span></div>
-          <span class="material-symbols-outlined opacity-0 group-hover:opacity-100 transition-opacity text-sm">arrow_forward_ios</span>
-        </a>
-        <a class="group flex items-center justify-between py-6 border-b border-black/10 font-label text-2xl tracking-wide bg-black text-white px-2 -mx-2 transition-all active:scale-95" href="/service.html">
-          <div class="flex items-center gap-4"><span class="material-symbols-outlined text-xl text-[#CFC1AA]">medical_services</span><span>Expertise</span></div>
-          <span class="material-symbols-outlined text-sm text-[#CFC1AA]">fiber_manual_record</span>
-        </a>
-        <a class="group flex items-center justify-between py-6 border-b border-black/10 font-label text-2xl tracking-wide text-on-surface-variant hover:text-primary transition-all active:scale-95 active:bg-black/5" href="/Stories.html">
-          <div class="flex items-center gap-4"><span class="material-symbols-outlined text-xl group-hover:translate-x-1 transition">auto_stories</span><span>Stories</span></div>
-          <span class="material-symbols-outlined opacity-0 group-hover:opacity-100 transition-opacity text-sm">arrow_forward_ios</span>
-        </a>
-        <a class="group flex items-center justify-between py-6 border-b border-black/10 font-label text-2xl tracking-wide text-on-surface-variant hover:text-primary transition-all active:scale-95 active:bg-black/5" href="/Contact.html">
-          <div class="flex items-center gap-4"><span class="material-symbols-outlined text-xl group-hover:translate-x-1 transition">call</span><span>Contact</span></div>
-          <span class="material-symbols-outlined opacity-0 group-hover:opacity-100 transition-opacity text-sm">arrow_forward_ios</span>
-        </a>
-      </div>
-
-      <div class="mt-12 space-y-4 opacity-60">
-        <p class="font-label text-[18px] uppercase tracking-[0.2em] text-black font-bold">Location</p>
-        <p class="font-label text-base leading-relaxed text-black font-semibold">
-          Superhealth Hospital<br/>
-          No. 12, 1st Cross, 5th Block,<br/>
-          Koramangala, Bangalore,<br/>
-          Karnataka 560034
-        </p>
-      </div>
-
-      <div class="mt-auto pt-8">
-        <a href="https://www.superhealth.co.in/appointment/koramangala/doctors/dr-abhishek-shenoy-orthopedics" target="_blank" rel="noopener noreferrer">
-          <button class="btn-sh w-full bg-[#1A1A1A] text-white px-8 py-4 text-sm uppercase tracking-widest font-bold hover:opacity-95 transition-all active:scale-[0.99]">
-            Book Consultation
-          </button>
-        </a>
-      </div>
     </div>
-  </div>
 </div>
 
 <!-- ══════════════════════════════════════════════

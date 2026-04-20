@@ -1,295 +1,643 @@
 <!DOCTYPE html>
-
-<html class="light" lang="en"><head>
+<html class="light" lang="en">
+<head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>The Role of Robotic Precision in Total Knee Replacement | Dr. Abhishek Shenoy</title>
+<title>Loading... | Dr. Abhishek Shenoy</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Manrope:wght@200..800&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            colors: {
-              "error-dim": "#5C1202",
-              "on-primary-container": "#525151",
-              "surface-container-highest": "#E0E3E0",
-              "on-background": "#2F3331",
-              "error-container": "#FE8B70",
-              "surface-container": "#EDEEEB",
-              "primary-fixed-dim": "#D6D4D3",
-              "surface-container-lowest": "#FFFFFF",
-              "tertiary-dim": "#575348",
-              "primary-container": "#E5E2E1",
-              "on-tertiary-container": "#605B51",
-              "on-secondary": "#FFF8F1",
-              "surface-container-low": "#F3F4F1",
-              "tertiary-fixed-dim": "#ECE5D7",
-              "background": "#F5F4ED",
-              "on-primary-fixed": "#403F3F",
-              "surface-variant": "#E0E3E0",
-              "secondary-dim": "#5F513A",
-              "inverse-surface": "#0D0E0E",
-              "error": "#9E422C",
-              "secondary-fixed-dim": "#E5D2B4",
-              "secondary-fixed": "#F4E0C1",
-              "primary-fixed": "#E5E2E1",
-              "tertiary-fixed": "#FAF3E5",
-              "on-error-container": "#742410",
-              "on-tertiary-fixed-variant": "#6A665B",
-              "on-primary-fixed-variant": "#5C5B5B",
-              "surface-dim": "#D6DBD7",
-              "outline": "#777C79",
-              "surface-container-high": "#E6E9E6",
-              "surface-bright": "#FAF9F7",
-              "inverse-primary": "#FFFFFF",
-              "on-surface": "#2F3331",
-              "surface-tint": "#5F5E5E",
-              "on-secondary-fixed-variant": "#675A41",
-              "primary-dim": "#535252",
-              "surface": "#FAF9F7",
-              "secondary-container": "#F4E0C1",
-              "secondary": "#6B5D45",
-              "outline-variant": "#AFB3B0",
-              "on-secondary-container": "#5D5038",
-              "on-primary": "#FAF7F6",
-              "tertiary": "#635F54",
-              "on-tertiary-fixed": "#4D493F",
-              "on-surface-variant": "#5C605D",
-              "on-error": "#FFF7F6",
-              "inverse-on-surface": "#9D9D9B",
-              "on-secondary-fixed": "#4A3E27",
-              "tertiary-container": "#FAF3E5",
-              "on-tertiary": "#FFF8EC",
-              "primary": "#5F5E5E"
-            },
-            fontFamily: {
-              "headline": ["Newsreader"],
-              "body": ["Manrope"],
-              "label": ["Manrope"]
-            },
-            borderRadius: {"DEFAULT": "0rem", "lg": "0rem", "xl": "0rem", "full": "9999px"},
-          },
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "error-dim": "#5C1202",
+          "on-primary-container": "#525151",
+          "surface-container-highest": "#E0E3E0",
+          "on-background": "#2F3331",
+          "error-container": "#FE8B70",
+          "surface-container": "#EDEEEB",
+          "primary-fixed-dim": "#D6D4D3",
+          "surface-container-lowest": "#FFFFFF",
+          "tertiary-dim": "#575348",
+          "primary-container": "#E5E2E1",
+          "on-tertiary-container": "#605B51",
+          "on-secondary": "#FFF8F1",
+          "surface-container-low": "#F3F4F1",
+          "tertiary-fixed-dim": "#ECE5D7",
+          "background": "#F5F4ED",
+          "on-primary-fixed": "#403F3F",
+          "surface-variant": "#E0E3E0",
+          "secondary-dim": "#5F513A",
+          "inverse-surface": "#0D0E0E",
+          "error": "#9E422C",
+          "secondary-fixed-dim": "#E5D2B4",
+          "secondary-fixed": "#F4E0C1",
+          "primary-fixed": "#E5E2E1",
+          "tertiary-fixed": "#FAF3E5",
+          "on-error-container": "#742410",
+          "on-tertiary-fixed-variant": "#6A665B",
+          "on-primary-fixed-variant": "#5C5B5B",
+          "surface-dim": "#D6DBD7",
+          "outline": "#777C79",
+          "surface-container-high": "#E6E9E6",
+          "surface-bright": "#FAF9F7",
+          "inverse-primary": "#FFFFFF",
+          "on-surface": "#2F3331",
+          "surface-tint": "#5F5E5E",
+          "on-secondary-fixed-variant": "#675A41",
+          "primary-dim": "#535252",
+          "surface": "#FAF9F7",
+          "secondary-container": "#F4E0C1",
+          "secondary": "#6B5D45",
+          "outline-variant": "#AFB3B0",
+          "on-secondary-container": "#5D5038",
+          "on-primary": "#FAF7F6",
+          "tertiary": "#635F54",
+          "on-tertiary-fixed": "#4D493F",
+          "on-surface-variant": "#5C605D",
+          "on-error": "#FFF7F6",
+          "inverse-on-surface": "#9D9D9B",
+          "on-secondary-fixed": "#4A3E27",
+          "tertiary-container": "#FAF3E5",
+          "on-tertiary": "#FFF8EC",
+          "primary": "#5F5E5E"
         },
-      }
-    </script>
+        fontFamily: {
+          "headline": ["Newsreader"],
+          "body": ["Manrope"],
+          "label": ["Manrope"]
+        },
+        borderRadius: {"DEFAULT": "0rem", "lg": "0rem", "xl": "0rem", "full": "9999px"},
+      },
+    },
+  }
+</script>
 <style>
-        .editorial-shadow { box-shadow: 0 20px 40px -15px rgba(49, 51, 44, 0.05); }
-        body { -webkit-font-smoothing: antialiased; }
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24;
-        }
-    </style>
+  .editorial-shadow { box-shadow: 0 20px 40px -15px rgba(49, 51, 44, 0.05); }
+  body { -webkit-font-smoothing: antialiased; }
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24;
+  }
+
+  /* Skeleton shimmer */
+  @keyframes shimmer {
+    0% { background-position: -700px 0; }
+    100% { background-position: 700px 0; }
+  }
+  .skeleton {
+    background: linear-gradient(90deg, #e0e3e0 25%, #edeeed 50%, #e0e3e0 75%);
+    background-size: 700px 100%;
+    animation: shimmer 1.4s infinite linear;
+  }
+
+  /* Portable Text rendered body styles */
+  .pt-body p {
+    font-family: 'Newsreader', serif;
+    font-size: 1.2rem;
+    line-height: 1.85;
+    color: rgba(47,51,49,0.90);
+    margin-bottom: 1.5rem;
+  }
+  .pt-body h2 {
+    font-family: 'Newsreader', serif;
+    font-size: 1.9rem;
+    margin-top: 3rem;
+    margin-bottom: 1.25rem;
+    color: #2F3331;
+  }
+  .pt-body h3 {
+    font-family: 'Newsreader', serif;
+    font-size: 1.45rem;
+    font-style: italic;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    color: #2F3331;
+  }
+  .pt-body strong { font-weight: 700; }
+  .pt-body em { font-style: italic; }
+  .pt-body a { text-decoration: underline; color: #5F5E5E; }
+  .pt-body ul {
+    list-style: disc;
+    padding-left: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-family: 'Newsreader', serif;
+    font-size: 1.1rem;
+    line-height: 1.75;
+    color: rgba(47,51,49,0.90);
+  }
+  .pt-body ol {
+    list-style: decimal;
+    padding-left: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-family: 'Newsreader', serif;
+    font-size: 1.1rem;
+    line-height: 1.75;
+    color: rgba(47,51,49,0.90);
+  }
+  .pt-body blockquote {
+    font-family: 'Newsreader', serif;
+    font-size: 1.35rem;
+    font-style: italic;
+    line-height: 1.5;
+    border-left: 3px solid #5F5E5E;
+    padding-left: 1.5rem;
+    margin: 2rem 0;
+    color: #2F3331;
+  }
+</style>
 </head>
 <body class="bg-surface text-on-surface font-body selection:bg-secondary-container selection:text-on-secondary-container">
+
 <!-- Top Navigation -->
-<nav class="fixed top-0 w-full flex justify-between items-center px-12 py-6 max-w-none bg-[#FAF9F7]/80 dark:bg-[#1A1A1A]/80 backdrop-blur-xl z-50">
-<div class="font-['Newsreader'] text-2xl font-semibold text-[#31332C] dark:text-[#FAF9F7]">
-            Dr. Abhishek Shenoy
+<nav class="fixed top-0 w-full z-[60] bg-white/90 backdrop-blur-xl border-b border-black/5">
+  <div class="flex justify-between items-center px-6 md:px-12 py-6 max-w-[1920px] mx-auto">
+
+    <div class="font-headline text-2xl text-on-surface shrink-0">
+      <a href="index.html">Dr. Abhishek Shenoy</a>
+    </div>
+
+    <div class="hidden md:flex gap-8 items-center absolute left-1/2 -translate-x-1/2">
+      <a class="uppercase tracking-widest text-xs font-bold text-on-surface-variant opacity-70 hover:opacity-100 transition-opacity" href="/">Home</a>
+      <a class="uppercase tracking-widest text-xs font-bold text-on-surface-variant opacity-70 hover:opacity-100 transition-opacity" href="/service.html">Expertise</a>
+      <a class="uppercase tracking-widest text-xs font-bold text-on-surface-variant opacity-70 hover:opacity-100 transition-opacity" href="/stories.html">Stories</a>
+      <a class="uppercase tracking-widest text-xs font-bold text-on-surface-variant opacity-70 hover:opacity-100 transition-opacity" href="/contact.html">Contact</a>
+      <a class="uppercase tracking-widest text-xs font-bold text-on-surface border-b-2 border-on-surface pb-1 transition-opacity" href="/Blogs.html">Blogs</a>
+
+    </div>
+
+    <div class="flex items-center gap-3 md:gap-6">
+      <button class="hidden md:block bg-black text-on-primary px-6 py-3 text-xs uppercase tracking-widest font-bold hover:bg-[#C8B89E] hover:text-black transition-all active:scale-[0.99]">
+        <a href="https://www.superhealth.co.in/appointment/koramangala/doctors/dr-abhishek-shenoy-orthopedics" target="_blank" rel="noopener noreferrer">Book Consultation</a>
+      </button>
+      
+      <button id="menu-toggle" class="md:hidden flex items-center justify-center text-on-surface">
+        <span class="material-symbols-outlined text-3xl">menu</span>
+      </button>
+    </div>
+  </div>
+</nav>
+<!-- ── Mobile Menu ───────────────────────────────── -->
+<div id="mobile-menu" class="fixed inset-0 z-[70] invisible md:hidden">
+  <div id="menu-backdrop" class="absolute inset-0 bg-black/40 backdrop-blur-sm opacity-0 transition-opacity duration-500"></div>
+  <div id="menu-drawer" class="absolute right-0 top-0 h-full w-[85%] max-w-sm bg-white translate-x-full transition-transform duration-500 ease-in-out border-l border-black/5 shadow-2xl">
+    <div class="flex flex-col h-full px-10 py-12">
+      <div class="flex justify-between items-center mb-16">
+        <div class="space-y-1">
+          <div class="font-label text-2xl tracking-wide uppercase font-bold text-on-surface">Menu</div>
+          <div class="h-[2px] w-8 bg-tertiary-container"></div>
         </div>
-<div class="hidden md:flex items-center gap-12">
-<a class="text-[#31332C]/60 dark:text-[#FAF9F7]/60 font-['Manrope'] uppercase text-[0.75rem] tracking-[0.3em] hover:text-[#31332C] dark:hover:text-[#FFFFFF] transition-colors duration-300" href="#">Home</a>
-<a class="text-[#31332C]/60 dark:text-[#FAF9F7]/60 font-['Manrope'] uppercase text-[0.75rem] tracking-[0.3em] hover:text-[#31332C] dark:hover:text-[#FFFFFF] transition-colors duration-300" href="#">Philosophy</a>
-<a class="text-[#31332C]/60 dark:text-[#FAF9F7]/60 font-['Manrope'] uppercase text-[0.75rem] tracking-[0.3em] hover:text-[#31332C] dark:hover:text-[#FFFFFF] transition-colors duration-300" href="#">Expertise</a>
-<a class="text-[#31332C] dark:text-[#FFFFFF] border-b border-[#31332C] dark:border-[#FFFFFF] pb-1 font-['Manrope'] uppercase text-[0.75rem] tracking-[0.3em]" href="#">Insights</a>
-<a class="text-[#31332C]/60 dark:text-[#FAF9F7]/60 font-['Manrope'] uppercase text-[0.75rem] tracking-[0.3em] hover:text-[#31332C] dark:hover:text-[#FFFFFF] transition-colors duration-300" href="#">Contact</a>
-</div>
-<button class="font-['Manrope'] uppercase text-[0.75rem] tracking-[0.3em] border border-outline px-6 py-2.5 hover:bg-on-surface hover:text-surface transition-all duration-300">
-            Book Consultation
+        <button id="menu-close" class="text-on-surface active:scale-90">
+          <span class="material-symbols-outlined text-3xl">close</span>
         </button>
-</nav>
-<main class="pt-32 pb-24">
-<!-- Editorial Header -->
-<article class="max-w-6xl mx-auto px-6">
-<header class="mb-16 md:mb-24 flex flex-col items-center text-center">
-<span class="font-label uppercase text-[0.75rem] tracking-[0.3em] text-outline mb-6">Expertise &amp; Innovation</span>
-<h1 class="font-headline text-5xl md:text-[4.5rem] leading-[0.95] text-on-surface max-w-4xl italic">
-                    The Role of <span class="not-italic font-bold">Robotic Precision</span> in Total Knee Replacement
-                </h1>
-<div class="mt-12 flex items-center gap-6 border-y border-outline-variant py-8 w-full max-w-2xl justify-center">
-<div class="flex flex-col items-center">
-<span class="font-label uppercase text-[0.65rem] tracking-[0.3em] text-outline">Author</span>
-<span class="font-headline text-lg italic mt-1">Dr. Abhishek Shenoy</span>
+      </div>
+
+      <div class="flex flex-col gap-0">
+        <a class="group flex items-center justify-between py-6 border-b border-black/95 font-label text-2xl tracking-wide text-on-surface-variant hover:text-primary transition-all active:scale-95" href="/">
+          <div class="flex items-center gap-4"><span class="material-symbols-outlined text-xl group-hover:translate-x-1 transition">home</span><span>Home</span></div>
+          <span class="material-symbols-outlined opacity-0 group-hover:opacity-100 transition-opacity text-sm">arrow_forward_ios</span>
+        </a>
+
+        <a class="group flex items-center justify-between py-6 border-b border-black/95 font-label text-2xl tracking-wide text-on-surface-variant hover:text-primary transition-all active:scale-95" href="/service.html">
+          <div class="flex items-center gap-4"><span class="material-symbols-outlined text-xl group-hover:translate-x-1 transition">medical_services</span><span>Expertise</span></div>
+          <span class="material-symbols-outlined opacity-0 group-hover:opacity-100 transition-opacity text-sm">arrow_forward_ios</span>
+        </a>
+
+        <a class="group flex items-center justify-between py-6 border-b border-black/95 font-label text-2xl tracking-wide text-on-surface-variant hover:text-primary transition-all active:scale-95" href="/Stories.html">
+          <div class="flex items-center gap-4"><span class="material-symbols-outlined text-xl group-hover:translate-x-1 transition">auto_stories</span><span>Stories</span></div>
+          <span class="material-symbols-outlined opacity-0 group-hover:opacity-100 transition-opacity text-sm">arrow_forward_ios</span>
+        </a>
+
+        <a class="group flex items-center justify-between py-6 border-b border-black/95 font-label text-2xl tracking-wide text-on-surface-variant hover:text-primary transition-all active:scale-95" href="/Contact.html">
+          <div class="flex items-center gap-4"><span class="material-symbols-outlined text-xl group-hover:translate-x-1 transition">call</span><span>Contact</span></div>
+          <span class="material-symbols-outlined opacity-0 group-hover:opacity-100 transition-opacity text-sm">arrow_forward_ios</span>
+        </a>
+
+        <a class="group flex items-center justify-between py-6 border-b border-black/95 font-label text-2xl tracking-wide bg-black text-white px-2 -mx-2 transition-all active:scale-95" href="/blogs.html">
+          <div class="flex items-center gap-4"><span class="material-symbols-outlined text-xl text-tertiary-container">feed</span><span>Blogs</span></div>
+          <span class="material-symbols-outlined text-sm text-tertiary-container">fiber_manual_record</span>
+        </a>
+      </div>
+
+      <div class="mt-12 space-y-4 opacity-60">
+        <p class="font-label text-[20px] uppercase tracking-[0.2em] text-black font-bold">Location</p>
+        <p class="font-label text-[18px] leading-relaxed text-black font-semibold">
+          Superhealth Hospital<br />
+          No. 12, 1st Cross, 5th Block, <br />
+          Koramangala, Bangalore, <br />
+          Karnataka 560034
+        </p>
+      </div>
+
+      <div class="mt-auto pt-8">
+        <button class="btn-shimmer bg-[#1A1A1A] text-on-primary px-8 py-4 text-sm uppercase tracking-widest font-bold hover:opacity-95 transition-all active:scale-[0.99]">
+          Book Consultation
+        </button>
+      </div>
+    </div>
+  </div>
 </div>
-<div class="w-px h-8 bg-outline-variant"></div>
-<div class="flex flex-col items-center">
-<span class="font-label uppercase text-[0.65rem] tracking-[0.3em] text-outline">Published</span>
-<span class="font-headline text-lg italic mt-1">October 24, 2024</span>
+<!-- Not Found State -->
+<div id="not-found" class="hidden pt-48 pb-24 text-center">
+  <span class="font-label uppercase text-[0.75rem] tracking-[0.3em] text-outline">404</span>
+  <h1 class="font-headline text-5xl italic mt-4 mb-6">Article Not Found</h1>
+  <p class="font-body text-on-surface-variant mb-10">The article you're looking for doesn't exist or has been removed.</p>
+  <a href="blogs.html" class="font-label uppercase text-[0.75rem] tracking-[0.3em] border-b border-outline pb-1 hover:text-primary transition-all">
+    Back to Insights
+  </a>
 </div>
-</div>
-</header>
-<!-- Hero Image Section - Asymmetric Layout -->
-<div class="grid grid-cols-12 gap-8 mb-24">
-<div class="col-span-12 md:col-span-8 overflow-hidden aspect-[16/9]">
-<img alt="Surgical robotics interface" class="w-full h-full object-cover grayscale brightness-90 contrast-110" data-alt="Close-up of a high-tech robotic surgical arm in a sterile operating theater with cool blue and white medical lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXB3T-3WPvItejnnp7jtLEWD_VTV4qTGmHgkvMwmYUIIrpyyr1Vrh9XEfNBZW20J5D-MrpS0LbYM_XC_xpqE9ogd3MnWr3XaqxfiJYFyeMa9VnaWwJvebCOVVaZgHB3cBCanV6_kVGRHN3QqhRX4jjd63SuaNW6SFoaO0vmkw_zy5U7swU_prkpNI09LZv3acOpRaoBBnxpDth9NpXIKTKGuWLFvQT0YzePCoN3UAiQnug6KX5jkdnn0vpYk60mgAcrEPPyuMYFW4n"/>
-</div>
-<div class="col-span-12 md:col-span-4 bg-surface-container flex flex-col justify-center p-12 editorial-shadow">
-<span class="material-symbols-outlined text-4xl mb-6 text-primary">precision_manufacturing</span>
-<h3 class="font-headline text-2xl mb-4 italic leading-tight">A New Standard of Care</h3>
-<p class="font-body text-sm leading-relaxed text-on-surface-variant">
-                        Leveraging advanced computational mapping to achieve sub-millimeter accuracy that human hands alone cannot replicate.
-                    </p>
-</div>
-</div>
-<!-- Content Body -->
-<div class="grid grid-cols-12 gap-8 lg:gap-16">
-<!-- Sidebar / Table of Contents -->
-<aside class="hidden lg:block col-span-3 sticky top-40 h-fit">
-<nav class="flex flex-col gap-6">
-<span class="font-label uppercase text-[0.75rem] tracking-[0.3em] text-outline-variant pb-4 border-b border-outline-variant">Navigation</span>
-<a class="font-headline italic text-lg hover:text-primary transition-colors" href="#what-is-it">The Technology</a>
-<a class="font-headline italic text-lg hover:text-primary transition-colors" href="#benefits">Patient Advantages</a>
-<a class="font-headline italic text-lg hover:text-primary transition-colors" href="#candidacy">Candidate Profile</a>
-</nav>
-</aside>
-<!-- Article Content -->
-<div class="col-span-12 lg:col-span-7 space-y-16">
-<section id="what-is-it">
-<h2 class="font-headline text-3xl mb-8">What is Robotic-Assisted Surgery?</h2>
-<div class="font-headline text-xl leading-[1.8] text-on-surface/90 space-y-6">
-<p>
-                                Robotic-assisted surgery is often misunderstood as a procedure performed entirely by a machine. In reality, the surgeon remains in complete control. The <span class="italic">robotic arm</span> acts as a highly advanced extension of the surgeon's hands, providing data-driven guidance and a level of physical stabilization that ensures bone cuts are executed exactly as planned.
-                            </p>
-<p>
-                                Before the first incision is even made, 3D imaging technology is used to create a digital "map" of your unique anatomy. This allows us to pre-plan the implant's position with surgical precision, accounting for the unique biomechanics of your joint.
-                            </p>
-</div>
-</section>
-<div class="h-px bg-outline-variant w-1/3"></div>
-<section id="benefits">
-<h2 class="font-headline text-3xl mb-8">Benefits for the Patient</h2>
-<div class="grid md:grid-cols-2 gap-12">
-<div class="space-y-4">
-<span class="font-label uppercase text-[0.65rem] tracking-[0.3em] text-primary">01. Precision</span>
-<p class="font-body text-md leading-relaxed text-on-surface-variant">
-                                    The robotic system provides real-time feedback, ensuring that the alignment of the new knee joint is perfectly balanced. This reduces the risk of uneven wear and tear over time.
-                                </p>
-</div>
-<div class="space-y-4">
-<span class="font-label uppercase text-[0.65rem] tracking-[0.3em] text-primary">02. Recovery Time</span>
-<p class="font-body text-md leading-relaxed text-on-surface-variant">
-                                    Because the technology allows for smaller, more precise incisions, there is often less damage to the surrounding soft tissue. This typically leads to a faster return to daily activities.
-                                </p>
-</div>
-</div>
-<div class="mt-12 bg-primary text-on-primary p-12">
-<blockquote class="font-headline text-2xl italic leading-snug">
-                                "Precision is not just about the surgery itself; it is about how the patient feels six months, and even six years, down the line."
-                            </blockquote>
-<cite class="block mt-6 font-label uppercase text-[0.7rem] tracking-[0.2em] opacity-80">— Dr. Abhishek Shenoy</cite>
-</div>
-</section>
-<section id="candidacy">
-<h2 class="font-headline text-3xl mb-8">Is it Right for You?</h2>
-<div class="font-headline text-xl leading-[1.8] text-on-surface/90">
-<p>
-                                While robotic-assisted knee replacement offers significant advantages, it is one tool in a comprehensive surgical toolkit. The decision to use this technology depends on several factors, including the severity of joint degeneration, previous surgeries, and the specific goals of the individual.
-                            </p>
-<p class="mt-8">
-                                During your consultation, we evaluate your gait, lifestyle needs, and clinical scans to determine the surgical approach that will offer you the most stable and natural-feeling result.
-                            </p>
-</div>
-<div class="mt-12">
-<button class="bg-surface-container text-on-surface font-label uppercase text-[0.75rem] tracking-[0.3em] px-10 py-5 hover:bg-secondary-container transition-colors duration-300 w-full md:w-auto">
-                                Schedule a Clinical Evaluation
-                            </button>
-</div>
-</section>
-</div>
-</div>
-</article>
-<!-- Related Insights Section -->
-<section class="mt-32 bg-surface-container-low py-24">
-<div class="max-w-6xl mx-auto px-6">
-<div class="flex justify-between items-end mb-12">
-<div>
-<span class="font-label uppercase text-[0.75rem] tracking-[0.3em] text-outline">Continue Reading</span>
-<h2 class="font-headline text-4xl mt-2 italic">Related Insights</h2>
-</div>
-<a class="font-label uppercase text-[0.75rem] tracking-[0.3em] border-b border-outline pb-1 hover:text-primary hover:border-primary transition-all" href="#">View All</a>
-</div>
-<div class="grid md:grid-cols-3 gap-8">
-<!-- Related Card 1 -->
-<div class="bg-surface-container-lowest group cursor-pointer overflow-hidden editorial-shadow transition-transform duration-300 hover:scale-[1.02]">
-<div class="aspect-[4/3] overflow-hidden">
-<img alt="Modern clinical setting" class="w-full h-full object-cover grayscale opacity-80 group-hover:scale-110 transition-transform duration-500" data-alt="Interior of a modern, bright clinical office with minimalist furniture and clean lines in neutral tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPSd7-3AHAjpv1FHgBB3TedQXv32MnZH_zkFDK306Kv7PjBGxNrFkDIDpeyOl-J1Tpou5IJVZSppyAZfTYO44lQG9NCzbzvEU7KfYP5-XCbMhFyKyR_5YgAC0pnF5Uw8weKfZU1KZfHYnrJlpsuxb7f4x7vMVSGaRbzO8WL0uwP61ZB5SHaiVqz22cqTA-c-ye6r0WMpl_5P8urGK9qtJ7NT16xU_cRak6xtfvJ9eWgnhg5FUVBqmcDSr2v4UB2mB1v7ZYDf75t-A6"/>
-</div>
-<div class="p-8">
-<span class="font-label uppercase text-[0.6rem] tracking-[0.2em] text-outline">Rehabilitation</span>
-<h3 class="font-headline text-xl mt-3 group-hover:text-primary transition-colors">Post-Operative Movement: The First 48 Hours</h3>
-</div>
-</div>
-<!-- Related Card 2 -->
-<div class="bg-surface-container-lowest group cursor-pointer overflow-hidden editorial-shadow transition-transform duration-300 hover:scale-[1.02]">
-<div class="aspect-[4/3] overflow-hidden">
-<img alt="Medical consultation" class="w-full h-full object-cover grayscale opacity-80 group-hover:scale-110 transition-transform duration-500" data-alt="Close up of a doctor's hands holding a skeletal model of a knee joint during a patient consultation" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCn0N9KtYdEyeAMM8TkBNMLSVKDjDuk4QNjoRreqyVnOxBKw8TIegZ-dzPF96YcMBoyTrnk6jlYgX9DvHzB6I-KTjbcyYbssiO195MZzAfOWuUynzdrguDR1DJPLBHK_aJBmWmLyj0QX9EBaSOaIZFtjncyas4g1auntbNXzySLtnRSVlnbXyLhY8pBmXDTMMmi4F0rTsbb-Q7y7CbDYv05x6BYQ7wCdmKI2Iq0i5FdUxGRJWlX6TRoDLwOkjD7hzof_t5rsbvxLWQQ"/>
-</div>
-<div class="p-8">
-<span class="font-label uppercase text-[0.6rem] tracking-[0.2em] text-outline">Technology</span>
-<h3 class="font-headline text-xl mt-3 group-hover:text-primary transition-colors">Understanding Joint Biomechanics and Longevity</h3>
-</div>
-</div>
-<!-- Related Card 3 -->
-<div class="bg-surface-container-lowest group cursor-pointer overflow-hidden editorial-shadow transition-transform duration-300 hover:scale-[1.02]">
-<div class="aspect-[4/3] overflow-hidden">
-<img alt="Medical imaging" class="w-full h-full object-cover grayscale opacity-80 group-hover:scale-110 transition-transform duration-500" data-alt="High contrast black and white X-ray image of a knee joint displayed on a luminous digital screen" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlC0sG4o2K65D7-1S9alxEfMgMIFNZpefWd2BfwhrUk7LEJd-CJtOvill-GlQD4iUKXYMwwNMw6aB91XFOTg-m0P_tMC_kvE30kK069PxHENQSHOCC1IlDkqh2A777dwUR49aPrtbs4udxZqsqHm24YPv_XueOPrzbtXXZ1eodBGbbqFkvgVMWtLhg4ivw6-n5uhWPVBU94ueqA0jhfn6anY_bTZD3CrjTRHOscU_8688NYvAUKgakll165WXPObP9NJvzvAQkECDa"/>
-</div>
-<div class="p-8">
-<span class="font-label uppercase text-[0.6rem] tracking-[0.2em] text-outline">Lifestyle</span>
-<h3 class="font-headline text-xl mt-3 group-hover:text-primary transition-colors">Returning to Sport After Joint Replacement</h3>
-</div>
-</div>
-</div>
-</div>
-</section>
+
+<main id="post-main" class="pt-32 pb-24">
+
+  <!-- ── SKELETON ── -->
+  <div id="skeleton-wrapper">
+    <article class="max-w-6xl mx-auto px-6">
+
+      <!-- Skeleton header -->
+      <header class="mb-16 md:mb-24 flex flex-col items-center text-center gap-6">
+        <div class="skeleton h-3 w-28 rounded-full"></div>
+        <div class="skeleton h-14 w-3/4 rounded"></div>
+        <div class="skeleton h-14 w-1/2 rounded"></div>
+        <div class="mt-6 flex items-center gap-6 border-y border-outline-variant py-8 w-full max-w-2xl justify-center">
+          <div class="flex flex-col items-center gap-2">
+            <div class="skeleton h-2 w-12 rounded-full"></div>
+            <div class="skeleton h-5 w-32 rounded"></div>
+          </div>
+          <div class="w-px h-8 bg-outline-variant"></div>
+          <div class="flex flex-col items-center gap-2">
+            <div class="skeleton h-2 w-12 rounded-full"></div>
+            <div class="skeleton h-5 w-28 rounded"></div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Skeleton hero -->
+      <div class="grid grid-cols-12 gap-8 mb-24">
+        <div class="col-span-12 md:col-span-8">
+          <div class="skeleton w-full aspect-[16/9]"></div>
+        </div>
+        <div class="col-span-12 md:col-span-4 bg-surface-container p-12 flex flex-col gap-4">
+          <div class="skeleton h-8 w-8 rounded-full"></div>
+          <div class="skeleton h-6 w-3/4 rounded"></div>
+          <div class="skeleton h-4 w-full rounded"></div>
+          <div class="skeleton h-4 w-5/6 rounded"></div>
+        </div>
+      </div>
+
+      <!-- Skeleton body -->
+      <div class="grid grid-cols-12 gap-8 lg:gap-16">
+        <aside class="hidden lg:block col-span-3">
+          <div class="flex flex-col gap-5">
+            <div class="skeleton h-2 w-full rounded-full mb-2"></div>
+            <div class="skeleton h-5 w-3/4 rounded"></div>
+            <div class="skeleton h-5 w-2/3 rounded"></div>
+            <div class="skeleton h-5 w-4/5 rounded"></div>
+          </div>
+        </aside>
+        <div class="col-span-12 lg:col-span-7 space-y-4">
+          <div class="skeleton h-5 w-full rounded"></div>
+          <div class="skeleton h-5 w-full rounded"></div>
+          <div class="skeleton h-5 w-5/6 rounded"></div>
+          <div class="skeleton h-5 w-full rounded mt-6"></div>
+          <div class="skeleton h-5 w-4/5 rounded"></div>
+          <div class="skeleton h-5 w-full rounded"></div>
+          <div class="skeleton h-5 w-3/4 rounded"></div>
+          <div class="skeleton h-32 w-full rounded mt-8"></div>
+        </div>
+      </div>
+
+    </article>
+  </div>
+  <!-- ── END SKELETON ── -->
+
+
+  <!-- ── REAL CONTENT (hidden until loaded) ── -->
+  <div id="post-content" class="hidden">
+    <article class="max-w-6xl mx-auto px-6">
+
+      <!-- Article Header -->
+      <header class="mb-16 md:mb-24 flex flex-col items-center text-center">
+        <span id="post-category" class="font-label uppercase text-[0.75rem] tracking-[0.3em] text-outline mb-6"></span>
+        <h1 id="post-title" class="font-headline text-5xl md:text-[4.5rem] leading-[0.95] text-on-surface max-w-4xl italic"></h1>
+        <div class="mt-12 flex items-center gap-6 border-y border-outline-variant py-8 w-full max-w-2xl justify-center">
+          <div class="flex flex-col items-center">
+            <span class="font-label uppercase text-[0.65rem] tracking-[0.3em] text-outline">Author</span>
+            <span id="post-author" class="font-headline text-lg italic mt-1">Dr. Abhishek Shenoy</span>
+          </div>
+          <div class="w-px h-8 bg-outline-variant"></div>
+          <div class="flex flex-col items-center">
+            <span class="font-label uppercase text-[0.65rem] tracking-[0.3em] text-outline">Published</span>
+            <span id="post-date" class="font-headline text-lg italic mt-1"></span>
+          </div>
+        </div>
+      </header>
+
+      <!-- Hero Image + Side Panel -->
+      <div class="grid grid-cols-12 gap-8 mb-24">
+        <div class="col-span-12 md:col-span-8 overflow-hidden aspect-[16/9]">
+          <img id="post-hero-image" class="w-full h-full object-cover brightness-90 contrast-110" src="" alt=""/>
+        </div>
+        <div class="col-span-12 md:col-span-4 bg-surface-container flex flex-col justify-center p-12 editorial-shadow">
+          <span class="material-symbols-outlined text-4xl mb-6 text-primary">medical_services</span>
+          <h3 id="post-side-title" class="font-headline text-2xl mb-4 italic leading-tight"></h3>
+          <p id="post-side-excerpt" class="font-body text-sm leading-relaxed text-on-surface-variant"></p>
+        </div>
+      </div>
+
+      <!-- Content Body + TOC Sidebar -->
+      <div class="grid grid-cols-12 gap-8 lg:gap-16">
+
+        <!-- Sidebar / TOC (auto-generated from headings) -->
+        <aside class="hidden lg:block col-span-3 sticky top-40 h-fit">
+          <nav class="flex flex-col gap-6">
+            <span class="font-label uppercase text-[0.75rem] tracking-[0.3em] text-outline-variant pb-4 border-b border-outline-variant">Navigation</span>
+            <div id="toc-links" class="flex flex-col gap-4"></div>
+          </nav>
+        </aside>
+
+        <!-- Portable Text Body -->
+        <div id="post-body" class="col-span-12 lg:col-span-7 pt-body space-y-0"></div>
+
+        <!-- Right rail (empty for now, preserves layout) -->
+        <div class="hidden lg:block col-span-2"></div>
+      </div>
+
+      <!-- CTA -->
+      <div class="mt-24">
+        <a href="https://www.superhealth.co.in/appointment/koramangala/doctors/dr-abhishek-shenoy-orthopedics" target="_blank" rel="noopener noreferrer">
+          <button class="bg-black text-white font-label font-semibold uppercase text-[0.75rem] tracking-[0.2em] px-10 py-5 hover:bg-[#C8B89E] hover:text-black transition-colors duration-300 w-full md:w-auto">
+            Schedule a Clinical Evaluation
+          </button>
+        </a>
+      </div>
+
+    </article>
+  </div>
+  <!-- ── END REAL CONTENT ── -->
+
 </main>
+
+<!-- Related Insights -->
+<section id="related-section" class="hidden mt-32 bg-surface-container-low py-24">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="flex justify-between items-end mb-12">
+      <div>
+        <span class="font-label uppercase text-[0.75rem] tracking-[0.3em] text-outline">Continue Reading</span>
+        <h2 class="font-headline text-4xl mt-2 italic">Related Insights</h2>
+      </div>
+      <a class="font-label uppercase text-[0.75rem] tracking-[0.3em] border-b border-outline pb-1 hover:text-primary hover:border-primary transition-all" href="blogs.html">View All</a>
+    </div>
+    <div id="related-grid" class="grid md:grid-cols-3 gap-8"></div>
+  </div>
+</section>
+
 <!-- Footer -->
-<footer class="bg-white py-20 border-t border-border-light">
-<div class="max-w-7xl mx-auto px-6 lg:px-12">
-<div class="grid md:grid-cols-12 gap-16 mb-20">
-<div class="md:col-span-5">
-<div class="text-2xl font-display tracking-[0.2em] uppercase text-text-primary mb-8">
-                        Dr. Abhishek <span class="font-light italic text-beige">Shenoy</span>
-</div>
-<p class="max-w-xs text-text-secondary text-sm leading-relaxed mb-10">
-                        Dedicated to providing advanced orthopaedic solutions through innovation, precision, and compassionate care.
-                    </p>
-<div class="flex gap-6">
-<a class="text-text-secondary hover:text-beige transition-colors" href="#">Instagram</a>
-<a class="text-text-secondary hover:text-beige transition-colors" href="#">LinkedIn</a>
-<a class="text-text-secondary hover:text-beige transition-colors" href="#">Twitter</a>
-</div>
-</div>
-<div class="md:col-span-3">
-<h5 class="font-bold uppercase tracking-[0.3em] text-[10px] text-text-primary mb-10">The Clinic</h5>
-<ul class="space-y-4 text-text-secondary text-xs tracking-widest uppercase">
-<li><a class="hover:text-beige transition-colors" href="#about">Philosophy</a></li>
-<li><a class="hover:text-beige transition-colors" href="#services">Procedures</a></li>
-<li><a class="hover:text-beige transition-colors" href="#patient-stories">Stories</a></li>
-<li><a class="hover:text-beige transition-colors" href="#contact">Inquiry</a></li>
-</ul>
-</div>
-<div class="md:col-span-4">
-<h5 class="font-bold uppercase tracking-[0.3em] text-[10px] text-text-primary mb-10">Subscribe to Health Notes</h5>
-<p class="text-text-secondary text-xs leading-relaxed mb-6">Expert insights on joint health and longevity delivered monthly.</p>
-<div class="flex border-b border-border-light">
-<input class="bg-transparent border-0 focus:ring-0 text-xs py-3 px-0 w-full text-text-primary placeholder:text-border-light" placeholder="Email Address" type="email"/>
-<button class="text-beige text-[10px] font-bold uppercase tracking-widest pl-4">Join</button>
-</div>
-</div>
-</div>
-<div class="pt-10 border-t border-border-light flex flex-col md:flex-row justify-between items-center gap-6">
-<p class="text-[9px] text-text-secondary uppercase tracking-[0.3em]">
-                    © 2024 Dr. Abhishek Shenoy. Meticulously Crafted Care.
-                </p>
-<div class="flex items-center gap-8 text-[9px] uppercase tracking-[0.3em] font-medium text-text-secondary">
-<a class="hover:text-beige" href="#">Privacy Policy</a>
-<a class="hover:text-beige" href="#">Terms of Care</a>
-</div>
-</div>
-</div>
+<footer class="bg-white w-full border-t border-black/5">
+  <div class="flex flex-col md:flex-row justify-between items-center px-6 md:px-12 py-20 gap-8 max-w-[1920px] mx-auto">
+    <div class="flex flex-col items-center md:items-start gap-4">
+      <div class="font-headline text-xl font-bold text-on-surface">Dr. Abhishek Shenoy</div>
+      <p class="font-manrope text-[10px] tracking-wider uppercase text-on-surface-variant">
+        © 2024 Dr. Abhishek Shenoy. All rights reserved. <br class="md:hidden"/>
+        Surgical Precision & Human Restoration.
+      </p>
+    </div>
+    <div class="flex gap-8">
+      <a class="font-manrope text-[10px] tracking-wider uppercase text-on-surface-variant hover:text-primary font-bold transition-colors" href="#">Privacy Policy</a>
+      <a class="font-manrope text-[10px] tracking-wider uppercase text-on-surface-variant hover:text-primary font-bold transition-colors" href="#">Terms of Service</a>
+      <a class="font-manrope text-[10px] tracking-wider uppercase text-on-surface-variant hover:text-primary font-bold transition-colors" href="#">Clinical Credits</a>
+      <a class="font-manrope text-[10px] tracking-wider uppercase text-on-surface-variant hover:text-primary font-bold transition-colors" href="#">Accessibility</a>
+    </div>
+  </div>
 </footer>
-</body></html>
+
+<script type="module">
+  // ─── Sanity Config ─────────────────────────────────────────────
+  const PROJECT_ID = '0piuyzak';
+  const DATASET    = 'production';
+  const API_VER    = '2024-01-01';
+
+  function sanityImageUrl(ref) {
+    if (!ref) return null;
+    const [, id, dims, fmt] = ref.match(/^image-([a-f0-9]+)-(\d+x\d+)-(\w+)$/);
+    return `https://cdn.sanity.io/images/${PROJECT_ID}/${DATASET}/${id}-${dims}.${fmt}`;
+  }
+
+  function placeholderImg() {
+    return `https://placehold.co/1200x675/EDEEEB/777C79?text=Dr.+Shenoy`;
+  }
+
+  // ─── Fetch single post by slug ──────────────────────────────────
+  async function fetchPost(slug) {
+    const query = encodeURIComponent(
+      `*[_type == "post" && slug.current == "${slug}"][0]`
+    );
+    const url = `https://${PROJECT_ID}.api.sanity.io/v${API_VER}/data/query/${DATASET}?query=${query}`;
+    const res = await fetch(url);
+    if (!res.ok) throw new Error('Fetch failed');
+    const { result } = await res.json();
+    return result;
+  }
+
+  // ─── Fetch related posts (same category, exclude current slug) ──
+  async function fetchRelated(category, excludeSlug) {
+    const catFilter = category
+      ? `&& category == "${category}"`
+      : '';
+    const query = encodeURIComponent(
+      `*[_type == "post" && slug.current != "${excludeSlug}" ${catFilter}] | order(publishedAt desc)[0..2] {
+        title, slug, category, publishedAt, mainImage
+      }`
+    );
+    const url = `https://${PROJECT_ID}.api.sanity.io/v${API_VER}/data/query/${DATASET}?query=${query}`;
+    const res = await fetch(url);
+    const { result } = await res.json();
+    return result || [];
+  }
+
+  // ─── Portable Text → HTML ──────────────────────────────────────
+  function renderMarks(text, marks = []) {
+    let html = text
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;');
+    if (marks.includes('strong'))  html = `<strong>${html}</strong>`;
+    if (marks.includes('em'))      html = `<em>${html}</em>`;
+    if (marks.includes('underline')) html = `<u>${html}</u>`;
+    if (marks.includes('code'))    html = `<code class="bg-surface-container px-1 font-mono text-sm">${html}</code>`;
+    return html;
+  }
+
+  function renderInlineChildren(children) {
+    return (children || []).map(child => {
+      if (child._type === 'span') {
+        return renderMarks(child.text || '', child.marks || []);
+      }
+      return '';
+    }).join('');
+  }
+
+  function portableTextToHtml(blocks) {
+    if (!blocks || !blocks.length) return '';
+
+    const headings = [];
+    const html = blocks.map(block => {
+
+      if (block._type === 'block') {
+        const inner = renderInlineChildren(block.children);
+        switch (block.style) {
+          case 'h2': {
+            const id = `section-${headings.length}`;
+            headings.push({ id, text: inner.replace(/<[^>]+>/g, '') });
+            return `<h2 id="${id}">${inner}</h2>`;
+          }
+          case 'h3': {
+            const id = `section-${headings.length}`;
+            headings.push({ id, text: inner.replace(/<[^>]+>/g, '') });
+            return `<h3 id="${id}">${inner}</h3>`;
+          }
+          case 'blockquote':
+            return `<blockquote>${inner}</blockquote>`;
+          case 'normal':
+          default:
+            return inner ? `<p>${inner}</p>` : '';
+        }
+      }
+
+      if (block._type === 'list') {
+        const tag = block.listItem === 'number' ? 'ol' : 'ul';
+        const items = (block.children || []).map(item =>
+          `<li>${renderInlineChildren(item.children)}</li>`
+        ).join('');
+        return `<${tag}>${items}</${tag}>`;
+      }
+
+      return '';
+    }).join('\n');
+
+    return { html, headings };
+  }
+
+  // ─── Format date ───────────────────────────────────────────────
+  function formatDate(iso) {
+    if (!iso) return '';
+    return new Date(iso).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+  }
+
+  // ─── Render Related Cards ──────────────────────────────────────
+  function renderRelated(posts) {
+    if (!posts.length) return;
+    const grid = document.getElementById('related-grid');
+    grid.innerHTML = posts.map(post => {
+      const imgRef = post.mainImage?.asset?._ref;
+      const imgUrl = imgRef ? sanityImageUrl(imgRef) : placeholderImg();
+      const slug   = post.slug?.current;
+      return `
+        <div onclick="window.location='blog-post.html?slug=${slug}'"
+          class="bg-surface-container-lowest group cursor-pointer overflow-hidden editorial-shadow transition-transform duration-300 hover:scale-[1.02]">
+          <div class="aspect-[4/3] overflow-hidden">
+            <img alt="${post.title}" class="w-full h-full object-cover opacity-80 group-hover:scale-110 transition-transform duration-500"
+                 src="${imgUrl}"/>
+          </div>
+          <div class="p-8">
+            <span class="font-label uppercase text-[0.6rem] tracking-[0.2em] text-outline">${post.category || 'Clinical'}</span>
+            <h3 class="font-headline text-xl mt-3 group-hover:text-primary transition-colors">${post.title}</h3>
+          </div>
+        </div>`;
+    }).join('');
+    document.getElementById('related-section').classList.remove('hidden');
+  }
+
+  // ─── Init ──────────────────────────────────────────────────────
+  (async () => {
+    const params = new URLSearchParams(window.location.search);
+    const slug   = params.get('slug');
+
+    if (!slug) {
+      document.getElementById('skeleton-wrapper').classList.add('hidden');
+      document.getElementById('not-found').classList.remove('hidden');
+      return;
+    }
+
+    try {
+      const post = await fetchPost(slug);
+
+      if (!post) {
+        document.getElementById('skeleton-wrapper').classList.add('hidden');
+        document.getElementById('not-found').classList.remove('hidden');
+        return;
+      }
+
+      // ── Populate Header ──
+      document.title = `${post.title} | Dr. Abhishek Shenoy`;
+      document.getElementById('post-category').textContent = post.category || '';
+      document.getElementById('post-title').textContent    = post.title;
+      document.getElementById('post-author').textContent   = post.author || 'Dr. Abhishek Shenoy';
+      document.getElementById('post-date').textContent     = formatDate(post.publishedAt);
+
+      // ── Hero image ──
+      const imgRef = post.mainImage?.asset?._ref;
+      const imgUrl = imgRef ? sanityImageUrl(imgRef) : placeholderImg();
+      document.getElementById('post-hero-image').src = imgUrl;
+      document.getElementById('post-hero-image').alt = post.title;
+
+      // ── Side panel (first two sentences of body as teaser) ──
+      const firstBlock = (post.body || []).find(b => b._type === 'block' && b.children);
+      const sideText   = firstBlock
+        ? firstBlock.children.map(c => c.text).join('').slice(0, 180) + '…'
+        : '';
+      document.getElementById('post-side-title').textContent   = post.category || 'Clinical Insight';
+      document.getElementById('post-side-excerpt').textContent = sideText;
+
+      // ── Portable Text body ──
+      const { html, headings } = portableTextToHtml(post.body || []);
+      document.getElementById('post-body').innerHTML = html;
+
+      // ── TOC from headings ──
+      if (headings.length) {
+        const toc = document.getElementById('toc-links');
+        toc.innerHTML = headings.map(h =>
+          `<a class="font-headline italic text-lg hover:text-primary transition-colors"
+              href="#${h.id}">${h.text}</a>`
+        ).join('');
+      }
+
+      // ── Show content, hide skeleton ──
+      document.getElementById('skeleton-wrapper').classList.add('hidden');
+      document.getElementById('post-content').classList.remove('hidden');
+
+      // ── Related posts ──
+      const related = await fetchRelated(post.category, slug);
+      if (related.length) renderRelated(related);
+
+    } catch (err) {
+      console.error('Sanity error:', err);
+      document.getElementById('skeleton-wrapper').classList.add('hidden');
+      document.getElementById('not-found').classList.remove('hidden');
+    }
+  })();
+    /* ── Mobile menu ─────────────────────────────── */
+const menuToggle=document.getElementById('menu-toggle');
+const menuClose=document.getElementById('menu-close');
+const mobileMenu=document.getElementById('mobile-menu');
+const menuDrawer=document.getElementById('menu-drawer');
+const menuBackdrop=document.getElementById('menu-backdrop');
+
+function openMenu(){
+  mobileMenu.classList.remove('invisible');
+  menuBackdrop.classList.add('opacity-100');
+  menuDrawer.classList.remove('translate-x-full');
+  document.body.style.overflow='hidden';
+}
+function closeMenu(){
+  menuBackdrop.classList.remove('opacity-100');
+  menuDrawer.classList.add('translate-x-full');
+  setTimeout(()=>{mobileMenu.classList.add('invisible');document.body.style.overflow='';},500);
+}
+menuToggle?.addEventListener('click',openMenu);
+menuClose?.addEventListener('click',closeMenu);
+menuBackdrop?.addEventListener('click',closeMenu);
+</script>
+</body>
+</html>
