@@ -505,71 +505,71 @@
   </section>
 
   <!-- ── Testimonials ──────────────────────────────── -->
-  <section class="py-20 bg-surface-container-low overflow-hidden">
-    <div class="max-w-[1440px] mx-auto px-6 md:px-12 relative">
+    <section class="py-20 bg-surface-container-low overflow-hidden">
+      <div class="max-w-[1440px] mx-auto px-6 md:px-12 relative">
 
-      <!-- Header -->
-      <div class="flex items-center justify-between mb-16">
-        <h2 class="font-label text-2xl uppercase tracking-[0.2em] text-black font-semibold">
-          <span class="sh-line"><span class="sh-inner" id="testi-heading">Selected Testimonials</span></span>
-        </h2>
-        <div class="flex gap-6 rv" id="slider-btns" style="transition-delay:0.2s">
-          <button id="prevBtn" class="slider-btn hover:opacity-50 transition">
-            <span class="material-symbols-outlined text-3xl">chevron_left</span>
-          </button>
-          <button id="nextBtn" class="slider-btn hover:opacity-50 transition">
-            <span class="material-symbols-outlined text-3xl">chevron_right</span>
-          </button>
+        <!-- Header -->
+        <div class="flex items-center justify-between mb-16">
+          <h2 class="font-label text-2xl uppercase tracking-[0.2em] text-black font-semibold">
+          <span class="sh-inner" id="testi-heading">Selected Testimonials</span>
+          </h2>
+          <div class="flex gap-6 rv" id="slider-btns" style="transition-delay:0.2s">
+            <button id="prevBtn" class="slider-btn hover:opacity-50 transition">
+              <span class="material-symbols-outlined text-3xl">chevron_left</span>
+            </button>
+            <button id="nextBtn" class="slider-btn hover:opacity-50 transition">
+              <span class="material-symbols-outlined text-3xl">chevron_right</span>
+            </button>
+          </div>
         </div>
+
+        <!-- Slider -->
+        <div id="testimonialSlider"
+            class="flex overflow-x-auto gap-10 snap-x snap-mandatory scroll-smooth no-scrollbar"
+            style="scroll-behavior:smooth;">
+
+          <div class="tcard w-full md:w-[700px] flex-shrink-0 snap-center">
+            <div class="p-10 md:p-14 editorial-shadow border border-black/5 bg-white">
+              <blockquote class="text-lg md:text-2xl italic leading-relaxed mb-8">Cannot recommend Superhealth enough. Especially for preventative physician consultations. Saw 8 doctors and got 4 tests — all under 4.5 hours at a price &lt;80% of other hospitals. Dr. Shenoy's approach is bar none.</blockquote>
+              <p class="font-bold uppercase text-sm tracking-widest"><span class="author-line">Aryaman Ramanathan</span></p>
+            </div>
+          </div>
+
+          <div class="tcard w-full md:w-[700px] flex-shrink-0 snap-center">
+            <div class="p-10 md:p-14 editorial-shadow border border-black/5 bg-white">
+              <blockquote class="text-lg md:text-2xl italic leading-relaxed mb-8">The staff was very polite and supportive. The hospital was clean and well maintained. Dr. Abhishek explained everything clearly. Tests were efficient and facilities modern.</blockquote>
+              <p class="font-bold uppercase text-sm tracking-widest"><span class="author-line">Gyan Deep Boruah</span></p>
+            </div>
+          </div>
+
+          <div class="tcard w-full md:w-[700px] flex-shrink-0 snap-center">
+            <div class="p-10 md:p-14 editorial-shadow border border-black/5 bg-white">
+              <blockquote class="text-lg md:text-2xl italic leading-relaxed mb-8">Consulted Dr. Abhishek Shenoy for chronic knee pain and underwent knee replacement. Practical, confident and clear. Very positive orthopaedic experience overall.</blockquote>
+              <p class="font-bold uppercase text-sm tracking-widest"><span class="author-line">Mansi Singh</span></p>
+            </div>
+          </div>
+
+          <div class="tcard w-full md:w-[700px] flex-shrink-0 snap-center">
+            <div class="p-10 md:p-14 editorial-shadow border border-black/5 bg-white">
+              <blockquote class="text-lg md:text-2xl italic leading-relaxed mb-8">Excellent experience. Surgery, insurance handling, physiotherapy and follow-ups were seamless. Dr. Shenoy explained everything clearly and care was top-notch.</blockquote>
+              <p class="font-bold uppercase text-sm tracking-widest"><span class="author-line">Venkatesh K</span></p>
+            </div>
+          </div>
+
+          <div class="tcard w-full md:w-[700px] flex-shrink-0 snap-center">
+            <div class="p-10 md:p-14 editorial-shadow border border-black/5 bg-white">
+              <blockquote class="text-lg md:text-2xl italic leading-relaxed mb-8">Smooth and reassuring experience. Dr. Shenoy is patient, honest and empathetic. Focused on practical solutions. My recovery has been encouraging.</blockquote>
+              <p class="font-bold uppercase text-sm tracking-widest"><span class="author-line">Surekha Nayak</span></p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Dots -->
+        <div class="flex justify-center gap-3 mt-10" id="dots"></div>
+
       </div>
-
-      <!-- Slider -->
-      <div id="testimonialSlider"
-           class="flex overflow-x-auto gap-10 snap-x snap-mandatory scroll-smooth no-scrollbar"
-           style="scroll-behavior:smooth;">
-
-        <div class="tcard w-full md:w-[700px] flex-shrink-0 snap-center">
-          <div class="p-10 md:p-14 editorial-shadow border border-black/5 bg-white">
-            <blockquote class="text-lg md:text-2xl italic leading-relaxed mb-8">Cannot recommend Superhealth enough. Especially for preventative physician consultations. Saw 8 doctors and got 4 tests — all under 4.5 hours at a price &lt;80% of other hospitals. Dr. Shenoy's approach is bar none.</blockquote>
-            <p class="font-bold uppercase text-sm tracking-widest"><span class="author-line">Aryaman Ramanathan</span></p>
-          </div>
-        </div>
-
-        <div class="tcard w-full md:w-[700px] flex-shrink-0 snap-center">
-          <div class="p-10 md:p-14 editorial-shadow border border-black/5 bg-white">
-            <blockquote class="text-lg md:text-2xl italic leading-relaxed mb-8">The staff was very polite and supportive. The hospital was clean and well maintained. Dr. Abhishek explained everything clearly. Tests were efficient and facilities modern.</blockquote>
-            <p class="font-bold uppercase text-sm tracking-widest"><span class="author-line">Gyan Deep Boruah</span></p>
-          </div>
-        </div>
-
-        <div class="tcard w-full md:w-[700px] flex-shrink-0 snap-center">
-          <div class="p-10 md:p-14 editorial-shadow border border-black/5 bg-white">
-            <blockquote class="text-lg md:text-2xl italic leading-relaxed mb-8">Consulted Dr. Abhishek Shenoy for chronic knee pain and underwent knee replacement. Practical, confident and clear. Very positive orthopaedic experience overall.</blockquote>
-            <p class="font-bold uppercase text-sm tracking-widest"><span class="author-line">Mansi Singh</span></p>
-          </div>
-        </div>
-
-        <div class="tcard w-full md:w-[700px] flex-shrink-0 snap-center">
-          <div class="p-10 md:p-14 editorial-shadow border border-black/5 bg-white">
-            <blockquote class="text-lg md:text-2xl italic leading-relaxed mb-8">Excellent experience. Surgery, insurance handling, physiotherapy and follow-ups were seamless. Dr. Shenoy explained everything clearly and care was top-notch.</blockquote>
-            <p class="font-bold uppercase text-sm tracking-widest"><span class="author-line">Venkatesh K</span></p>
-          </div>
-        </div>
-
-        <div class="tcard w-full md:w-[700px] flex-shrink-0 snap-center">
-          <div class="p-10 md:p-14 editorial-shadow border border-black/5 bg-white">
-            <blockquote class="text-lg md:text-2xl italic leading-relaxed mb-8">Smooth and reassuring experience. Dr. Shenoy is patient, honest and empathetic. Focused on practical solutions. My recovery has been encouraging.</blockquote>
-            <p class="font-bold uppercase text-sm tracking-widest"><span class="author-line">Surekha Nayak</span></p>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Dots -->
-      <div class="flex justify-center gap-3 mt-10" id="dots"></div>
-
-    </div>
-  </section>
+    </section>
 
   <!-- ── Marquee ───────────────────────────────────── -->
   <section class="py-24 bg-surface overflow-hidden marquee-section mq-section-rv" id="mq-section">
