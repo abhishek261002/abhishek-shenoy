@@ -266,15 +266,15 @@
 
   /* ── Marquee ──────────────────────────────────── */
   .marquee-track {
-    display: flex; gap: 2rem;
-    animation: marqueeScroll 38s linear infinite;
+    display: flex; 
+    gap: 2rem;
     will-change: transform;
+    cursor: grab; /* Shows the user they can interact */
+    user-select: none; /* Prevents text/image selection while dragging */
   }
-  @keyframes marqueeScroll {
-    from { transform: translateX(0); }
-    to   { transform: translateX(-50%); }
+  .marquee-track:active {
+    cursor: grabbing;
   }
-  .marquee-section:hover .marquee-track { animation-play-state: paused; }
 
   /* Marquee image hover */
   .mq-img {
@@ -793,6 +793,62 @@ function closeMenu(){
 menuToggle?.addEventListener('click',openMenu);
 menuClose?.addEventListener('click',closeMenu);
 menuBackdrop?.addEventListener('click',closeMenu);
+
+/* ── Draggable Marquee Logic ────────────────── */
+const mqTrack = document.querySelector('.marquee-track');
+let mqX = 0;
+let mqIsDragging = false;
+let mqStartX;
+let mqScrollLeft;
+const mqSpeed = 0.6; // Adjust auto-scroll speed here (pixels per frame)
+
+function updateMarquee() {
+  if (!mqIsDragging) {
+    mqX -= mqSpeed;
+    // Reset for infinite loop once halfway through (since we doubled the images)
+    if (Math.abs(mqX) >= mqTrack.scrollWidth / 2) {
+      mqX = 0;
+    }
+    mqTrack.style.transform = `translateX(${mqX}px)`;
+  }
+  requestAnimationFrame(updateMarquee);
+}
+
+// Start the loop
+updateMarquee();
+
+// Interaction Listeners
+const startDragging = (e) => {
+  mqIsDragging = true;
+  mqStartX = (e.pageX || e.touches[0].pageX) - mqTrack.offsetLeft;
+  mqScrollLeft = mqX;
+};
+
+const stopDragging = () => {
+  mqIsDragging = false;
+};
+
+const moveMarquee = (e) => {
+  if (!mqIsDragging) return;
+  e.preventDefault();
+  const x = (e.pageX || e.touches[0].pageX) - mqTrack.offsetLeft;
+  const walk = (x - mqStartX); 
+  mqX = mqScrollLeft + walk;
+  
+  // Boundary check for infinite feel during drag
+  const halfWidth = mqTrack.scrollWidth / 2;
+  if (mqX > 0) mqX = -halfWidth;
+  if (Math.abs(mqX) >= halfWidth) mqX = 0;
+
+  mqTrack.style.transform = `translateX(${mqX}px)`;
+};
+
+mqTrack.addEventListener('mousedown', startDragging);
+mqTrack.addEventListener('touchstart', startDragging);
+window.addEventListener('mouseup', stopDragging);
+window.addEventListener('touchend', stopDragging);
+mqTrack.addEventListener('mousemove', moveMarquee);
+mqTrack.addEventListener('touchmove', moveMarquee);
 </script>
 
 </body>
